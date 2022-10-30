@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
             <head>
                 <title>Alfian Nahar</title>
             </head>
-            <body style={{ margin: "0" }}>
+            <body style={{ margin: "0", height: "100vh" }}>
                 <Navbar />
                 {children}
             </body>
