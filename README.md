@@ -6,16 +6,16 @@ Every update of my projets or experience will written here, and link to my site 
 
 ## Built With
 
-- Next.js
+- Next.js 13 (experimental app :interrobang:)
 - _Still thinking lol_ :rofl:
 - _Still thinking lol_ :rofl:
 
 ## Roadmap
 
-1. [x] Testing Next 13
+1. [ ] Testing Next 13 (**_still on progress_** :dash:)
 2. [ ] Design
 3. [ ] Code
-4. [x] Domain
+4. [x] Domain (old page using next 12 and plain front page design :nauseated_face:)
 
 ## Author
 
@@ -23,7 +23,7 @@ Every update of my projets or experience will written here, and link to my site 
 
 - [Profile](https://github.com/alfianahar "Alfian Nahar")
 - [Email](mailto:alfian.aswinda@gmail.com? "Hi!")
-- [Website](https://alfianahar.com/bio "Welcome")
+- [Website](https://alfianahar.com/bio "Welcome") (old page using next 12)
 
 ### 🤝 Support
 
