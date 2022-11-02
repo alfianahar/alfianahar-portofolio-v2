@@ -7,11 +7,11 @@ const fira = Fira_Sans_Extra_Condensed({
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" >
+        <html lang="en" className={fira.className}>
             <head>
                 <title>Alfian Nahar</title>
             </head>
-            <body style={{ margin: "0" }} className={fira.className}>
+            <body style={{ margin: "0" }} >
                 <Navbar />
                 {children}
             </body>
