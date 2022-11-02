@@ -5,14 +5,13 @@ const fira = Fira_Sans_Extra_Condensed({
     weight: '700',
 });
 
-
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className={fira.className}>
+        <html lang="en" >
             <head>
                 <title>Alfian Nahar</title>
             </head>
-            <body style={{ margin: "0" }}>
+            <body style={{ margin: "0" }} className={fira.className}>
                 <Navbar />
                 {children}
             </body>
