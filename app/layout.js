@@ -12,8 +12,11 @@ export default function RootLayout({ children }) {
                 <title>Alfian Nahar</title>
             </head>
             <body style={{ margin: "0" }} >
-                <Navbar />
-                {children}
+                <main>
+
+                    <Navbar />
+                    {children}
+                </main>
             </body>
         </html>
     );
