@@ -17,7 +17,7 @@ export default async function Page() {
             <div style={{ display: 'grid', gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "1rem", fontSize: "1rem", padding: "0 4rem" }}>
                 {
                     users?.map((people) => (
-                        <Link key={people.id} href={`/about/${[people.id]}`} style={{ border: "4px solid black", borderRadius: "0.375rem", padding: "1rem", }}>
+                        <Link key={people.id} href={`/about/${[people.id]}`} style={{ border: "4px solid white", borderRadius: "0.375rem", padding: "1rem", }}>
                             <img
                                 src={people.image}
                                 alt={people.firstName}
