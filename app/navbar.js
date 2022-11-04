@@ -3,10 +3,17 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import NewNavBar from './modal-nav';
 
 export default function Navbar() {
     const [disp, setDisp] = useState(true);
+    const [nav, setNav] = useState(false);
     const pathname = usePathname();
+
+    const handleClick = () => {
+        setNav(!nav)
+    }
+
     useEffect(() => {
         if (pathname === '/bio') return setDisp(false);
         return setDisp(true);
@@ -15,37 +22,30 @@ export default function Navbar() {
     return (
         <>
             {disp && (
-                <nav
+                <header
                     style={{
-                        padding: '2rem 4rem',
-                        display: 'flex',
-                        justifyContent: 'space-between',
                         position: 'fixed',
                         top: '0',
                         left: '0',
                         right: '0',
                         background: 'black',
+                        height: nav && '100vh',
+                        // width: nav && '100vw'
                     }}
                 >
-                    <div>
+                    <div style={{
+                        padding: '2rem 4rem',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                    }}>
                         <Link href="/">LOGO</Link>
+                        <button onClick={handleClick} >Menu</button>
+
                     </div>
-                    <div>
-                        <Link href="/" style={{ marginRight: '1.5rem' }}>
-                            Home
-                        </Link>
-                        <Link href="/about" style={{ marginRight: '1.5rem' }}>
-                            About
-                        </Link>
-                        <Link href="/work" style={{ marginRight: '1.5rem' }}>
-                            Work
-                        </Link>
-                        <Link href="/bio" style={{ marginRight: '1.5rem' }}>
-                            Bio
-                        </Link>
-                    </div>
-                </nav>
+                    {nav && <NewNavBar />}
+                </header>
             )}
+
         </>
     );
 }
