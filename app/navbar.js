@@ -29,8 +29,7 @@ export default function Navbar() {
                         left: '0',
                         right: '0',
                         background: 'black',
-                        height: nav && '100vh',
-                        // width: nav && '100vw'
+                        zIndex: '11',
                     }}
                 >
                     <div style={{
@@ -42,9 +41,9 @@ export default function Navbar() {
                         <button onClick={handleClick} >Menu</button>
 
                     </div>
-                    {nav && <NewNavBar />}
                 </header>
             )}
+            {nav && <NewNavBar setNav={setNav} />}
 
         </>
     );
