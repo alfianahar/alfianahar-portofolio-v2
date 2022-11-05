@@ -12,9 +12,9 @@ Every update of my projets or experience will written here, and link to my site 
 
 ## Roadmap
 
-1. [ ] Testing Next 13 (**_still on progress_** :dash:)
-2. [ ] Design
-3. [ ] Code
+1. [x] Testing Next 13 (**_atleast almost cover all test from nextjs beta_** :dash:)
+2. [ ] Design (**_design in figma_** :dash:)
+3. [ ] Code (**_code after every section or component designed in figma_** :dash:)
 4. [x] Domain (old page using next 12 and plain front page design :nauseated_face:)
 
 ## Author
