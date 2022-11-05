@@ -22,15 +22,7 @@ export default function Navbar() {
     return (
         <>
             {disp && (
-                <header
-                    style={{
-                        position: 'fixed',
-                        top: '0',
-                        left: '0',
-                        right: '0',
-                        background: 'black',
-                        zIndex: '11',
-                    }}
+                <header className='fixed top-0 left-0 right-0 bg-black text-white'
                 >
                     <div style={{
                         padding: '2rem 4rem',
