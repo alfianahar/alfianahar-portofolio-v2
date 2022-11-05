@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import NewNavBar from './modal-nav';
+import ModalNav from './modal-nav';
 
 export default function Navbar() {
     const [disp, setDisp] = useState(true);
@@ -22,20 +22,16 @@ export default function Navbar() {
     return (
         <>
             {disp && (
-                <header className='fixed top-0 left-0 right-0 bg-black text-white'
+                <header className='fixed top-0 left-0 right-0 bg-black text-white z-10'
                 >
-                    <div style={{
-                        padding: '2rem 4rem',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                    }}>
+                    <div className='py-8 px-16 flex justify-between' >
                         <Link href="/">LOGO</Link>
                         <button onClick={handleClick} >Menu</button>
 
                     </div>
                 </header>
             )}
-            {nav && <NewNavBar setNav={setNav} />}
+            {nav && <ModalNav setNav={setNav} />}
 
         </>
     );

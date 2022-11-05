@@ -2,30 +2,16 @@
 
 import Link from "next/link";
 
-export default function NewNavBar({ setNav }) {
+export default function ModalNav({ setNav }) {
     return (
-        <nav
-            style={{
-                padding: '2rem 5rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                fontSize: '5rem',
-                fontWeight: '700',
-                height: '100vh',
-                width: '100vw',
-                position: 'fixed',
-                top: '0',
-                background: 'black',
-                zIndex: '10',
-            }}>
-            <Link href="/" style={{ padding: '1rem' }} onClick={() => setNav(false)} >
+        <nav className="py-8 px-16 flex flex-col justify-center text-7xl font-bold min-h-screen min-w-full fixed top-0 bg-black text-white">
+            <Link href="/" className="border-t-4 border-indigo-500 p-8 hover:bg-slate-700" onClick={() => setNav(false)} >
                 Home
             </Link>
-            <Link href="/about" style={{ padding: '1rem' }} onClick={() => setNav(false)}>
+            <Link href="/about" className="border-y-4 border-indigo-500 p-8 hover:bg-slate-700" onClick={() => setNav(false)}>
                 About
             </Link>
-            <Link href="/work" style={{ padding: '1rem' }} onClick={() => setNav(false)}>
+            <Link href="/work" className="border-b-4 border-indigo-500 p-8 hover:bg-slate-700" onClick={() => setNav(false)}>
                 Work
             </Link>
         </nav>
