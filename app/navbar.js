@@ -17,7 +17,6 @@ export default function Navbar() {
     useEffect(() => {
         if (pathname === '/bio') return setDisp(false);
         return setDisp(true);
-        console.log(pathname);
     }, [pathname]);
     return (
         <>
@@ -25,13 +24,13 @@ export default function Navbar() {
                 <header className='fixed top-0 left-0 right-0 bg-black text-white z-10'
                 >
                     <div className='py-8 px-16 flex justify-between' >
-                        <Link href="/">LOGO</Link>
+                        <Link href="/" onClick={() => setNav(false)}>LOGO</Link>
                         <button onClick={handleClick} >Menu</button>
 
                     </div>
                 </header>
             )}
-            {nav && <ModalNav setNav={setNav} />}
+            <ModalNav nav={nav} setNav={setNav} />
 
         </>
     );
