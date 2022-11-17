@@ -1,14 +1,15 @@
-// import { Fira_Sans_Extra_Condensed } from '@next/font/google';
+import { Fira_Sans_Condensed } from '@next/font/google';
 import Navbar from "./navbar";
 import './globals.css'
 
-// const fira = Fira_Sans_Extra_Condensed({
-//     weight: '700',
-// });
+const fira = Fira_Sans_Condensed({
+    weight: '700',
+    subsets: ["latin"]
+});
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="en" className={fira.className}>
             <head>
                 <title>Alfian Nahar</title>
             </head>
