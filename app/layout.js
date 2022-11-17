@@ -1,5 +1,5 @@
 import { Fira_Sans_Condensed } from '@next/font/google';
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 import './globals.css'
 
 const fira = Fira_Sans_Condensed({
