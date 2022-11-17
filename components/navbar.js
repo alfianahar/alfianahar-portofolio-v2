@@ -24,8 +24,8 @@ export default function Navbar() {
                 <header className='fixed top-0 left-0 right-0 bg-black text-white z-10'
                 >
                     <div className='py-8 px-16 flex justify-between' >
-                        <Link href="/" onClick={() => setNav(false)}>LOGO</Link>
-                        <button onClick={handleClick} >Menu</button>
+                        <Link href="/" onClick={() => setNav(false)}>ALFIAN <span className='font-extrabold'>NAHAR</span></Link>
+                        <button onClick={handleClick} className="font-bold">Menu</button>
 
                     </div>
                 </header>

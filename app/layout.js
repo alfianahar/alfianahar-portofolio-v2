@@ -1,10 +1,9 @@
-import { Fira_Sans_Condensed } from '@next/font/google';
+import { Rubik } from '@next/font/google';
 import Navbar from "../components/navbar";
 import './globals.css'
 
-const fira = Fira_Sans_Condensed({
-    weight: '700',
-    subsets: ["latin"]
+const fira = Rubik({
+    // variable: '--font-rubik',
 });
 
 export default function RootLayout({ children }) {
@@ -13,7 +12,7 @@ export default function RootLayout({ children }) {
             <head>
                 <title>Alfian Nahar</title>
             </head>
-            <body style={{ margin: "0" }} >
+            <body className='' style={{ margin: "0" }} >
                 <main>
                     <Navbar />
                     {children}
