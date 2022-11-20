@@ -1,4 +1,5 @@
 import { Rubik } from '@next/font/google';
+import Loader from '../components/loader';
 import Navbar from "../components/navbar";
 import './globals.css'
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
                 <title>Alfian Nahar</title>
             </head>
             <body className='' style={{ margin: "0" }} >
+                <Loader />
                 <main>
                     <Navbar />
                     {children}
