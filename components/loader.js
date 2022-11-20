@@ -21,7 +21,7 @@ export default function Loader() {
         <>
             {
                 display &&
-                <div className={`fixed h-screen w-screen bg-white z-50 flex justify-center items-center duration-700 ease-in-out  ${loader ? '' : 'opacity-0 -z-40'}`}>
+                <div className={`fixed h-screen w-screen bg-white z-50 flex justify-center items-center duration-700 ease-in-out  ${loader ? '' : 'scale-[2] opacity-0 -z-40'}`}>
                     <div className="bg-black fixed h-screen w-[200vw] flex justify-center items-center">
                         <div className="-rotate-[10deg] h-screen w-[200vw] bg-gray-200"></div>
                     </div>
