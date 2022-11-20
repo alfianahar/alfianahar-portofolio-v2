@@ -11,29 +11,31 @@ module.exports = {
         sans: ['var(--font-rubik)']
       },
       animation: {
-        slideBlurred: 'slideBlurred 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
-        colorChange: 'colorChange 3s linear infinite alternate both'
+        load: 'load 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+        text: 'text 2s ease-in-out infinite'
       },
       keyframes: {
-        slideBlurred: {
+        load: {
           '0%': {
-            transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
-            transformOrigin: '50% 0%',
-            filter: 'blur(40px)',
+            'transform': 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+            'transform-origin': '50% 0%',
+            'filter': 'blur(40px)',
           },
           '100%': {
-            transform: 'translateY(0) scaleY(1) scaleX(1)',
-            transformOrigin: '50% 50%',
-            filter: 'blur(0)',
-            opacity: '1',
+            'transform': 'translateY(0) scaleY(1) scaleX(1)',
+            'transform-origin': '50% 50%',
+            'filter': 'blur(0)',
+            'opacity': '1',
           },
         },
-        colorChange: {
-          '0%': {
-            background: '#19dcea'
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
           },
-          '100%': {
-            background: '#b22cff'
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
           },
         }
       },
