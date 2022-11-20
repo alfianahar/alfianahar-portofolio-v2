@@ -7,15 +7,16 @@ Every update of my projets or experience will written here, and link to my site 
 ## Built With
 
 - Next.js 13 (experimental app :interrobang:)
-- _Still thinking lol_ :rofl:
+- Tailwind CSS
 - _Still thinking lol_ :rofl:
 
 ## Roadmap
 
 1. [x] Testing Next 13 (**_atleast almost cover all test from nextjs beta_** :dash:)
-2. [ ] Design (**_design in figma_** :dash:)
-3. [ ] Code (**_code after every section or component designed in figma_** :dash:)
-4. [x] Domain (old page using next 12 and plain front page design :nauseated_face:)
+2. [ ] Testing module and component (**_design in figma_** :dash:)
+3. [ ] Design (**_design in figma_** :dash:)
+4. [ ] Code (**_code after every section or component designed in figma_** :dash:)
+5. [x] Domain (old page using next 12 and plain front page design :nauseated_face:)
 
 ## Author
 
