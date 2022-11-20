@@ -7,8 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-rubik)']
+      },
       animation: {
-        slideBlurred: 'slideBlurred 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+        slideBlurred: 'slideBlurred 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+        colorChange: 'colorChange 2s linear infinite alternate both'
       },
       keyframes: {
         slideBlurred: {
@@ -23,9 +27,17 @@ module.exports = {
             filter: 'blur(0)',
             opacity: '1',
           },
+        },
+        colorChange: {
+          '0%': {
+            background: '#19dcea'
+          },
+          '100%': {
+            background: '#b22cff'
+          },
         }
-      }
+      },
     },
-  },
-  plugins: [],
+    plugins: [],
+  }
 }
