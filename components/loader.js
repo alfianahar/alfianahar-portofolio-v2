@@ -15,7 +15,7 @@ export default function Loader() {
             setTimeout(() => {
                 setDisplay(false)
             }, 1000);
-        }, 2000);
+        }, 3000);
     })
     return (
         <>

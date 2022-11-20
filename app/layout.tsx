@@ -1,10 +1,13 @@
 import { Rubik } from "@next/font/google";
+import localFont from "@next/font/local";
 import Loader from "../components/loader";
 import Navbar from "../components/navbar";
 import "./globals.css";
 
-const rubik = Rubik({
+const rubik = localFont({ src: "./Rubik-VariableFont_wght.ttf" });
+const rubikgoogle = Rubik({
   variable: "--font-rubik",
+  subsets: ["latin"],
   fallback: ["sans"],
 });
 
@@ -14,7 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${rubik.variable} font-sans`}>
+    <html
+      lang="en"
+      className={`${rubik.className} ${rubikgoogle.variable} font-sans`}
+    >
       <head>
         <title>Alfian Nahar</title>
       </head>

@@ -11,8 +11,8 @@ module.exports = {
         sans: ['var(--font-rubik)']
       },
       animation: {
-        slideBlurred: 'slideBlurred 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
-        colorChange: 'colorChange 2s linear infinite alternate both'
+        slideBlurred: 'slideBlurred 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+        colorChange: 'colorChange 3s linear infinite alternate both'
       },
       keyframes: {
         slideBlurred: {
