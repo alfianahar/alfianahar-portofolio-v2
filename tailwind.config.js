@@ -12,7 +12,7 @@ module.exports = {
       },
       animation: {
         load: 'load 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
-        text: 'text 2s ease-in-out infinite'
+        text: 'text 3s linear infinite'
       },
       keyframes: {
         load: {
@@ -29,13 +29,13 @@ module.exports = {
           },
         },
         text: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center',
+          '0%': {
+            'background-size': '200%',
+            'background-position': '0% center',
           },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center',
+          '100%': {
+            'background-size': '200%',
+            'background-position': '-200% center',
           },
         }
       },
