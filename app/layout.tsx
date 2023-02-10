@@ -1,15 +1,15 @@
-import { Rubik } from "@next/font/google";
+// import { Rubik } from "@next/font/google";
 import localFont from "@next/font/local";
 import Loader from "../components/loader";
 import Navbar from "../components/navbar";
 import "./globals.css";
 
 const rubik = localFont({ src: "./Rubik-VariableFont_wght.ttf" });
-const rubikgoogle = Rubik({
-  variable: "--font-rubik",
-  subsets: ["latin"],
-  fallback: ["sans"],
-});
+// const rubikgoogle = Rubik({
+//   variable: "--font-rubik",
+//   subsets: ["latin"],
+//   fallback: ["sans"],
+// });
 
 export default function RootLayout({
   children,
@@ -19,7 +19,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${rubik.className} ${rubikgoogle.variable} font-sans`}
+      // className={`${rubik.className} ${rubikgoogle.variable} font-sans`}
+      className={`${rubik.className} selection:font-sans`}
     >
       <head>
         <title>Alfian Nahar</title>
