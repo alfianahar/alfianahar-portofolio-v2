@@ -10,10 +10,6 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const pathname = usePathname();
 
-  const handleClick = () => {
-    setNav(!nav);
-  };
-
   useEffect(() => {
     if (pathname === "/bio") return setDisp(false);
     return setDisp(true);
@@ -26,7 +22,7 @@ const Navbar = () => {
             <Link href="/" onClick={() => setNav(false)}>
               ALFIAN <span className="font-extrabold">NAHAR</span>
             </Link>
-            <button onClick={handleClick} className="font-bold">
+            <button onClick={() => setNav(!nav)} className="font-bold">
               Menu
             </button>
           </div>
