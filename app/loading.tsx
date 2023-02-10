@@ -1,16 +1,10 @@
+import Image from "next/image";
+import loading from "../public/grid.svg";
+
 const Loading = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        fontSize: "3rem",
-      }}
-    >
-      {" "}
-      LOADING DULU BOS....{" "}
+    <div className="fixed h-screen w-screen bg-slate-300/50 flex justify-center items-center z-100">
+      <Image src={loading} alt="loading-grid" />
     </div>
   );
 };
