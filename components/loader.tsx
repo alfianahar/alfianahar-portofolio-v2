@@ -29,7 +29,7 @@ const Loader = () => {
           </div>
           <div className="flex flex-col justify-center items-center animate-load delay-75">
             <Image src={mylogo} alt="logo" className="w-[50%]" />
-            <h1 className=" text-xl mt-2 font-black bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-purple-500 ">
+            <h1 className=" text-xl mt-2 font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-purple-500 ">
               {" "}
               ALFIAN NAHAR
             </h1>
