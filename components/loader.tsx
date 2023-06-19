@@ -27,9 +27,9 @@ const Loader = () => {
           <div className="bg-black fixed h-screen w-[200vw] flex justify-center items-center">
             <div className="-rotate-[10deg] h-screen w-[200vw] bg-gray-200"></div>
           </div>
-          <div className="inline-flex justify-center items-center animate-load delay-75">
-            <Image src={mylogo} alt="vercel" className="w-[10%] mr-2" />
-            <h1 className="animate-text text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 ">
+          <div className="flex flex-col justify-center items-center animate-load delay-75">
+            <Image src={mylogo} alt="logo" className="w-[50%]" />
+            <h1 className=" text-xl mt-2 font-black bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-purple-500 ">
               {" "}
               ALFIAN NAHAR
             </h1>
