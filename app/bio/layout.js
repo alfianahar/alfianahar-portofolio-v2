@@ -1,7 +1,3 @@
 export default function BioLayout({ children }) {
-    return (
-        <>
-            {children}
-        </>
-    )
+  return <>{children}</>;
 }

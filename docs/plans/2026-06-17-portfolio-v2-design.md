@@ -63,7 +63,7 @@ Recommended stack:
 - React `19.2.7` or newer stable release.
 - TypeScript `6.0.3` or newer stable release.
 - Tailwind CSS `4.3.1` or newer stable release for utility styling.
-- ESLint `10.5.0` or newer stable release for code quality rules.
+- ESLint `9.39.4` or newer compatible `9.x` release for code quality rules.
 - Prettier `3.8.4` or newer stable release for consistent formatting.
 - CSS variables for design tokens and theme control.
 - Local TypeScript data or MDX for projects, experience, links, and profile content.

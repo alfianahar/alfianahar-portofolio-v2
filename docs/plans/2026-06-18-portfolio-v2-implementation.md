@@ -6,7 +6,7 @@
 
 **Architecture:** Use Next.js App Router with TypeScript, Bun, Tailwind CSS, and Vercel as the deployment target. Keep content in typed data modules and render repeated UI with `.map()` so project cards, filters, navigation, CTAs, social links, chatbot messages, and bio buttons are data-driven. Build shared design tokens, layout primitives, metadata helpers, and route-level loading before page-specific UI.
 
-**Tech Stack:** Bun `1.3.3+`, Next.js `16.2.9+`, React `19.2.7+`, TypeScript `6.0.3+`, Tailwind CSS `4.3.1+`, ESLint `10.5.0+`, Prettier `3.8.4+`, Vercel.
+**Tech Stack:** Bun `1.3.3+`, Next.js `16.2.9+`, React `19.2.7+`, TypeScript `6.0.3+`, Tailwind CSS `4.3.1+`, ESLint `9.39.4+` within compatible `9.x`, Prettier `3.8.4+`, Vercel.
 
 ---
 
@@ -35,6 +35,7 @@
 ### Task 1: Stack Reset To Bun + Modern Next
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `next.config.js` or replace with `next.config.ts`
 - Modify: `tsconfig.json`
@@ -75,7 +76,7 @@ Use this target structure, adjusting exact patch details to the current file:
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "^10.5.0",
+    "eslint": "^9.39.4",
     "eslint-config-next": "latest",
     "prettier": "^3.8.4",
     "tailwindcss": "^4.3.1",
@@ -144,6 +145,7 @@ git commit -m "setup : modern next bun stack"
 ### Task 2: App Directory Cleanup And Base Layout
 
 **Files:**
+
 - Modify: `app/layout.tsx`
 - Modify: `app/page.tsx`
 - Modify: `app/globals.css`
@@ -224,6 +226,7 @@ git commit -m "add : base layout and design tokens"
 ### Task 3: Shared UI Primitives And Logo
 
 **Files:**
+
 - Create: `src/components/ui/button.tsx`
 - Create: `src/components/ui/container.tsx`
 - Create: `src/components/ui/section-heading.tsx`
@@ -269,6 +272,7 @@ git commit -m "add : shared ui primitives"
 ### Task 4: Typed Content Data
 
 **Files:**
+
 - Create: `src/types/content.ts`
 - Create: `src/content/navigation.ts`
 - Create: `src/content/profile.ts`
@@ -339,6 +343,7 @@ git commit -m "add : structured portfolio content"
 ### Task 5: SEO Infrastructure
 
 **Files:**
+
 - Modify: `app/layout.tsx`
 - Create: `app/sitemap.ts`
 - Create: `app/robots.ts`
@@ -386,6 +391,7 @@ git commit -m "add : seo infrastructure"
 ### Task 6: Shared Navigation And Loader
 
 **Files:**
+
 - Create: `src/components/layout/site-header.tsx`
 - Create: `src/components/layout/site-footer.tsx`
 - Create: `src/components/layout/page-loader.tsx`
@@ -435,6 +441,7 @@ git commit -m "add : navigation and route loaders"
 ### Task 7: Homepage Hero
 
 **Files:**
+
 - Modify: `app/page.tsx`
 - Create: `src/components/hero/hero-section.tsx`
 - Create: `src/components/hero/hero-background.tsx`
@@ -487,6 +494,7 @@ git commit -m "add : premium hero section"
 ### Task 8: Work Page With Filters
 
 **Files:**
+
 - Create: `app/work/page.tsx`
 - Create: `src/components/work/project-grid.tsx`
 - Create: `src/components/work/project-card.tsx`
@@ -534,6 +542,7 @@ git commit -m "add : filterable work page"
 ### Task 9: About Page
 
 **Files:**
+
 - Create: `app/about/page.tsx`
 - Create: `src/components/about/about-hero.tsx`
 - Create: `src/components/about/avatar-art.tsx`
@@ -571,6 +580,7 @@ git commit -m "add : about page"
 ### Task 10: Bio Page
 
 **Files:**
+
 - Create: `app/bio/page.tsx`
 - Create: `src/components/bio/bio-card.tsx`
 - Create: `src/components/bio/bio-actions.tsx`
@@ -612,6 +622,7 @@ git commit -m "add : modern bio page"
 ### Task 11: Shared Chatbot Preview UI
 
 **Files:**
+
 - Create: `src/components/chat/chat-panel.tsx`
 - Create: `src/components/chat/chat-message.tsx`
 - Create: `src/components/chat/chat-input.tsx`
@@ -655,6 +666,7 @@ git commit -m "add : chatbot preview ui"
 ### Task 12: Final QA And Polish
 
 **Files:**
+
 - Modify only files required by issues found during QA.
 
 **Step 1: Run full checks**

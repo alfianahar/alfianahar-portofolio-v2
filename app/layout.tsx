@@ -1,5 +1,5 @@
-// import { Rubik } from "@next/font/google";
-import localFont from "@next/font/local";
+// import { Rubik } from "next/font/google";
+import localFont from "next/font/local";
 import Loader from "../components/loader";
 import Navbar from "../components/navbar";
 import "./globals.css";
@@ -11,11 +11,7 @@ const rubik = localFont({ src: "./Rubik-VariableFont_wght.ttf" });
 //   fallback: ["sans"],
 // });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
