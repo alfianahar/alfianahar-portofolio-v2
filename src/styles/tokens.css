@@ -1,0 +1,25 @@
+:root {
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-elevated: rgba(255, 255, 255, 0.78);
+  --text-primary: #050505;
+  --text-secondary: #525252;
+  --text-muted: #737373;
+  --border: #e5e5e5;
+  --muted-surface: #f4f4f5;
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.08);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+}
+
+[data-theme="dark"] {
+  --background: #14273e;
+  --surface: #0f1f33;
+  --surface-elevated: rgba(15, 31, 51, 0.84);
+  --text-primary: #efeff6;
+  --text-secondary: rgba(239, 239, 246, 0.78);
+  --text-muted: rgba(239, 239, 246, 0.68);
+  --border: rgba(239, 239, 246, 0.16);
+  --muted-surface: rgba(239, 239, 246, 0.08);
+}

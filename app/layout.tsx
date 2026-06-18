@@ -1,32 +1,24 @@
-// import { Rubik } from "next/font/google";
 import localFont from "next/font/local";
-import Loader from "../components/loader";
-import Navbar from "../components/navbar";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import "./globals.css";
 
-const rubik = localFont({ src: "./Rubik-VariableFont_wght.ttf" });
-// const rubikgoogle = Rubik({
-//   variable: "--font-rubik",
-//   subsets: ["latin"],
-//   fallback: ["sans"],
-// });
+const rubik = localFont({
+  src: "./Rubik-VariableFont_wght.ttf",
+  variable: "--font-rubik",
+  display: "swap",
+});
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Alfian Nahar",
+  description: "Personal portfolio for Alfian Nahar.",
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      // className={`${rubik.className} ${rubikgoogle.variable} font-sans`}
-      className={`${rubik.className} selection:font-sans`}
-    >
-      <head>
-        <title>Alfian Nahar</title>
-      </head>
-      <body className="" style={{ margin: "0" }}>
-        <Loader />
-        <main>
-          <Navbar />
-          {children}
-        </main>
+    <html lang="en" className={rubik.variable}>
+      <body>
+        <main>{children}</main>
       </body>
     </html>
   );
