@@ -1,22 +1,38 @@
 <h1 align="center">PORTOFOLIO SITE - VERSION 2</h1>
 
 <p align="center">This is my portofolio site for version 2 <br />
-Every update of my projets or experience will written here, and link to my site is below here</p>
+Every update of my projects or experience will written here, and link to my site is below here</p>
 <a align="center" href="https://alfianahar.com" target="_blank"> My Page </a>
 
 ## Built With
 
-- Next.js 13 (experimental app :interrobang:)
-- Tailwind CSS
-- _Still thinking lol_ :rofl:
+- Next.js 16
+- Tailwind CSS v4
+- Bun
+- TypeScript 6
 
 ## Roadmap
 
-1. [x] Testing Next 13 (**_atleast almost cover all test from nextjs beta_** :dash:)
-2. [ ] Testing module and component (**_design in figma_** :dash:)
-3. [ ] Design (**_design in figma_** :dash:)
-4. [ ] Code (**_code after every section or component designed in figma_** :dash:)
-5. [x] Domain (old page using next 12 and plain front page design :nauseated_face:)
+### Implementation Progress
+
+**Phase 6 — In Progress (Jun 18, 2026)**
+
+Full migration to Bun + Next.js 16 App Router + Tailwind v4 + TypeScript 6.
+
+Tasks completed:
+
+1. [x] Stack Reset To Bun + Modern Next
+2. [x] App Directory Cleanup And Base Layout
+3. [x] Shared UI Primitives And Logo
+4. [x] Typed Content Data
+5. [x] SEO Infrastructure
+6. [x] Shared Navigation And Loader
+7. [x] Homepage Hero
+8. [x] Work Page With Filters
+9. [x] About Page
+10. [ ] Bio Page
+11. [ ] Shared Chatbot Preview UI
+12. [ ] Final QA And Polish
 
 ## Author
 
