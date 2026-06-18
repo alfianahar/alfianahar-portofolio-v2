@@ -10,7 +10,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
       <Container size="wide" className="flex h-20 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-4" aria-label="Go to homepage">
-          <LogoMark priority size={44} />
+          <LogoMark priority size={36} />
           <span className="text-sm font-semibold tracking-[-0.02em] text-[var(--text-primary)] sm:text-base">
             {profile.displayName}
           </span>

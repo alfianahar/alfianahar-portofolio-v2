@@ -12,11 +12,6 @@ export const socialLinks = [
     username: "alfianahar",
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/alfianahar",
-    username: "alfianahar",
-  },
-  {
     label: "Instagram",
     href: "https://www.instagram.com/alfianahar/",
     username: "alfianahar",

@@ -22,6 +22,7 @@ export function LogoMark({
       width={size}
       height={Math.round(size * 0.689)}
       priority={priority}
+      style={{ width: size, height: "auto" }}
       className={cn("h-auto w-auto", className)}
     />
   );

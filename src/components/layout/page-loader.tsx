@@ -16,7 +16,7 @@ export function PageLoader({ label = "Preparing interface", variant = "light" }:
     >
       <div className="page-loader__panel" aria-hidden="true" />
       <div className="page-loader__mark relative z-10 flex flex-col items-center gap-4">
-        <LogoMark priority size={76} />
+        <LogoMark priority size={56} />
         <p
           className={cn("text-sm font-medium tracking-[0.24em] text-[var(--text-muted)] uppercase")}
         >

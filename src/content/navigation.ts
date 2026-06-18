@@ -5,5 +5,4 @@ export const navigationItems = [
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "/about#contact" },
 ] satisfies NavigationItem[];
