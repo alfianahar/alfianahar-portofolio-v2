@@ -34,6 +34,12 @@ Tasks completed:
 11. [ ] Shared Chatbot Preview UI
 12. [ ] Final QA And Polish
 
+Additional cleanup completed:
+
+1. [x] Root App Structure Cleanup
+
+Phase 6 is not complete yet. Calling it complete now would be fake progress. The remaining work is the modern `/bio` page, shared chatbot preview extraction, and final QA/polish.
+
 ## Author
 
 **Alfian Nahar**

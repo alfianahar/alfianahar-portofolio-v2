@@ -65,6 +65,13 @@ export type ChatQuickAction = {
   prompt: string;
 };
 
+export type BioAction = {
+  label: string;
+  href: string;
+  description: string;
+  external?: boolean;
+};
+
 export type Profile = {
   name: string;
   displayName: string;
