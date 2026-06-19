@@ -55,18 +55,4 @@ When a task or phase is complete and all checks pass:
 
 Full migration to Bun + Next.js 16 App Router + Tailwind v4 + TypeScript 6.
 
-Completed:
-
-1. Stack Reset To Bun + Modern Next
-2. App Directory Cleanup And Base Layout
-3. Shared UI Primitives And Logo
-4. Typed Content Data
-5. SEO Infrastructure
-6. Shared Navigation And Loader
-7. Homepage Hero
-8. Work Page With Filters
-9. About Page
-10. Root App Structure Cleanup
-11. Bio Page
-12. Shared Chatbot Preview UI
-13. Final QA And Polish
+See `README.md` for detailed task progress.
