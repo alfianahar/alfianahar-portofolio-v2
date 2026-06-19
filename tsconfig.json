@@ -11,6 +11,13 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@content/*": ["./content/*"],
+      "@lib/*": ["./lib/*"],
+      "@styles/*": ["./styles/*"],
+      "@app-types/*": ["./types/*"]
+    },
     "types": ["node", "bun-types"],
     "resolveJsonModule": true,
     "isolatedModules": true,

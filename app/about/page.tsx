@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { AboutHero } from "../../src/components/about/about-hero";
-import { createPageMetadata } from "../../src/lib/seo";
+import { AboutHero } from "@components/about/about-hero";
+import { createPageMetadata } from "@lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "About",

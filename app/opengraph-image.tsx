@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { siteConfig } from "../src/lib/seo";
+import { siteConfig } from "@lib/seo";
 
 export const size = {
   width: 1200,

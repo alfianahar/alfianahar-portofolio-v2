@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl } from "../src/lib/seo";
+import { absoluteUrl } from "@lib/seo";
 
 const routes = ["/", "/about", "/work", "/bio"];
 

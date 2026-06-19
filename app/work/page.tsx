@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { ExperienceTimeline } from "../../src/components/work/experience-timeline";
-import { ProjectFilters } from "../../src/components/work/project-filters";
-import { ProjectGrid } from "../../src/components/work/project-grid";
-import { SectionHeading } from "../../src/components/ui/section-heading";
-import { Container } from "../../src/components/ui/container";
-import { experiences } from "../../src/content/experience";
-import { projects } from "../../src/content/projects";
-import { filterProjects } from "../../src/lib/project-filters";
-import { createPageMetadata } from "../../src/lib/seo";
-import type { ProjectFilter, ProjectFilterKind } from "../../src/types/content";
+import { ExperienceTimeline } from "@components/work/experience-timeline";
+import { ProjectFilters } from "@components/work/project-filters";
+import { ProjectGrid } from "@components/work/project-grid";
+import { SectionHeading } from "@components/ui/section-heading";
+import { Container } from "@components/ui/container";
+import { experiences } from "@content/experience";
+import { projects } from "@content/projects";
+import { filterProjects } from "@lib/project-filters";
+import { createPageMetadata } from "@lib/seo";
+import type { ProjectFilter, ProjectFilterKind } from "@app-types/content";
 
 type WorkPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;

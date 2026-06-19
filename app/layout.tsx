@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
-import { SiteFooter } from "../src/components/layout/site-footer";
-import { SiteHeader } from "../src/components/layout/site-header";
-import { buildPersonJsonLd, buildWebsiteJsonLd } from "../src/lib/json-ld";
-import { createPageMetadata } from "../src/lib/seo";
+import { SiteFooter } from "@components/layout/site-footer";
+import { SiteHeader } from "@components/layout/site-header";
+import { buildPersonJsonLd, buildWebsiteJsonLd } from "@lib/json-ld";
+import { createPageMetadata } from "@lib/seo";
 import "./globals.css";
 
 const rubik = localFont({
