@@ -6,13 +6,13 @@ import { HeroToolStrip } from "./hero-tool-strip";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[var(--background)] py-20 sm:py-28 lg:min-h-[calc(100vh-5rem)] lg:py-24">
+    <section className="relative isolate h-[calc(100svh-5rem)] overflow-hidden bg-[var(--background)]">
       <HeroBackground />
       <Container
         size="wide"
-        className="relative z-10 grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center"
+        className="relative z-10 grid h-full gap-5 py-5 sm:gap-6 sm:py-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-8"
       >
-        <div className="space-y-10">
+        <div className="flex min-h-0 flex-col justify-center gap-6 lg:gap-8">
           <HeroCopy />
           <HeroToolStrip />
         </div>

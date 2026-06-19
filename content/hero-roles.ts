@@ -1,12 +1,10 @@
 import type { HeroRole } from "@app-types/content";
 
 export const heroRoles = [
-  { fun: "all-rounder", real: "fullstack" },
-  { fun: "server whisperer", real: "backend" },
-  { fun: "pixel pusher", real: "frontend" },
-  { fun: "bug hunter", real: "debugger" },
-  { fun: "caffeinated coder", real: "developer" },
-  { fun: "architect of chaos", real: "systems" },
-  { fun: "interface thinker", real: "UI engineer" },
-  { fun: "automation builder", real: "AI workflow" },
+  { fun: "Robotics UI", real: "Next.js" },
+  { fun: "Backend APIs", real: "Golang" },
+  { fun: "Realtime Systems", real: "GraphQL + ROS" },
+  { fun: "AI Engineering", real: "learning in public" },
+  { fun: "Product Interfaces", real: "React" },
+  { fun: "System Design", real: "microservices" },
 ] satisfies HeroRole[];

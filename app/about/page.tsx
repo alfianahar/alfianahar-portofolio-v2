@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AboutHero } from "@components/about/about-hero";
+import { SiteFooter } from "@components/layout/site-footer";
 import { createPageMetadata } from "@lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -10,5 +11,10 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function AboutPage() {
-  return <AboutHero />;
+  return (
+    <>
+      <AboutHero />
+      <SiteFooter />
+    </>
+  );
 }

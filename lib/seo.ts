@@ -3,9 +3,9 @@ import { profile } from "@content/profile";
 
 export const siteConfig = {
   name: "Alfian Nahar",
-  title: "Alfian Nahar | AI Developer & Designer",
+  title: "Alfian Nahar | Fullstack Software Engineer",
   description:
-    "Personal portfolio of Alfian Nahar, focused on AI-powered products, modern web applications, and polished digital interfaces.",
+    "Personal portfolio of Alfian Nahar, a fullstack software engineer building web systems, robotics interfaces, backend APIs, and practical AI-assisted workflows.",
   url: profile.website,
   ogImage: "/opengraph-image",
   locale: "en_US",

@@ -2,34 +2,30 @@ import type { ChatMessage, ChatQuickAction } from "@app-types/content";
 
 export const chatMessages = [
   {
-    id: "user-portfolio-help",
+    id: "user-capability-check",
     role: "user",
-    content: "Can you help me understand what Alfian can build?",
+    content: "What kind of systems can Alfian build?",
     timestamp: "10:30 AM",
   },
   {
-    id: "assistant-profile-summary",
+    id: "assistant-resume-summary",
     role: "assistant",
     content:
-      "Alfian builds modern web applications, AI-assisted workflows, and polished product interfaces. He is strongest when turning rough ideas into clear flows, usable interfaces, and maintainable implementation systems.",
+      "Alfian builds fullstack systems across robotics UI, REST APIs, Apollo GraphQL with ROS integrations, WebRTC workflows, and Golang microservices. He is also deepening practical AI engineering for smarter product and automation flows.",
   },
 ] satisfies ChatMessage[];
 
 export const chatQuickActions = [
   {
-    label: "Review My Website",
+    label: "Review Website",
     prompt: "Review my website and suggest the highest-impact improvements.",
   },
   {
-    label: "Show Projects",
-    prompt: "Show Alfian's selected projects and the role he played in each one.",
+    label: "Show Work",
+    prompt: "Show Alfian's selected fullstack and robotics work.",
   },
   {
-    label: "Suggest Improvements",
-    prompt: "Suggest improvements for product experience, performance, and SEO.",
-  },
-  {
-    label: "Contact Alfian",
-    prompt: "Help me contact Alfian about a project or collaboration.",
+    label: "Discuss AI",
+    prompt: "Discuss practical AI engineering and automation ideas with Alfian.",
   },
 ] satisfies ChatQuickAction[];

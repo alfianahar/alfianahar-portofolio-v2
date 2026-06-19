@@ -1,4 +1,4 @@
-const tools = ["Next.js", "React", "TypeScript", "Tailwind", "Bun", "Vercel", "AI workflows"];
+const tools = ["Next.js", "TypeScript", "Golang", "Python", "GraphQL", "AI Systems"];
 
 export function HeroToolStrip() {
   return (
@@ -6,7 +6,7 @@ export function HeroToolStrip() {
       {tools.map((tool) => (
         <span
           key={tool}
-          className="rounded-full border border-[var(--border)] bg-white/68 px-4 py-2 text-sm font-medium text-[var(--text-secondary)] shadow-sm backdrop-blur"
+          className="rounded-full border border-[var(--border)] bg-white/68 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)] shadow-sm backdrop-blur sm:px-4 sm:py-2 sm:text-sm"
         >
           {tool}
         </span>
