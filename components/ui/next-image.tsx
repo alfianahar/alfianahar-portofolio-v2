@@ -8,7 +8,16 @@ type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   priority?: boolean;
 };
 
-export function Image({ src, alt, width, height, priority, className, style, ...props }: ImageProps) {
+export function Image({
+  src,
+  alt,
+  width,
+  height,
+  priority,
+  className,
+  style,
+  ...props
+}: ImageProps) {
   return (
     <img
       src={src}

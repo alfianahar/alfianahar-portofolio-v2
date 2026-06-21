@@ -64,6 +64,30 @@ describe("ChatPanel", () => {
     expect(html).toContain("https://wa.me/6285725359530");
   });
 
+  test("renders structured markdown responses clearly", () => {
+    const html = renderToStaticMarkup(
+      <ChatPanel
+        title="Alfian Assistant"
+        description="Interactive assistant"
+        messages={[
+          {
+            id: "experience",
+            role: "assistant",
+            content: `### Alfian's experience\n\n- **Movel Ai Pte Ltd** - Senior Software Engineer (Full Stack)`,
+          },
+        ]}
+        quickActions={[]}
+        inputLabel="Ask Alfian Assistant"
+        inputPlaceholder="Ask about Alfian"
+      />,
+    );
+
+    expect(html).toContain("Alfian&#x27;s experience");
+    expect(html).toContain("Movel Ai Pte Ltd");
+    expect(html).toContain("<h3");
+    expect(html).toContain("<ul");
+  });
+
   test("can render without its own frame for embedded page shells", () => {
     const html = renderToStaticMarkup(
       <ChatPanel

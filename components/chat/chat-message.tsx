@@ -1,5 +1,6 @@
 import type { ChatMessage as ChatMessageType } from "@app-types/content";
 import { cn } from "@lib/utils";
+import { ChatMarkdown } from "./chat-markdown";
 
 type ChatMessageProps = {
   message: ChatMessageType;
@@ -25,7 +26,7 @@ export function ChatMessage({
         className,
       )}
     >
-      {message.content}
+      <ChatMarkdown content={message.content} />
       {message.actions?.length ? (
         <div className="mt-3 flex flex-wrap gap-2">
           {message.actions.map((action) => (
@@ -34,7 +35,7 @@ export function ChatMessage({
               href={action.href}
               target={action.href.startsWith("http") ? "_blank" : undefined}
               rel={action.href.startsWith("http") ? "noreferrer" : undefined}
-              className="rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
+               className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
             >
               {action.label}
             </a>

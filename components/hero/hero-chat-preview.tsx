@@ -35,7 +35,9 @@ export function HeroChatPreview() {
                 {card.label}
               </p>
               <p className="mt-1 text-sm font-semibold text-[var(--text-primary)]">{card.value}</p>
-              <p className="mt-0.5 hidden text-xs text-[var(--text-muted)] sm:block">{card.detail}</p>
+              <p className="mt-0.5 hidden text-xs text-[var(--text-muted)] sm:block">
+                {card.detail}
+              </p>
             </div>
           ))}
         </div>

@@ -22,7 +22,9 @@ describe("chat API", () => {
   });
 
   test("returns contact actions for obvious out-of-scope prompts", async () => {
-    const response = await POST({ request: createRequest({ messages: [{ role: "user", content: "weather today" }] }) } as never);
+    const response = await POST({
+      request: createRequest({ messages: [{ role: "user", content: "weather today" }] }),
+    } as never);
     const json = await response.json();
 
     expect(response.status).toBe(200);
@@ -34,9 +36,15 @@ describe("chat API", () => {
     process.env.OPENROUTER_API_KEY = "test-key";
     process.env.OPENROUTER_MODEL = "test-model";
     globalThis.fetch = (async () =>
-      Response.json({ choices: [{ message: { content: "Alfian builds robotics UI and backend APIs." } }] })) as unknown as typeof globalThis.fetch;
+      Response.json({
+        choices: [{ message: { content: "Alfian builds robotics UI and backend APIs." } }],
+      })) as unknown as typeof globalThis.fetch;
 
-    const response = await POST({ request: createRequest({ messages: [{ role: "user", content: "Tell me about Alfian robotics work" }] }) } as never);
+    const response = await POST({
+      request: createRequest({
+        messages: [{ role: "user", content: "Tell me about Alfian robotics work" }],
+      }),
+    } as never);
     const json = await response.json();
 
     expect(response.status).toBe(200);
@@ -52,7 +60,7 @@ describe("chat API", () => {
       'data: {"choices":[{"delta":{"content":"Alfian"}}]}',
       'data: {"choices":[{"delta":{"content":" builds"}}]}',
       'data: {"choices":[{"delta":{"content":" robots."}}]}',
-      'data: [DONE]',
+      "data: [DONE]",
     ];
 
     let chunkIndex = 0;

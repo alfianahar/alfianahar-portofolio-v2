@@ -48,11 +48,7 @@ export function ChatQuickActions({
 
         if (action.href) {
           return (
-            <a
-              key={key}
-              href={action.href}
-              className={cn(classes, "inline-block no-underline")}
-            >
+            <a key={key} href={action.href} className={cn(classes, "inline-block no-underline")}>
               {action.label}
             </a>
           );

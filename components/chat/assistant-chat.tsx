@@ -21,7 +21,11 @@ type AssistantChatProps = {
   inputBaseClassName?: string;
 };
 
-function createMessage(role: ChatMessage["role"], content: string, actions?: ChatMessage["actions"]): ChatMessage {
+function createMessage(
+  role: ChatMessage["role"],
+  content: string,
+  actions?: ChatMessage["actions"],
+): ChatMessage {
   return {
     id: `${role}-${Date.now()}-${Math.random().toString(16).slice(2)}`,
     role,
@@ -126,7 +130,10 @@ export function AssistantChat({
       const contentType = response.headers.get("content-type") ?? "";
 
       if (contentType.includes("application/json")) {
-        const data = (await response.json()) as { reply?: string; actions?: ChatMessage["actions"] };
+        const data = (await response.json()) as {
+          reply?: string;
+          actions?: ChatMessage["actions"];
+        };
         setMessages((current) => [
           ...current,
           createMessage("assistant", data.reply ?? "", data.actions ?? []),
@@ -138,10 +145,7 @@ export function AssistantChat({
       const decoder = new TextDecoder();
       const streamingId = `assistant-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-      setMessages((current) => [
-        ...current,
-        { id: streamingId, role: "assistant", content: "" },
-      ]);
+      setMessages((current) => [...current, { id: streamingId, role: "assistant", content: "" }]);
 
       let buffer = "";
       let hasContent = false;
@@ -213,7 +217,11 @@ export function AssistantChat({
       setMessages((current) => [
         ...current,
         createMessage("user", action.prompt),
-        createMessage("assistant", "Happy to hear that! Let's discuss your project. Reach out via:", contactFallbackActions),
+        createMessage(
+          "assistant",
+          "Happy to hear that! Let's discuss your project. Reach out via:",
+          contactFallbackActions,
+        ),
       ]);
       return;
     }

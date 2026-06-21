@@ -125,7 +125,10 @@ export const POST: APIRoute = async ({ request }) => {
   const latestUserMessage = [...messages].reverse().find((message) => message.role === "user");
 
   if (!latestUserMessage) {
-    return jsonResponse({ reply: "Ask a question about Alfian's resume or selected work.", actions: [] }, 400);
+    return jsonResponse(
+      { reply: "Ask a question about Alfian's resume or selected work.", actions: [] },
+      400,
+    );
   }
 
   if (isLikelyOutOfScope(latestUserMessage.content)) {
@@ -212,7 +215,8 @@ export const POST: APIRoute = async ({ request }) => {
           controller.enqueue(
             sseEvent({
               error: true,
-              reply: "The assistant is unavailable right now. Send Alfian a message directly instead.",
+              reply:
+                "The assistant is unavailable right now. Send Alfian a message directly instead.",
               actions: createOutOfScopeResponse().actions,
             }),
           );
@@ -259,7 +263,9 @@ export const POST: APIRoute = async ({ request }) => {
 
         controller.enqueue(
           sseEvent({
-            reply: fullReply || "The assistant did not return an answer. Send Alfian a message directly instead.",
+            reply:
+              fullReply ||
+              "The assistant did not return an answer. Send Alfian a message directly instead.",
             actions: fullReply && outOfScope ? createOutOfScopeResponse().actions : [],
           }),
         );
@@ -267,7 +273,8 @@ export const POST: APIRoute = async ({ request }) => {
         controller.enqueue(
           sseEvent({
             error: true,
-            reply: "The assistant is unavailable right now. Send Alfian a message directly instead.",
+            reply:
+              "The assistant is unavailable right now. Send Alfian a message directly instead.",
             actions: createOutOfScopeResponse().actions,
           }),
         );

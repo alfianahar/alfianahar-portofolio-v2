@@ -12,8 +12,8 @@ export function HeroCopy() {
         Reliable Systems. Practical AI.
       </h1>
       <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl sm:leading-9">
-        I build fullstack web systems, robotics interfaces, backend APIs, realtime integrations,
-        and practical AI-assisted workflows that turn rough ideas into reliable products.
+        I build fullstack web systems, robotics interfaces, backend APIs, realtime integrations, and
+        practical AI-assisted workflows that turn rough ideas into reliable products.
       </p>
       <div className="mt-9 flex flex-col gap-3 sm:flex-row">
         <Link href="/bio" className={buttonClassName({ size: "lg", className: "h-14 px-7" })}>
