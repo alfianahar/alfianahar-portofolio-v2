@@ -47,4 +47,4 @@ next-env.d.ts
 .playwright-cli/
 
 # plans
-/docs/plan
+docs/plans/
