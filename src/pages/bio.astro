@@ -1,41 +1,219 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { BioActions } from "@components/bio/bio-actions";
-import { BioCard } from "@components/bio/bio-card";
-import { BioChatPreview } from "@components/bio/bio-chat-preview";
-import { SiteFooter } from "@components/layout/site-footer";
-import { Link } from "@components/ui/next-link";
+import { Image } from "@components/ui/next-image";
+import "swiper/css";
 
 const title = "Bio | Alfian Nahar";
 const description =
-  "Quick links, social profiles, and assistant preview for Alfian Nahar, an AI developer and designer.";
+  "Quick links and social profiles for Alfian Nahar, an AI developer and designer.";
+
+interface BioButton {
+  id: number;
+  icon: { type: string; name: string };
+  title: string;
+  style: string;
+  target: string;
+}
+
+const res = await fetch("https://alfianahar.github.io/my-bio-json/data/bio-button.json");
+const buttons: BioButton[] = await res.json();
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/alfianahar", icon: "github" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/alfianahar/",
+    icon: "linkedin",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/alfianahar/",
+    icon: "instagram",
+  },
+];
 ---
 
-<Layout title={title} description={description}>
-  <div
-    data-theme="dark"
-    class="relative min-h-dvh overflow-hidden bg-[var(--background)] px-6 py-8 text-[var(--text-primary)] sm:px-8 lg:py-12"
-  >
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(124,184,252,0.24),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(213,204,255,0.18),transparent_26%),linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%)]" />
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-    <div class="relative mx-auto flex w-full max-w-5xl flex-col gap-6">
-      <Link
-        href="/"
-        className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-medium text-[var(--text-secondary)] transition hover:border-white/30 hover:text-[var(--text-primary)]"
+<Layout title={title} description={description} hideHeader>
+  <div data-theme="dark" class="flex min-h-dvh items-center justify-center bg-[var(--background)]">
+    <div
+      class="relative flex h-dvh w-full flex-col overflow-hidden bg-[var(--background)] shadow-2xl shadow-white/[0.08] md:h-[85dvh] md:w-[32rem] md:rounded-2xl"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 z-0 flex items-center justify-center py-12 opacity-10 lg:items-end"
       >
-        <span aria-hidden="true">←</span>
-        Back to portfolio
-      </Link>
+        <img src="/an-logo.svg" alt="" class="w-48 sm:w-64" />
+      </div>
 
-      <div class="grid gap-4 lg:grid-cols-[1fr_0.82fr] lg:items-start">
-        <div class="grid gap-4">
-          <BioCard />
-          <BioActions />
+      <div class="relative z-10 flex min-h-0 flex-1 flex-col">
+        <div class="flex shrink-0 gap-1.5 px-5 pt-5 sm:px-6 sm:pt-6">
+          <div class="h-1 flex-1 rounded-full bg-white/20">
+            <div class="slide-progress h-full w-0 rounded-full bg-[#7cb8fc]"></div>
+          </div>
+          <div class="h-1 flex-1 rounded-full bg-white/20">
+            <div class="slide-progress h-full w-0 rounded-full bg-[#7cb8fc]"></div>
+          </div>
         </div>
-        <BioChatPreview />
+
+        <div class="swiper bio-swiper min-h-0 w-full min-w-0 flex-1">
+          <div class="swiper-wrapper">
+            <section class="swiper-slide">
+              <div
+                class="flex h-full flex-col items-center overflow-y-auto px-6 pb-14 pt-12 text-center"
+              >
+                <div class="relative inline-flex">
+                  <div
+                    class="grid size-24 place-items-center rounded-full border-2 border-[#efeff6] bg-gradient-to-tr from-[#37cdbe] to-[#99fefc] sm:size-28"
+                  >
+                    <img
+                      src="https://github.com/alfianahar.png"
+                      alt="Alfian Nahar"
+                      width={112}
+                      height={112}
+                      class="size-full rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                <h1 class="mt-4 text-xl font-medium text-[#efeff6] sm:text-2xl">Alfian Nahar</h1>
+                <p class="mt-3 font-light leading-6 tracking-widest text-[#efeff6]/80">
+                  Full Stack Developer with <br /> Minimal UI/UX Design Skills
+                </p>
+
+                <div class="mt-6 flex items-center gap-6">
+                  {
+                    socialLinks.map((link) => (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        class="transition duration-300 hover:scale-125 hover:ease-out"
+                        aria-label={link.label}
+                      >
+                        <box-icon type="logo" name={link.icon} color="#efeff6" size="sm" />
+                      </a>
+                    ))
+                  }
+                </div>
+
+                <div class="mt-8 flex w-full max-w-xs flex-col gap-4">
+                  {
+                    buttons.map((button) => (
+                      <a
+                        href={button.target}
+                        target={button.target.startsWith("http") ? "_blank" : undefined}
+                        rel={button.target.startsWith("http") ? "noreferrer" : undefined}
+                        class="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-tr from-[#7cb8fc] to-[#3e6bb5] px-4 text-center font-medium text-[#040c15] shadow-lg shadow-[#3e6bb5]/40 transition hover:ring-4 hover:ring-[#7cb8fc]/40"
+                      >
+                        <box-icon
+                          type={button.icon.type || undefined}
+                          name={button.icon.name}
+                          color="#040c15"
+                          size="md"
+                        />
+                        <span class="flex-grow">{button.title}</span>
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            </section>
+
+            <section class="swiper-slide">
+              <div class="flex h-full w-full flex-col px-6 pb-14 pt-12">
+                <div
+                  class="mx-auto flex w-full max-w-[34rem] flex-1 flex-col items-center justify-start gap-8 pt-2 sm:gap-10"
+                >
+                  <div
+                    class="relative w-full rounded-2xl border-2 border-dotted border-white/20 px-5 pb-5 pt-8 text-center sm:px-6"
+                  >
+                    <h5
+                      class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-[var(--background)] px-3 py-1 font-mono text-sm text-[#7cb8fc] sm:text-base"
+                    >
+                      Hello, i am
+                    </h5>
+                    <h3 class="text-3xl font-semibold leading-none text-[#efeff6] sm:text-5xl">
+                      Alfian Nahar
+                    </h3>
+                    <p
+                      class="mx-auto mt-4 max-w-xl font-light leading-7 tracking-[0.18em] text-[#efeff6]/80 sm:text-lg"
+                    >
+                      Energetic, motivated and eager to learn new skillset! Professional full-stack
+                      developer with a motivation to build something awesome
+                    </p>
+                  </div>
+
+                  <div
+                    class="relative w-full flex-1 min-h-[26rem] overflow-hidden rounded-[2rem] sm:min-h-[30rem]"
+                  >
+                    <div class="absolute w-full h-3/5 bottom-2 rounded-[2rem] bg-[#8f95c8]/45">
+                    </div>
+                    <Image
+                      src="/me-bg.png"
+                      alt="Alfian Nahar"
+                      width={500}
+                      height={500}
+                      loading="lazy"
+                      className="absolute inset-x-0 bottom-0 h-full w-full object-cover object-[center_10%] grayscale"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-4 left-0 z-50 flex h-6 w-full items-center justify-center gap-1 text-xs font-light text-[#efeff6]/60"
+      >
+        Made
+        <img src="/an-logo-blue.svg" alt="" class="h-4 w-auto" />
+        by
       </div>
     </div>
   </div>
-  <SiteFooter />
+
+  <script is:inline src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
 </Layout>
+
+<style>
+  .bio-swiper .swiper-slide {
+    height: 100%;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Mousewheel, Keyboard, A11y } from "swiper/modules";
+
+  const swiperEl = document.querySelector<HTMLElement>(".bio-swiper");
+  if (swiperEl) {
+    const progressBars =
+      swiperEl.parentElement?.querySelectorAll<HTMLElement>(".slide-progress") ?? [];
+
+    const setProgress = (sw: Swiper) => {
+      const n = sw.slides.length;
+      const p = sw.progress;
+      progressBars.forEach((bar, i) => {
+        const fill = Math.max(0, Math.min(1, 1 - Math.abs(p * (n - 1) - i)));
+        bar.style.width = fill * 100 + "%";
+      });
+    };
+
+    new Swiper(swiperEl, {
+      modules: [Mousewheel, Keyboard, A11y],
+      direction: "horizontal",
+      slidesPerView: 1,
+      grabCursor: true,
+      simulateTouch: true,
+      resistance: true,
+      keyboard: { enabled: true },
+      mousewheel: { forceToAxis: true },
+      speed: 450,
+      on: {
+        init: setProgress,
+        progress: setProgress,
+      },
+    });
+  }
+</script>

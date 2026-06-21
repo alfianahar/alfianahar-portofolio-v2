@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@components/ui/next-link";
 import type { Profile, SocialLink } from "@app-types/content";
 
 type ContactCardProps = {
