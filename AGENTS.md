@@ -26,16 +26,16 @@
 
 ## Stack
 
-| Layer       | Tech              |
-| ----------- | ----------------- |
-| Framework   | Astro 5           |
-| UI          | React 19 (islands) |
-| Styling     | Tailwind CSS v4   |
-| Language    | TypeScript 6      |
-| Runtime     | Bun               |
-| Linter      | ESLint 9          |
-| Formatter   | Prettier          |
-| Deployment  | Cloudflare Pages  |
+| Layer      | Tech               |
+| ---------- | ------------------ |
+| Framework  | Astro 5            |
+| UI         | React 19 (islands) |
+| Styling    | Tailwind CSS v4    |
+| Language   | TypeScript 6       |
+| Runtime    | Bun                |
+| Linter     | ESLint 9           |
+| Formatter  | Prettier           |
+| Deployment | Cloudflare Pages   |
 
 ## Migration Notes
 

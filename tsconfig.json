@@ -23,6 +23,13 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "include": ["src/**/*", "components/**/*", "content/**/*", "lib/**/*", "types/**/*", "styles/**/*"],
+  "include": [
+    "src/**/*",
+    "components/**/*",
+    "content/**/*",
+    "lib/**/*",
+    "types/**/*",
+    "styles/**/*"
+  ],
   "exclude": ["node_modules", "dist"]
 }
