@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { HeroSection } from "@components/hero/hero-section";
+import { siteConfig } from "@lib/seo";
+---
+
+<Layout title={siteConfig.title} description={siteConfig.description}>
+  <HeroSection client:load />
+</Layout>

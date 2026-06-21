@@ -18,8 +18,8 @@ describe("ChatPanel", () => {
 
     expect(html).toContain("Alfian Assistant");
     expect(html).toContain("Static preview, real content");
-    expect(html).toContain("What kind of systems can Alfian build?");
     expect(html).toContain("Review Website");
+    expect(html).toContain("Show Work");
     expect(html).toContain('aria-label="Ask Alfian Assistant"');
   });
 

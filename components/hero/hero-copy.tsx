@@ -1,33 +1,31 @@
 import Link from "next/link";
 import { buttonClassName } from "@components/ui/button";
-import { profile } from "@content/profile";
-import { RotatingRole } from "./rotating-role";
 
 export function HeroCopy() {
   return (
-    <div className="relative z-10 max-w-2xl">
-      <p className="mb-4 inline-flex rounded-full border border-[var(--border)] bg-white/70 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] shadow-sm backdrop-blur sm:px-4 sm:py-2 sm:text-xs">
-        {profile.name} / {profile.title}
+    <div className="relative z-10 max-w-3xl">
+      <p className="mb-8 inline-flex items-center gap-2 rounded-full bg-black/[0.04] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--text-primary)] ring-1 ring-black/5">
+        <span aria-hidden="true">✦</span>
+        AI-POWERED ENGINEERING
       </p>
-      <h1 className="text-4xl font-semibold tracking-[-0.07em] text-[var(--text-primary)] sm:text-5xl lg:text-6xl xl:text-7xl">
-        Fullstack engineer building reliable systems.
+      <h1 className="max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.075em] text-[var(--text-primary)] sm:text-6xl lg:text-7xl xl:text-8xl">
+        Reliable Systems. Practical AI.
       </h1>
-      <div className="mt-5">
-        <RotatingRole />
-      </div>
-      <p className="mt-5 max-w-xl text-base leading-7 text-[var(--text-secondary)] sm:text-lg sm:leading-8">
-        I build fullstack web systems with Next.js, Golang, and real-time integrations, while
-        deepening practical AI engineering.
+      <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl sm:leading-9">
+        I build fullstack web systems, robotics interfaces, backend APIs, realtime integrations,
+        and practical AI-assisted workflows that turn rough ideas into reliable products.
       </p>
-      <div className="mt-7 flex flex-row gap-3">
-        <Link href="/work" className={buttonClassName({ size: "lg" })}>
-          View Work
+      <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+        <Link href="/bio" className={buttonClassName({ size: "lg", className: "h-14 px-7" })}>
+          Let's Build Something
+          <span aria-hidden="true">↗</span>
         </Link>
         <Link
-          href="/about#contact"
-          className={buttonClassName({ variant: "secondary", size: "lg" })}
+          href="/work"
+          className={buttonClassName({ variant: "secondary", size: "lg", className: "h-14 px-7" })}
         >
-          Contact Me
+          View My Work
+          <span aria-hidden="true">↗</span>
         </Link>
       </div>
     </div>

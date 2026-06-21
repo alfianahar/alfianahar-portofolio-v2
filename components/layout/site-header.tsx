@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@components/ui/next-link";
 import { LogoMark } from "@components/brand/logo-mark";
 import { buttonClassName } from "@components/ui/button";
 import { Container } from "@components/ui/container";
@@ -29,14 +29,14 @@ export function SiteHeader() {
         </nav>
 
         <Link
-          href="/about#contact"
+          href="/bio"
           className={buttonClassName({
             variant: "secondary",
             size: "sm",
             className: "hidden sm:flex",
           })}
         >
-          Contact
+          Biopage
         </Link>
       </Container>
     </header>

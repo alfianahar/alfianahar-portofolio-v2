@@ -13,6 +13,7 @@
 | Add dev dependency   | `bun add -d <package>` |
 | Dev server           | `bun run dev`          |
 | Build                | `bun run build`        |
+| Preview              | `bun run preview`      |
 | Lint                 | `bun run lint`         |
 | Test                 | `bun run test`         |
 | Format               | `bun run format`       |
@@ -25,15 +26,24 @@
 
 ## Stack
 
-| Layer     | Tech            |
-| --------- | --------------- |
-| Framework | Next.js 16      |
-| UI        | React 19        |
-| Styling   | Tailwind CSS v4 |
-| Language  | TypeScript 6    |
-| Runtime   | Bun             |
-| Linter    | ESLint 9        |
-| Formatter | Prettier        |
+| Layer       | Tech              |
+| ----------- | ----------------- |
+| Framework   | Astro 5           |
+| UI          | React 19 (islands) |
+| Styling     | Tailwind CSS v4   |
+| Language    | TypeScript 6      |
+| Runtime     | Bun               |
+| Linter      | ESLint 9          |
+| Formatter   | Prettier          |
+| Deployment  | Cloudflare Pages  |
+
+## Migration Notes
+
+- Next.js `next/link` → `@components/ui/next-link`
+- Next.js `next/image` → `@components/ui/next-image`
+- React components in `components/` unchanged
+- Content files in `content/` unchanged
+- Lib files in `lib/` unchanged
 
 ## Workflow
 
@@ -53,6 +63,6 @@ When a task or phase is complete and all checks pass:
 
 **Complete**
 
-Full migration to Bun + Next.js 16 App Router + Tailwind v4 + TypeScript 6.
+Full migration from Next.js 16 to Astro 5 + React 19 on Cloudflare Pages.
 
 See `README.md` for detailed task progress.

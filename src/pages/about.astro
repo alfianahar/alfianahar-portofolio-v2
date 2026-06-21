@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { AboutHero } from "@components/about/about-hero";
+import { SiteFooter } from "@components/layout/site-footer";
+
+const title = "About | Alfian Nahar";
+const description =
+  "About Alfian Nahar, an AI developer and designer building modern web applications and product interfaces.";
+---
+
+<Layout title={title} description={description}>
+  <AboutHero />
+  <SiteFooter />
+</Layout>

@@ -13,28 +13,17 @@ Every update of my projects or experience will written here, and link to my site
 
 ## Roadmap
 
-### Implementation Progress
+### Phase 1 — ✅ Complete (Jun 19, 2026)
 
-**Phase 6 — ✅ Complete (Jun 19, 2026)**
+Full portfolio rewrite to Bun + Next.js 16 App Router + Tailwind v4 + TypeScript 6.
 
-The full [implementation plan](docs/plans/2026-06-18-portfolio-v2-implementation.md) has been completed.
+See [implementation plan](docs/plans/2026-06-18-portfolio-v2-implementation.md).
 
-All 12 tasks finished:
+### Phase 2 — 🚧 In Progress (Home Hero No-Scroll)
 
-1. [x] Stack Reset To Bun + Modern Next
-2. [x] App Directory Cleanup And Base Layout
-3. [x] Shared UI Primitives And Logo
-4. [x] Typed Content Data
-5. [x] SEO Infrastructure
-6. [x] Shared Navigation And Loader
-7. [x] Homepage Hero
-8. [x] Work Page With Filters
-9. [x] About Page
-10. [x] Bio Page
-11. [x] Shared Chatbot Preview UI
-12. [x] Final QA And Polish
+Reworking the home page into a one-viewport hero with compact resume-backed copy on the left and a dominant AI assistant panel on the right.
 
-The site now runs on Bun, Next.js 16 App Router, Tailwind v4, and TypeScript 6 with premium hero, work page with filters, about, bio, shared chatbot preview UI, SEO infrastructure, route loaders, and final QA all in place.
+See [implementation plan](docs/plans/2026-06-19-home-hero-no-scroll-implementation.md).
 
 ## Author
 

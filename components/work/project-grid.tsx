@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@components/ui/next-link";
 import type { Project } from "@app-types/content";
 import { ProjectCard } from "./project-card";
 

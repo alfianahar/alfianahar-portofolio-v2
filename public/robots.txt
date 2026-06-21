@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alfianahar.com/sitemap-index.xml

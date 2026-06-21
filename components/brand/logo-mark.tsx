@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@components/ui/next-image";
 import { cn } from "@lib/utils";
 
 type LogoMarkProps = {

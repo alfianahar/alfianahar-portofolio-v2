@@ -1,12 +1,8 @@
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import nextTypescript from "eslint-config-next/typescript";
+import eslintPluginAstro from "eslint-plugin-astro";
 
-const eslintConfig = [
-  ...nextCoreWebVitals,
-  ...nextTypescript,
+export default [
+  ...eslintPluginAstro.configs.recommended,
   {
-    ignores: [".next/**", "node_modules/**", "out/**", "public/**", "next-env.d.ts"],
+    ignores: [".astro/**", "dist/**", "node_modules/**", "public/**", ".git/**"],
   },
 ];
-
-export default eslintConfig;

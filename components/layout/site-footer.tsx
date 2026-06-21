@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@components/ui/next-link";
 import { LogoMark } from "@components/brand/logo-mark";
 import { Container } from "@components/ui/container";
 import { profile } from "@content/profile";

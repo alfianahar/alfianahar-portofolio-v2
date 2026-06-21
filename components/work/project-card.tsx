@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Image } from "@components/ui/next-image";
+import { Link } from "@components/ui/next-link";
 import type { Project } from "@app-types/content";
 
 type ProjectCardProps = {
