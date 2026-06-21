@@ -17,15 +17,11 @@ export const chatMessages = [
 
 export const chatQuickActions = [
   {
-    label: "Review Website",
-    prompt: "Review my website and suggest the highest-impact improvements.",
-  },
-  {
     label: "Show Work",
-    prompt: "Show Alfian's selected fullstack and robotics work.",
+    prompt: "Show Alfian's selected work.",
   },
   {
-    label: "Discuss AI",
-    prompt: "Discuss practical AI engineering and automation ideas with Alfian.",
+    label: "Discuss new project",
+    prompt: "Discuss new project",
   },
 ] satisfies ChatQuickAction[];

@@ -53,16 +53,23 @@ export type Experience = {
   stack?: string[];
 };
 
+export type ChatAction = {
+  label: string;
+  href: string;
+};
+
 export type ChatMessage = {
   id: string;
   role: "assistant" | "user";
   content: string;
   timestamp?: string;
+  actions?: ChatAction[];
 };
 
 export type ChatQuickAction = {
   label: string;
   prompt: string;
+  href?: string;
 };
 
 export type BioAction = {

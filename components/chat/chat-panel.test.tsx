@@ -18,8 +18,8 @@ describe("ChatPanel", () => {
 
     expect(html).toContain("Alfian Assistant");
     expect(html).toContain("Static preview, real content");
-    expect(html).toContain("Review Website");
     expect(html).toContain("Show Work");
+    expect(html).toContain("Discuss new project");
     expect(html).toContain('aria-label="Ask Alfian Assistant"');
   });
 
@@ -29,7 +29,7 @@ describe("ChatPanel", () => {
         title="Alfian Assistant"
         description="Static preview, curated answers"
         messages={chatMessages}
-        quickActions={chatQuickActions.slice(0, 2)}
+        quickActions={chatQuickActions.slice(0, 1)}
         quickActionMode="chip"
         inputLabel="Ask Alfian Assistant"
         inputPlaceholder="Ask about projects, skills, or collaboration..."
@@ -37,8 +37,31 @@ describe("ChatPanel", () => {
     );
 
     expect(html).toContain("Show Work");
-    expect(html).not.toContain("Discuss AI");
+    expect(html).not.toContain("Discuss new project");
     expect(html).not.toContain("<button");
+  });
+
+  test("renders assistant message actions as links", () => {
+    const html = renderToStaticMarkup(
+      <ChatPanel
+        title="Alfian Assistant"
+        description="Interactive assistant"
+        messages={[
+          {
+            id: "out-of-scope",
+            role: "assistant",
+            content: "I don't have enough context to answer that.",
+            actions: [{ label: "Send me a message", href: "https://wa.me/6285725359530" }],
+          },
+        ]}
+        quickActions={[]}
+        inputLabel="Ask Alfian Assistant"
+        inputPlaceholder="Ask about Alfian"
+      />,
+    );
+
+    expect(html).toContain("Send me a message");
+    expect(html).toContain("https://wa.me/6285725359530");
   });
 
   test("can render without its own frame for embedded page shells", () => {

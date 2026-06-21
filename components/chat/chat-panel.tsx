@@ -36,6 +36,9 @@ type ChatPanelProps = {
   inputClassName?: string;
   inputIndicatorBaseClassName?: string;
   inputIndicatorClassName?: string;
+  inputSlot?: ReactNode;
+  onQuickActionSelect?: (action: ChatQuickAction) => void;
+  quickActionsDisabled?: boolean;
 };
 
 export function ChatPanel({
@@ -69,6 +72,9 @@ export function ChatPanel({
   inputClassName,
   inputIndicatorBaseClassName,
   inputIndicatorClassName,
+  inputSlot,
+  onQuickActionSelect,
+  quickActionsDisabled,
 }: ChatPanelProps) {
   return (
     <div
@@ -141,16 +147,20 @@ export function ChatPanel({
         className={quickActionsClassName}
         itemBaseClassName={quickActionBaseClassName}
         itemClassName={quickActionClassName}
+        onActionSelect={onQuickActionSelect}
+        disabled={quickActionsDisabled}
       />
 
-      <ChatInput
-        label={inputLabel}
-        placeholder={inputPlaceholder}
-        baseClassName={inputBaseClassName}
-        className={inputClassName}
-        indicatorBaseClassName={inputIndicatorBaseClassName}
-        indicatorClassName={inputIndicatorClassName}
-      />
+      {inputSlot ?? (
+        <ChatInput
+          label={inputLabel}
+          placeholder={inputPlaceholder}
+          baseClassName={inputBaseClassName}
+          className={inputClassName}
+          indicatorBaseClassName={inputIndicatorBaseClassName}
+          indicatorClassName={inputIndicatorClassName}
+        />
+      )}
     </div>
   );
 }

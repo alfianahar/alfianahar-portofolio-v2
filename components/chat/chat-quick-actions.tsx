@@ -7,6 +7,8 @@ type ChatQuickActionsProps = {
   className?: string;
   itemBaseClassName?: string;
   itemClassName?: string;
+  onActionSelect?: (action: ChatQuickAction) => void;
+  disabled?: boolean;
 };
 
 const defaultButtonClassName =
@@ -21,6 +23,8 @@ export function ChatQuickActions({
   className,
   itemBaseClassName,
   itemClassName,
+  onActionSelect,
+  disabled,
 }: ChatQuickActionsProps) {
   if (actions.length === 0) {
     return null;
@@ -30,24 +34,42 @@ export function ChatQuickActions({
 
   return (
     <div className={cn("mt-5 flex flex-wrap gap-2", className)}>
-      {actions.map((action) =>
-        mode === "button" ? (
+      {actions.map((action) => {
+        const key = action.href ?? action.prompt;
+        const classes = cn(itemBaseClassName ?? defaultItemClassName, itemClassName);
+
+        if (mode === "chip") {
+          return (
+            <span key={key} className={classes}>
+              {action.label}
+            </span>
+          );
+        }
+
+        if (action.href) {
+          return (
+            <a
+              key={key}
+              href={action.href}
+              className={cn(classes, "inline-block no-underline")}
+            >
+              {action.label}
+            </a>
+          );
+        }
+
+        return (
           <button
-            key={action.prompt}
+            key={key}
             type="button"
-            className={cn(itemBaseClassName ?? defaultItemClassName, itemClassName)}
+            className={classes}
+            onClick={() => onActionSelect?.(action)}
+            disabled={disabled}
           >
             {action.label}
           </button>
-        ) : (
-          <span
-            key={action.prompt}
-            className={cn(itemBaseClassName ?? defaultItemClassName, itemClassName)}
-          >
-            {action.label}
-          </span>
-        ),
-      )}
+        );
+      })}
     </div>
   );
 }

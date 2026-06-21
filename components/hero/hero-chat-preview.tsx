@@ -1,11 +1,8 @@
-import { chatMessages, chatQuickActions } from "@content/chatbot";
-import { ChatPanel } from "@components/chat/chat-panel";
+import { AssistantChat } from "@components/chat/assistant-chat";
 
 const sideCards = [
-  { label: "Core", value: "Fullstack", detail: "Next.js + Golang" },
-  { label: "Domain", value: "Robotics UI", detail: "ROS + realtime ops" },
-  { label: "Backend", value: "APIs", detail: "REST, GraphQL, gRPC" },
-  { label: "Now", value: "AI Engineering", detail: "Automation systems" },
+  { label: "Core", value: "Fullstack + AI Engineer", detail: "TypeScript, Python, Golang" },
+  { label: "Domain", value: "System Integration", detail: "Webapp, IOT, Robotic" },
 ];
 
 export function HeroChatPreview() {
@@ -15,16 +12,14 @@ export function HeroChatPreview() {
         AI assistant preview
       </div>
 
-      <ChatPanel
+      <AssistantChat
         title="Alfian Assistant"
         description="Fullstack, robotics, backend, AI"
-        messages={chatMessages}
-        quickActions={chatQuickActions}
         inputLabel="Ask Alfian Assistant"
         inputPlaceholder="Ask about fullstack systems, robotics UI, or AI engineering..."
         className="flex h-full min-h-0 flex-col overflow-hidden"
         headerClassName="mb-3 border-b border-[var(--border)] pb-3 sm:mb-4 sm:pb-4"
-        messagesClassName="min-h-0 flex-1 overflow-hidden space-y-3"
+        messagesClassName="min-h-0 flex-1 overflow-y-auto space-y-3"
         messageMaxWidthClassName="max-w-[92%]"
         messageClassName="text-xs leading-5 sm:text-sm sm:leading-6"
         userMessageClassName="bg-[var(--text-primary)] text-[var(--background)]"
@@ -44,7 +39,7 @@ export function HeroChatPreview() {
             </div>
           ))}
         </div>
-      </ChatPanel>
+      </AssistantChat>
     </div>
   );
 }

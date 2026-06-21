@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@components/ui/next-link";
 import { buttonClassName } from "@components/ui/button";
 
 export function HeroCopy() {
