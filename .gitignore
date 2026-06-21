@@ -39,5 +39,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# cloudflare
+.wrangler/
+
+# playwright
+.playwright-cli/
+
 # plans
 /docs/plan
