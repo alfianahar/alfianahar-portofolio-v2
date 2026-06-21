@@ -8,13 +8,12 @@ export type Props = {
   title: string;
   description: string;
   image?: string;
+  hideHeader?: boolean;
 };
 
-const { title, description, image = siteConfig.ogImage } = Astro.props;
+const { title, description, image = siteConfig.ogImage, hideHeader } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://alfianahar.com").toString();
-const imageUrl = image
-  ? new URL(image, "https://alfianahar.com").toString()
-  : undefined;
+const imageUrl = image ? new URL(image, "https://alfianahar.com").toString() : undefined;
 const jsonLd = [buildPersonJsonLd(), buildWebsiteJsonLd()];
 ---
 
@@ -46,13 +45,41 @@ const jsonLd = [buildPersonJsonLd(), buildWebsiteJsonLd()];
 
     <!-- JSON-LD -->
     <script is:inline set:html={JSON.stringify(jsonLd)} type="application/ld+json" />
-
-
   </head>
   <body>
-    <SiteHeader />
-    <main>
+    {!hideHeader && <SiteHeader />}
+    <main class={hideHeader ? "overflow-x-clip" : ""}>
       <slot />
     </main>
+
+    <div id="page-loader" class="page-loader" aria-hidden="true">
+      <div class="page-loader__content">
+        <img src="/an-logo.svg" alt="" class="page-loader__logo" />
+        <h1 class="page-loader__title">alfian aswinda</h1>
+      </div>
+    </div>
+
+    <script>
+      const loader = document.getElementById("page-loader");
+      let navPending = false;
+
+      document.addEventListener("click", (e) => {
+        if (navPending) return;
+        const link = e.target.closest("a");
+        if (!link || link.target === "_blank") return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+
+        const url = new URL(link.href, location.origin);
+        if (url.origin !== location.origin) return;
+        if (url.href === location.href) return;
+
+        e.preventDefault();
+        navPending = true;
+        loader.removeAttribute("aria-hidden");
+        setTimeout(() => {
+          location.href = url.href;
+        }, 150);
+      });
+    </script>
   </body>
 </html>
