@@ -79,6 +79,17 @@ export type BioAction = {
   external?: boolean;
 };
 
+export type BioButton = {
+  id: number;
+  icon: {
+    type: string;
+    name: string;
+  };
+  title: string;
+  style: string;
+  target: string;
+};
+
 export type Profile = {
   name: string;
   displayName: string;

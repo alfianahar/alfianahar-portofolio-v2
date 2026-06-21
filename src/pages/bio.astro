@@ -1,22 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "@components/ui/next-image";
+import { bioButtons } from "@content/bio-buttons";
 import "swiper/css";
 
 const title = "Bio | Alfian Nahar";
 const description =
   "Quick links and social profiles for Alfian Nahar, an AI developer and designer.";
-
-interface BioButton {
-  id: number;
-  icon: { type: string; name: string };
-  title: string;
-  style: string;
-  target: string;
-}
-
-const res = await fetch("https://alfianahar.github.io/my-bio-json/data/bio-button.json");
-const buttons: BioButton[] = await res.json();
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/alfianahar", icon: "github" },
@@ -97,7 +87,7 @@ const socialLinks = [
 
                 <div class="mt-8 flex w-full max-w-xs flex-col gap-4">
                   {
-                    buttons.map((button) => (
+                    bioButtons.map((button) => (
                       <a
                         href={button.target}
                         target={button.target.startsWith("http") ? "_blank" : undefined}
