@@ -173,6 +173,12 @@ const socialLinks = [
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    cursor: grab;
+  }
+
+  .bio-slides.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
   }
 
   .bio-slides::-webkit-scrollbar {
@@ -209,6 +215,62 @@ const socialLinks = [
 
     slides.addEventListener("scroll", setProgress, { passive: true });
     window.addEventListener("resize", setProgress);
+
+    let dragPointerId: number | null = null;
+    let dragStartX = 0;
+    let dragStartLeft = 0;
+    let didDrag = false;
+    const interactiveSelector = "a, button, input, textarea, select, label";
+
+    const snapToNearestSlide = () => {
+      slides.scrollTo({
+        left: Math.round(slides.scrollLeft / slides.clientWidth) * slides.clientWidth,
+        behavior: "smooth",
+      });
+    };
+
+    slides.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0) return;
+      if (event.target instanceof Element && event.target.closest(interactiveSelector)) {
+        didDrag = false;
+        return;
+      }
+
+      dragPointerId = event.pointerId;
+      dragStartX = event.clientX;
+      dragStartLeft = slides.scrollLeft;
+      didDrag = false;
+      slides.setPointerCapture(event.pointerId);
+      slides.classList.add("is-dragging");
+    });
+
+    slides.addEventListener("pointermove", (event) => {
+      if (event.pointerId !== dragPointerId) return;
+
+      const delta = dragStartX - event.clientX;
+      didDrag = didDrag || Math.abs(delta) > 4;
+      if (!didDrag) return;
+
+      event.preventDefault();
+      slides.scrollLeft = dragStartLeft + delta;
+    });
+
+    slides.addEventListener("pointerup", (event) => {
+      if (event.pointerId !== dragPointerId) return;
+
+      dragPointerId = null;
+      slides.releasePointerCapture(event.pointerId);
+      slides.classList.remove("is-dragging");
+      snapToNearestSlide();
+    });
+
+    slides.addEventListener("click", (event) => {
+      if (!didDrag) return;
+
+      event.preventDefault();
+      didDrag = false;
+    });
+
     slides.addEventListener("keydown", (event) => {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
 
