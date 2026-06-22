@@ -47,9 +47,7 @@ const socialLinks = [
         <div class="swiper bio-swiper min-h-0 w-full min-w-0 flex-1">
           <div class="swiper-wrapper">
             <section class="swiper-slide">
-              <div
-                class="flex h-full flex-col items-center overflow-y-auto px-6 pb-14 pt-12 text-center"
-              >
+              <div class="flex h-full flex-col items-center px-6 pb-14 pt-12 text-center">
                 <div class="relative inline-flex">
                   <div
                     class="grid size-24 place-items-center rounded-full border-2 border-[#efeff6] bg-gradient-to-tr from-[#37cdbe] to-[#99fefc] sm:size-28"
@@ -133,9 +131,9 @@ const socialLinks = [
                   </div>
 
                   <div
-                    class="relative w-full flex-1 min-h-[26rem] overflow-hidden rounded-[2rem] sm:min-h-[30rem]"
+                    class="pointer-events-none relative w-full flex-1 min-h-[26rem] overflow-hidden rounded-[2rem] sm:min-h-[30rem]"
                   >
-                    <div class="absolute w-full h-3/5 bottom-2 rounded-[2rem] bg-[#8f95c8]/45">
+                    <div class="absolute bottom-2 h-3/5 w-full rounded-[2rem] bg-[#8f95c8]/45">
                     </div>
                     <Image
                       src="/me-bg.png"
@@ -143,7 +141,8 @@ const socialLinks = [
                       width={500}
                       height={500}
                       loading="lazy"
-                      className="absolute inset-x-0 bottom-0 h-full w-full object-cover object-[center_10%] grayscale"
+                      draggable="false"
+                      className="absolute inset-x-0 bottom-0 h-full w-full select-none object-cover object-[center_10%] grayscale"
                     />
                   </div>
                 </div>
@@ -154,11 +153,16 @@ const socialLinks = [
       </div>
 
       <div
-        class="absolute bottom-4 left-0 z-50 flex h-6 w-full items-center justify-center gap-1 text-xs font-light text-[#efeff6]/60"
+        class="absolute bottom-4 left-0 z-50 flex h-6 w-full items-center justify-center gap-1 font-light text-[#efeff6]/60 blur-md"
       >
-        Made
+        Made by
         <img src="/an-logo-blue.svg" alt="" class="h-4 w-auto" />
-        by
+      </div>
+      <div
+        class="absolute bottom-4 left-0 z-50 flex h-6 w-full items-center justify-center gap-1 font-light text-[#efeff6]/60"
+      >
+        Made by
+        <img src="/an-logo-blue.svg" alt="" class="h-4 w-auto" />
       </div>
     </div>
   </div>
@@ -167,6 +171,10 @@ const socialLinks = [
 </Layout>
 
 <style>
+  .bio-swiper {
+    touch-action: pan-y;
+  }
+
   .bio-swiper .swiper-slide {
     height: 100%;
   }
@@ -196,6 +204,8 @@ const socialLinks = [
       slidesPerView: 1,
       grabCursor: true,
       simulateTouch: true,
+      touchEventsTarget: "container",
+      touchStartPreventDefault: false,
       resistance: true,
       keyboard: { enabled: true },
       mousewheel: { forceToAxis: true },
