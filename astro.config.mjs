@@ -22,7 +22,6 @@ export default defineConfig({
         "@lib": path.resolve(__dirname, "lib"),
         "@styles": path.resolve(__dirname, "src/styles"),
         "@app-types": path.resolve(__dirname, "types"),
-        "@layouts": path.resolve(__dirname, "src/layouts"),
       },
     },
   },

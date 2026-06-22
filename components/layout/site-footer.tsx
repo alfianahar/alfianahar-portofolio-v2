@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import { LogoMark } from "@components/brand/logo-mark";
 import { Container } from "@components/ui/container";
 import { profile } from "@content/profile";
@@ -21,7 +20,7 @@ export function SiteFooter() {
 
         <div className="flex flex-wrap gap-5 text-sm text-[var(--text-secondary)]">
           {socialLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               target="_blank"
@@ -29,7 +28,7 @@ export function SiteFooter() {
               className="transition hover:text-[var(--text-primary)]"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
       </Container>

@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import type { Profile, SocialLink } from "@app-types/content";
 
 type ContactCardProps = {
@@ -21,14 +20,14 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
         product implementation help.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link
+        <a
           href={`mailto:${profile.email}`}
           className="rounded-full bg-[var(--background)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)]"
         >
           {profile.email}
-        </Link>
+        </a>
         {socialLinks.map((link) => (
-          <Link
+          <a
             key={link.href}
             href={link.href}
             target="_blank"
@@ -36,7 +35,7 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
             className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-[var(--background)]/82 transition hover:bg-white/10"
           >
             {link.label}
-          </Link>
+          </a>
         ))}
       </div>
     </section>

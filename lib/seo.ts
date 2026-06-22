@@ -9,7 +9,3 @@ export const siteConfig = {
   ogImage: "/og-image.svg",
   locale: "en_US",
 };
-
-export function absoluteUrl(path = "/") {
-  return new URL(path, siteConfig.url).toString();
-}

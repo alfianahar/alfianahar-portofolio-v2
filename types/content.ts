@@ -10,11 +10,6 @@ export type SocialLink = {
   username?: string;
 };
 
-export type HeroRole = {
-  fun: string;
-  real: string;
-};
-
 export type Project = {
   title: string;
   slug: string;
@@ -43,16 +38,6 @@ export type ProjectFilter = {
   value?: string;
 };
 
-export type Experience = {
-  company: string;
-  role: string;
-  period: string;
-  location?: string;
-  summary: string;
-  highlights: string[];
-  stack?: string[];
-};
-
 export type ChatAction = {
   label: string;
   href: string;
@@ -62,7 +47,6 @@ export type ChatMessage = {
   id: string;
   role: "assistant" | "user";
   content: string;
-  timestamp?: string;
   actions?: ChatAction[];
 };
 
@@ -72,21 +56,12 @@ export type ChatQuickAction = {
   href?: string;
 };
 
-export type BioAction = {
-  label: string;
-  href: string;
-  description: string;
-  external?: boolean;
-};
-
 export type BioButton = {
-  id: number;
   icon: {
     type: string;
     name: string;
   };
   title: string;
-  style: string;
   target: string;
 };
 

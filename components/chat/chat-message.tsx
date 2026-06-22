@@ -35,7 +35,7 @@ export function ChatMessage({
               href={action.href}
               target={action.href.startsWith("http") ? "_blank" : undefined}
               rel={action.href.startsWith("http") ? "noreferrer" : undefined}
-               className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
+              className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
             >
               {action.label}
             </a>

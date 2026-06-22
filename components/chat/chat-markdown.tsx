@@ -4,9 +4,7 @@ import type { Components } from "react-markdown";
 
 const components: Components = {
   h3: ({ children }) => (
-    <h3 className="text-sm font-semibold tracking-wide text-[var(--text-primary)]">
-      {children}
-    </h3>
+    <h3 className="text-sm font-semibold tracking-wide text-[var(--text-primary)]">{children}</h3>
   ),
   h4: ({ children }) => (
     <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">

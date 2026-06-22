@@ -5,7 +5,6 @@ export const chatMessages = [
     id: "user-capability-check",
     role: "user",
     content: "What kind of systems can Alfian build?",
-    timestamp: "10:30 AM",
   },
   {
     id: "assistant-resume-summary",

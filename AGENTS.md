@@ -37,14 +37,6 @@
 | Formatter  | Prettier           |
 | Deployment | Cloudflare Pages   |
 
-## Migration Notes
-
-- Next.js `next/link` → `@components/ui/next-link`
-- Next.js `next/image` → `@components/ui/next-image`
-- React components in `components/` unchanged
-- Content files in `content/` unchanged
-- Lib files in `lib/` unchanged
-
 ## Workflow
 
 ### After Implementation

@@ -1,4 +1,3 @@
-import { Image } from "@components/ui/next-image";
 import { cn } from "@lib/utils";
 
 type LogoMarkProps = {
@@ -15,12 +14,12 @@ export function LogoMark({
   size = 48,
 }: LogoMarkProps) {
   return (
-    <Image
+    <img
       src="/an-logo.svg"
       alt={alt}
       width={size}
       height={Math.round(size * 0.689)}
-      priority={priority}
+      loading={priority ? "eager" : "lazy"}
       style={{ width: size, height: "auto" }}
       className={cn("h-auto w-auto", className)}
     />

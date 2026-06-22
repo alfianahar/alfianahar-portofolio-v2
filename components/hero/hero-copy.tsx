@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import { buttonClassName } from "@components/ui/button";
 
 export function HeroCopy() {
@@ -16,17 +15,17 @@ export function HeroCopy() {
         practical AI-assisted workflows that turn rough ideas into reliable products.
       </p>
       <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-        <Link href="/bio" className={buttonClassName({ size: "lg", className: "h-14 px-7" })}>
+        <a href="/bio" className={buttonClassName({ size: "lg", className: "h-14 px-7" })}>
           Let's Build Something
           <span aria-hidden="true">↗</span>
-        </Link>
-        <Link
+        </a>
+        <a
           href="/work"
           className={buttonClassName({ variant: "secondary", size: "lg", className: "h-14 px-7" })}
         >
           View My Work
           <span aria-hidden="true">↗</span>
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -64,8 +64,9 @@ const jsonLd = [buildPersonJsonLd(), buildWebsiteJsonLd()];
       let navPending = false;
 
       document.addEventListener("click", (e) => {
+        if (!loader || !(e.target instanceof Element)) return;
         if (navPending) return;
-        const link = e.target.closest("a");
+        const link = e.target.closest<HTMLAnchorElement>("a");
         if (!link || link.target === "_blank") return;
         if (e.metaKey || e.ctrlKey || e.shiftKey) return;
 

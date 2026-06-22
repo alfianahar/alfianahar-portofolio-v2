@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import { LogoMark } from "@components/brand/logo-mark";
 import { buttonClassName } from "@components/ui/button";
 import { Container } from "@components/ui/container";
@@ -9,26 +8,26 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
       <Container size="wide" className="flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-4" aria-label="Go to homepage">
+        <a href="/" className="flex items-center gap-4" aria-label="Go to homepage">
           <LogoMark priority size={36} />
           <span className="text-sm font-semibold tracking-[-0.02em] text-[var(--text-primary)] sm:text-base">
             {profile.displayName}
           </span>
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-8 text-sm text-[var(--text-secondary)] md:flex">
           {navigationItems.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
               className="transition hover:text-[var(--text-primary)]"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
-        <Link
+        <a
           href="/bio"
           className={buttonClassName({
             variant: "secondary",
@@ -37,7 +36,7 @@ export function SiteHeader() {
           })}
         >
           Biopage
-        </Link>
+        </a>
       </Container>
     </header>
   );

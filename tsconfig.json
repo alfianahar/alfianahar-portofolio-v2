@@ -14,7 +14,7 @@
       "@components/*": ["./components/*"],
       "@content/*": ["./content/*"],
       "@lib/*": ["./lib/*"],
-      "@styles/*": ["./styles/*"],
+      "@styles/*": ["./src/styles/*"],
       "@app-types/*": ["./types/*"]
     },
     "types": ["node", "bun-types"],

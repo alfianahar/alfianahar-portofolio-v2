@@ -14,11 +14,30 @@ const encoder = new TextEncoder();
 
 const RATE_WINDOW_MS = 15_000;
 const RATE_MAX_REQUESTS = 5;
+const RATE_PRUNE_SIZE = 100;
 const rateMap = new Map<string, number[]>();
+
+function pruneRateMap(now: number) {
+  const windowStart = now - RATE_WINDOW_MS;
+
+  for (const [ip, timestamps] of rateMap) {
+    const active = timestamps.filter((ts) => ts > windowStart);
+    if (active.length > 0) {
+      rateMap.set(ip, active);
+    } else {
+      rateMap.delete(ip);
+    }
+  }
+}
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const windowStart = now - RATE_WINDOW_MS;
+
+  // ponytail: global O(n) prune only after a small cap; use edge KV if abuse traffic matters.
+  if (rateMap.size > RATE_PRUNE_SIZE) {
+    pruneRateMap(now);
+  }
 
   let timestamps = rateMap.get(ip) ?? [];
   timestamps = timestamps.filter((ts) => ts > windowStart);
@@ -32,18 +51,6 @@ function isRateLimited(ip: string): boolean {
   rateMap.set(ip, timestamps);
   return false;
 }
-
-setInterval(() => {
-  const cutoff = Date.now() - RATE_WINDOW_MS;
-  for (const [ip, timestamps] of rateMap) {
-    const filtered = timestamps.filter((ts) => ts > cutoff);
-    if (filtered.length === 0) {
-      rateMap.delete(ip);
-    } else {
-      rateMap.set(ip, filtered);
-    }
-  }
-}, 60_000).unref();
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {

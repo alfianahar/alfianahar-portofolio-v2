@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import type { Project } from "@app-types/content";
 import { ProjectCard } from "./project-card";
 
@@ -17,12 +16,12 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
           The current portfolio content is intentionally small. Reset the filters instead of
           inventing weak filler projects.
         </p>
-        <Link
+        <a
           href="/work"
           className="mt-6 inline-flex rounded-full bg-[var(--text-primary)] px-5 py-3 text-sm font-semibold text-[var(--background)]"
         >
           Reset filters
-        </Link>
+        </a>
       </div>
     );
   }

@@ -6,20 +6,22 @@ Every update of my projects or experience will written here, and link to my site
 
 ## Built With
 
-- Next.js 16
+- Astro 5
+- React 19
 - Tailwind CSS v4
 - Bun
 - TypeScript 6
+- Cloudflare Pages
 
 ## Roadmap
 
 ### Phase 1 — ✅ Complete (Jun 19, 2026)
 
-Full portfolio rewrite to Bun + Next.js 16 App Router + Tailwind v4 + TypeScript 6.
+Full portfolio rewrite to Bun + Astro 5 + React 19 + Tailwind v4 + TypeScript 6.
 
 See [implementation plan](docs/plans/2026-06-18-portfolio-v2-implementation.md).
 
-### Phase 2 — 🚧 In Progress (Home Hero No-Scroll)
+### Phase 2 — ✅ Complete (Home Hero No-Scroll)
 
 Reworking the home page into a one-viewport hero with compact resume-backed copy on the left and a dominant AI assistant panel on the right.
 
@@ -31,7 +33,7 @@ See [implementation plan](docs/plans/2026-06-19-home-hero-no-scroll-implementati
 
 - [Profile](https://github.com/alfianahar "Alfian Nahar")
 - [Email](mailto:alfian.aswinda@gmail.com? "Hi!")
-- [Website](https://alfianahar.com/bio "Welcome") (old page using next 12)
+- [Website](https://alfianahar.com/bio "Welcome")
 
 ### 🤝 Support
 

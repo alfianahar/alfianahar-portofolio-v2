@@ -1,4 +1,3 @@
-import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -17,11 +16,6 @@ const sizes: Record<ButtonSize, string> = {
   lg: "h-12 px-6 text-base",
 };
 
-type ButtonProps = ComponentPropsWithoutRef<"button"> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-};
-
 export function buttonClassName({
   variant = "primary",
   size = "md",
@@ -37,8 +31,4 @@ export function buttonClassName({
     sizes[size],
     className,
   );
-}
-
-export function Button({ className, variant = "primary", size = "md", ...props }: ButtonProps) {
-  return <button className={buttonClassName({ variant, size, className })} {...props} />;
 }

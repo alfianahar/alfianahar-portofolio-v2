@@ -1,4 +1,9 @@
 .next
+.astro
+.wrangler
+.playwright-cli
+dist
+docs/plans
 node_modules
 bun.lock
 public

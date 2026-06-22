@@ -1,7 +1,6 @@
 import { profile } from "@content/profile";
 import { socialLinks } from "@content/social-links";
-import type { Project } from "@app-types/content";
-import { absoluteUrl, siteConfig } from "./seo";
+import { siteConfig } from "./seo";
 
 export function buildPersonJsonLd() {
   return {
@@ -27,20 +26,5 @@ export function buildWebsiteJsonLd() {
       "@type": "Person",
       name: profile.name,
     },
-  };
-}
-
-export function buildProjectJsonLd(project: Project) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    description: project.description,
-    url: absoluteUrl(project.links?.caseStudy ?? `/work/${project.slug}`),
-    creator: {
-      "@type": "Person",
-      name: profile.name,
-    },
-    keywords: [...project.tags, ...project.stack].join(", "),
   };
 }

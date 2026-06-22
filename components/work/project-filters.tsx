@@ -1,4 +1,3 @@
-import { Link } from "@components/ui/next-link";
 import type { Project, ProjectFilter } from "@app-types/content";
 import {
   getUniqueProjectPositions,
@@ -66,7 +65,7 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
       </p>
       <div className="flex flex-wrap gap-2">
         {links.map((link) => (
-          <Link
+          <a
             key={`${link.kind}-${link.value ?? "all"}`}
             href={link.href}
             className={cn(
@@ -77,7 +76,7 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
             )}
           >
             {link.label}
-          </Link>
+          </a>
         ))}
       </div>
     </div>

@@ -1,5 +1,3 @@
-import { Image } from "@components/ui/next-image";
-import { Link } from "@components/ui/next-link";
 import type { Project } from "@app-types/content";
 
 type ProjectCardProps = {
@@ -10,11 +8,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="group overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1">
       <div className="relative grid aspect-[16/10] place-items-center overflow-hidden bg-[linear-gradient(135deg,var(--muted-surface),#fff)]">
-        <Image
+        <img
           src={project.thumbnail.src}
           alt={project.thumbnail.alt}
           width={160}
           height={110}
+          loading="lazy"
           className="h-auto w-24 opacity-90 transition duration-300 group-hover:scale-105"
         />
         <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] backdrop-blur">
@@ -68,11 +67,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {project.links?.live || project.links?.repo || project.links?.caseStudy ? (
           <div className="flex flex-wrap gap-4 text-sm font-semibold text-[var(--text-primary)]">
-            {project.links.live ? <Link href={project.links.live}>Live</Link> : null}
-            {project.links.repo ? <Link href={project.links.repo}>Repository</Link> : null}
-            {project.links.caseStudy ? (
-              <Link href={project.links.caseStudy}>Case study</Link>
-            ) : null}
+            {project.links.live ? <a href={project.links.live}>Live</a> : null}
+            {project.links.repo ? <a href={project.links.repo}>Repository</a> : null}
+            {project.links.caseStudy ? <a href={project.links.caseStudy}>Case study</a> : null}
           </div>
         ) : null}
       </div>

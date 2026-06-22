@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
-import { POST } from "./chat";
+import { POST } from "../src/pages/api/chat";
 
 function createRequest(body: unknown) {
   return new Request("https://example.com/api/chat", {
