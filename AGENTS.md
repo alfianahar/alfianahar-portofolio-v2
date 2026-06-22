@@ -37,7 +37,15 @@
 | Formatter  | Prettier           |
 | Deployment | Cloudflare Pages   |
 
+## Skills
+
+- **ponytail** — Always invoke this skill via `/ponytail` before writing implementation code. Apply the laziness ladder: question whether it needs to exist, reach for stdlib first, use native features before dependencies, use already-installed deps before adding new ones, shortest code first. No unrequested abstractions, no boilerplate "for later".
+
 ## Workflow
+
+### During Implementation
+
+- Load skill `/ponytail` before writing any code. Follow the laziness ladder: YAGNI → stdlib → native → existing deps → one-liner → minimum code.
 
 ### After Implementation
 
