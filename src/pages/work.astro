@@ -5,7 +5,8 @@ import { ProjectGrid } from "@components/work/project-grid";
 import { SectionHeading } from "@components/ui/section-heading";
 import { Container } from "@components/ui/container";
 import { SiteFooter } from "@components/layout/site-footer";
-import { projects } from "@content/projects";
+import { getCollection } from "astro:content";
+import { mapProjectEntries } from "@lib/project-content";
 import { filterProjects } from "@lib/project-filters";
 import type { ProjectFilter, ProjectFilterKind } from "@app-types/content";
 
@@ -23,6 +24,7 @@ function getActiveFilter(): ProjectFilter {
 }
 
 const activeFilter = getActiveFilter();
+const projects = mapProjectEntries(await getCollection("projects"));
 const filteredProjects = filterProjects(projects, activeFilter);
 ---
 

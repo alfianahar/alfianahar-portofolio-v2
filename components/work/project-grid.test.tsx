@@ -1,7 +1,24 @@
 import { describe, expect, test } from "bun:test";
 import { renderToStaticMarkup } from "react-dom/server";
-import { projects } from "@content/projects";
+import type { Project } from "@app-types/content";
 import { ProjectGrid } from "./project-grid";
+
+const projects: Project[] = [
+  {
+    title: "Portfolio V2",
+    slug: "portfolio-v2",
+    description: "Portfolio built from Markdown content.",
+    thumbnail: {
+      src: "/_astro/cover.hash.svg",
+      alt: "Portfolio V2 preview",
+    },
+    role: "Designer & Developer",
+    position: ["personal", "lead"],
+    type: "from scratch",
+    tags: ["Portfolio", "Astro"],
+    stack: ["Astro", "React", "Tailwind CSS"],
+  },
+];
 
 describe("ProjectGrid", () => {
   test("renders project cards from structured content", () => {
