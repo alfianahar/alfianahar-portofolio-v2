@@ -2,7 +2,7 @@ import { AssistantChat } from "@components/chat/assistant-chat";
 
 const sideCards = [
   { label: "Core", value: "Fullstack + AI Engineer", detail: "TypeScript, Python, Golang" },
-  { label: "Domain", value: "System Integration", detail: "Webapp, IOT, Robotic" },
+  { label: "Domain", value: "System Integration", detail: "Webapp, IOT, Robotics Integration" },
 ];
 
 export function HeroChatPreview() {
@@ -14,7 +14,7 @@ export function HeroChatPreview() {
 
       <AssistantChat
         title="Alfian Assistant"
-        description="Fullstack, robotics, backend, AI"
+        description="Fullstack, robotics integration, backend, AI"
         inputLabel="Ask Alfian Assistant"
         inputPlaceholder="Ask about fullstack systems, robotics UI, or AI engineering..."
         className="flex h-full min-h-0 flex-col overflow-hidden"

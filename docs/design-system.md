@@ -118,6 +118,8 @@ Accent variant:
 
 Use `brutal` for one main CTA per view. More than that makes the accent noisy.
 
+Primary CTAs must route to email (`mailto:alfian.aswinda@gmail.com`). WhatsApp is secondary only and should use the label `Send me a message`.
+
 ### Project Card
 
 Source: `components/work/project-card.tsx`.

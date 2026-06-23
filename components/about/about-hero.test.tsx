@@ -8,7 +8,12 @@ describe("AboutHero", () => {
 
     expect(html).toContain("What Alfian builds");
     expect(html).toContain("AI-assisted workflows");
-    expect(html).toContain("alfian.aswinda@gmail.com");
+    expect(html).toContain("Send Email");
+    expect(html).toContain('href="mailto:alfian.aswinda@gmail.com"');
+    expect(html).toContain("Send me a message");
+    expect(html).toContain('href="https://wa.me/6285725359530"');
     expect(html).toContain("GitHub");
+    expect(html).toContain("LinkedIn");
+    expect(html).not.toContain("Instagram");
   });
 });

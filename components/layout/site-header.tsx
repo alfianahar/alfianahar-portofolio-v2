@@ -6,7 +6,7 @@ import { profile } from "@content/profile";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-[var(--background)]/80 shadow-[inset_0_-1px_0_0_var(--border)] backdrop-blur-xl">
       <Container size="wide" className="flex h-20 items-center justify-between gap-6">
         <a href="/" className="flex items-center gap-4" aria-label="Go to homepage">
           <LogoMark priority size={36} />

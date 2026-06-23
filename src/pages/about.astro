@@ -9,6 +9,10 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <AboutHero />
-  <SiteFooter />
+  <div class="flex min-h-[calc(100svh-5rem)] flex-col">
+    <div class="flex-1">
+      <AboutHero />
+    </div>
+    <SiteFooter />
+  </div>
 </Layout>

@@ -69,9 +69,9 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
             key={`${link.kind}-${link.value ?? "all"}`}
             href={link.href}
             className={cn(
-              "rounded-full border px-3 py-2 text-sm font-medium transition",
+              "rounded-[var(--radius-sm)] border px-3 py-2 text-sm font-medium transition",
               isActive(activeFilter, link)
-                ? "border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--background)]"
+                ? "border-[var(--brutal-ink)] bg-[var(--cream)] text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]"
                 : "border-[var(--border)] bg-white/70 text-[var(--text-secondary)] hover:border-[var(--text-primary)] hover:text-[var(--text-primary)]",
             )}
           >
