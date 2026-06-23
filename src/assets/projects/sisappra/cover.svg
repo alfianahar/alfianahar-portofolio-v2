@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">AI assistant interface preview</title>
+  <desc id="desc">Abstract chatbot project cover</desc>
+  <rect width="1200" height="750" fill="#f7f7fb"/>
+  <rect x="150" y="105" width="900" height="540" rx="48" fill="#ffffff" stroke="#d8d8e8" stroke-width="3"/>
+  <rect x="230" y="205" width="430" height="76" rx="28" fill="#111111"/>
+  <rect x="540" y="330" width="430" height="76" rx="28" fill="#ececff"/>
+  <rect x="230" y="455" width="510" height="76" rx="28" fill="#111111"/>
+  <circle cx="830" cy="245" r="58" fill="#c4ad82"/>
+  <path d="M800 250h60M830 220v60" stroke="#111111" stroke-width="18" stroke-linecap="round"/>
+</svg>

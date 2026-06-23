@@ -11,8 +11,7 @@ import { filterProjects } from "@lib/project-filters";
 import type { ProjectFilter, ProjectFilterKind } from "@app-types/content";
 
 const title = "Selected Work | Alfian Nahar";
-const description =
-  "Selected portfolio projects, responsibilities, stack, and experience from Alfian Nahar.";
+const description = "Selected projects by Alfian Nahar.";
 
 function getActiveFilter(): ProjectFilter {
   const kind = Astro.url.searchParams.get("kind") as ProjectFilterKind | null;
@@ -31,11 +30,11 @@ const filteredProjects = filterProjects(projects, activeFilter);
 <Layout title={title} description={description}>
   <div class="bg-[var(--background)] py-20 sm:py-28">
     <Container size="wide" className="space-y-16">
-      <div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+      <div class="space-y-8">
         <SectionHeading
           eyebrow="Selected work"
-          title="Projects shaped around clarity, speed, and useful AI-product thinking."
-          description="A focused view of public and sanitized work. Filters are intentionally simple so the portfolio does not become a noisy dashboard."
+          title="Work shaped around product, interface, and useful AI."
+          description="A simple index of selected projects, roles, and stacks."
         />
         <ProjectFilters projects={projects} activeFilter={activeFilter} />
       </div>

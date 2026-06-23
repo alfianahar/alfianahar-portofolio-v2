@@ -26,5 +26,6 @@ describe("ProjectFilters", () => {
     expect(html).toContain("bg-[var(--cream)]");
     expect(html).toContain("text-[var(--brutal-ink)]");
     expect(html).toContain("border-[var(--brutal-ink)]");
+    expect(html).toContain("Stack");
   });
 });
