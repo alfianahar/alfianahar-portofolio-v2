@@ -1,0 +1,13 @@
+{
+  "name": "alfianahar-portofolio-v2",
+  "compatibility_date": "2026-06-23",
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "directory": "./dist"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION"
+    }
+  ]
+}

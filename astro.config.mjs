@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   site: "https://alfianahar.com",
   output: "server",
-  adapter: cloudflare({ mode: "directory" }),
+  adapter: cloudflare({ mode: "directory", imageService: "passthrough" }),
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
