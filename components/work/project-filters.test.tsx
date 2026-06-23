@@ -28,4 +28,12 @@ describe("ProjectFilters", () => {
     expect(html).toContain("border-[var(--brutal-ink)]");
     expect(html).toContain("Stack");
   });
+
+  test("opens the collapsed filter panel when a filter is active", () => {
+    const html = renderToStaticMarkup(
+      <ProjectFilters projects={projects} activeFilter={{ kind: "tag", value: "Astro" }} />,
+    );
+
+    expect(html).toContain("<details open");
+  });
 });

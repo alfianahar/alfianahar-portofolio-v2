@@ -36,6 +36,7 @@ function isActive(activeFilter: ProjectFilter, link: FilterLink) {
 }
 
 export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) {
+  const isFilterOpen = activeFilter.kind !== "all";
   const groups: { label: string; links: FilterLink[] }[] = [
     {
       label: "Show",
@@ -71,11 +72,14 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
   ];
 
   return (
-    <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
+    <details
+      open={isFilterOpen}
+      className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl"
+    >
+      <summary className="cursor-pointer list-none text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] marker:hidden">
         Filter work
-      </p>
-      <div className="space-y-4">
+      </summary>
+      <div className="mt-4 space-y-4">
         {groups.map((group) => (
           <div key={group.label} className="grid gap-2 sm:grid-cols-[5rem_1fr] sm:items-start">
             <p className="pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
@@ -100,6 +104,6 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
           </div>
         ))}
       </div>
-    </div>
+    </details>
   );
 }
