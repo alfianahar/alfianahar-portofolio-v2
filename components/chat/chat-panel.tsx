@@ -79,7 +79,7 @@ export function ChatPanel({
   return (
     <div
       className={cn(
-        framed && "rounded-[1.55rem] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5",
+        framed && "rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5",
         className,
       )}
     >
@@ -88,7 +88,7 @@ export function ChatPanel({
           {avatar ? (
             <div
               className={cn(
-                "grid size-11 place-items-center rounded-2xl bg-[var(--text-primary)] text-sm font-semibold text-[var(--background)]",
+                "grid size-11 place-items-center rounded-[var(--radius-md)] bg-[var(--text-primary)] text-sm font-semibold text-[var(--background)]",
                 avatarClassName,
               )}
             >

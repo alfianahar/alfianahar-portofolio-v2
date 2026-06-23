@@ -8,7 +8,7 @@ type ProjectGridProps = {
 export function ProjectGrid({ projects }: ProjectGridProps) {
   if (projects.length === 0) {
     return (
-      <div className="rounded-[2rem] border border-dashed border-[var(--border)] bg-[var(--surface)] p-10 text-center">
+      <div className="rounded-[var(--radius-lg)] border border-dashed border-[var(--border)] bg-[var(--surface)] p-10 text-center">
         <h2 className="text-2xl font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
           No projects match this filter
         </h2>

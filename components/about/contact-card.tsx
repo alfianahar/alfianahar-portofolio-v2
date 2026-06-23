@@ -9,7 +9,7 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
   return (
     <section
       id="contact"
-      className="rounded-[2rem] border border-[var(--border)] bg-[var(--text-primary)] p-6 text-[var(--background)] shadow-[var(--shadow-soft)]"
+      className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--text-primary)] p-6 text-[var(--background)] shadow-[var(--shadow-soft)]"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.22em] opacity-70">Contact</p>
       <h2 className="mt-3 text-2xl font-semibold tracking-[-0.05em]">
@@ -22,7 +22,7 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${profile.email}`}
-          className="rounded-full bg-[var(--background)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)]"
+          className="brutal-press rounded-full border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] px-5 py-3 text-sm font-semibold text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]"
         >
           {profile.email}
         </a>

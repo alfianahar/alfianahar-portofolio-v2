@@ -19,7 +19,7 @@ const components: Components = {
   ol: ({ children }) => <ol className="space-y-2 pl-5">{children}</ol>,
   li: ({ children }) => <li className="pl-1 text-sm leading-6">{children}</li>,
   code: ({ children }) => (
-    <code className="rounded-md bg-[var(--border)]/20 px-1.5 py-0.5 text-[0.8em] font-medium text-[var(--text-primary)]">
+    <code className="rounded-[var(--radius-sm)] bg-[var(--border)]/20 px-1.5 py-0.5 text-[0.8em] font-medium text-[var(--text-primary)]">
       {children}
     </code>
   ),

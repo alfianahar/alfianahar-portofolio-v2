@@ -7,8 +7,8 @@ const sideCards = [
 
 export function HeroChatPreview() {
   return (
-    <div className="relative min-h-0 h-full rounded-[2rem] border border-white/80 bg-white/82 p-3 shadow-[0_32px_120px_rgba(20,39,62,0.16)] backdrop-blur-2xl sm:p-4 lg:p-5">
-      <div className="absolute -right-3 -top-3 hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-xs font-medium text-[var(--text-secondary)] shadow-[var(--shadow-soft)] lg:block">
+    <div className="relative min-h-[26rem] rounded-[var(--radius-lg)] border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] p-3 shadow-[var(--shadow-hard)] sm:p-4 lg:h-full lg:min-h-0 lg:p-5">
+      <div className="absolute -right-3 -top-3 hidden rounded-[var(--radius-md)] border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] px-4 py-3 text-xs font-semibold text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)] lg:block">
         AI assistant preview
       </div>
 
@@ -26,11 +26,14 @@ export function HeroChatPreview() {
         assistantMessageClassName="bg-[var(--muted-surface)] text-[var(--text-secondary)]"
         quickActionsClassName="mt-3 gap-2"
         quickActionClassName="px-3 py-1.5 text-[0.7rem]"
-        inputBaseClassName="mt-3 flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-xs text-[var(--text-muted)] sm:text-sm"
+        inputBaseClassName="mt-3 flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-4 py-3 text-xs text-[var(--text-muted)] sm:text-sm"
       >
         <div className="grid gap-2 sm:grid-cols-2">
           {sideCards.map((card) => (
-            <div key={card.label} className="rounded-2xl bg-[var(--muted-surface)] px-3 py-2.5">
+            <div
+              key={card.label}
+              className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--cream)] px-3 py-2.5"
+            >
               <p className="text-[0.62rem] uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 {card.label}
               </p>

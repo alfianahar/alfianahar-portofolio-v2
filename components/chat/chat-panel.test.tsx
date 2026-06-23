@@ -102,7 +102,7 @@ describe("ChatPanel", () => {
     );
 
     expect(html).not.toContain(
-      "rounded-[1.55rem] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5",
+      "rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5",
     );
   });
 });

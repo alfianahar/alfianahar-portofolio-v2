@@ -25,7 +25,7 @@ export function AboutHero() {
             description={profile.bio}
           />
 
-          <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)]">
+          <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)]">
             <h2 className="text-xl font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
               What Alfian builds
             </h2>
@@ -33,7 +33,7 @@ export function AboutHero() {
               {buildAreas.map((area) => (
                 <div
                   key={area}
-                  className="rounded-2xl bg-[var(--muted-surface)] p-4 text-sm font-medium text-[var(--text-secondary)]"
+                  className="rounded-[var(--radius-md)] bg-[var(--muted-surface)] p-4 text-sm font-medium text-[var(--text-secondary)]"
                 >
                   {area}
                 </div>

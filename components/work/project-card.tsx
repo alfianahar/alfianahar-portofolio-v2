@@ -6,7 +6,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1">
+    <article className="group overflow-hidden rounded-[var(--radius-lg)] border-[length:var(--border-bold)] border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:border-[var(--text-primary)] hover:shadow-[var(--shadow-hard)]">
       <div className="relative grid aspect-[16/10] place-items-center overflow-hidden bg-[linear-gradient(135deg,var(--muted-surface),#fff)]">
         <img
           src={project.thumbnail.src}
@@ -60,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {project.outcome ? (
-          <p className="rounded-2xl bg-[var(--muted-surface)] p-4 text-sm leading-6 text-[var(--text-secondary)]">
+          <p className="rounded-[var(--radius-md)] bg-[var(--muted-surface)] p-4 text-sm leading-6 text-[var(--text-secondary)]">
             {project.outcome}
           </p>
         ) : null}

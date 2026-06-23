@@ -10,7 +10,7 @@ type ChatInputProps = {
 };
 
 const defaultInputClassName =
-  "mt-5 flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text-muted)]";
+  "mt-5 flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text-muted)]";
 
 const defaultIndicatorClassName = "h-2 w-2 rounded-full bg-[var(--text-muted)]";
 

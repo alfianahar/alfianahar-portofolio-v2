@@ -59,7 +59,7 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
   ];
 
   return (
-    <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl">
+    <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl">
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)]">
         Filter by tag, type, or responsibility
       </p>

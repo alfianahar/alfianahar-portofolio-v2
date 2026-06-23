@@ -21,7 +21,7 @@ export function ChatMessage({
     <div
       className={cn(
         maxWidthClassName,
-        "rounded-2xl px-4 py-3 text-sm leading-6",
+        "rounded-[var(--radius-md)] px-4 py-3 text-sm leading-6",
         message.role === "user" ? cn("ml-auto", userClassName) : assistantClassName,
         className,
       )}

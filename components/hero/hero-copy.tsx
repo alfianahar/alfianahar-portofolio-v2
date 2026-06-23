@@ -3,7 +3,7 @@ import { buttonClassName } from "@components/ui/button";
 export function HeroCopy() {
   return (
     <div className="relative z-10 max-w-3xl">
-      <p className="mb-8 inline-flex items-center gap-2 rounded-full bg-black/[0.04] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--text-primary)] ring-1 ring-black/5">
+      <p className="mb-8 inline-flex items-center gap-2 rounded-full border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]">
         <span aria-hidden="true">✦</span>
         AI-POWERED ENGINEERING
       </p>
@@ -15,7 +15,10 @@ export function HeroCopy() {
         practical AI-assisted workflows that turn rough ideas into reliable products.
       </p>
       <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-        <a href="/bio" className={buttonClassName({ size: "lg", className: "h-14 px-7" })}>
+        <a
+          href="/bio"
+          className={buttonClassName({ variant: "brutal", size: "lg", className: "h-14 px-7" })}
+        >
           Let's Build Something
           <span aria-hidden="true">↗</span>
         </a>

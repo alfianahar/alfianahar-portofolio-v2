@@ -10,7 +10,7 @@ export function HeroToolStrip() {
         {tools.map((tool) => (
           <span
             key={tool}
-            className="rounded-full border border-[var(--border)] bg-white/68 px-3 py-1.5 text-xs font-medium text-[var(--text-secondary)] shadow-sm backdrop-blur sm:px-4 sm:py-2 sm:text-sm"
+            className="rounded-full border border-[var(--brutal-ink)] bg-[var(--cream)] px-3 py-1.5 text-xs font-semibold text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)] sm:px-4 sm:py-2 sm:text-sm"
           >
             {tool}
           </span>

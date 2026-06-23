@@ -1,6 +1,6 @@
 import { cn } from "@lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "brutal";
 type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
@@ -8,6 +8,8 @@ const variants: Record<ButtonVariant, string> = {
   secondary:
     "border border-[var(--border)] bg-[var(--surface-elevated)] text-[var(--text-primary)] backdrop-blur-xl",
   ghost: "text-[var(--text-secondary)] hover:text-[var(--text-primary)]",
+  brutal:
+    "brutal-press border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] text-[var(--brutal-ink)] shadow-[var(--shadow-hard)]",
 };
 
 const sizes: Record<ButtonSize, string> = {

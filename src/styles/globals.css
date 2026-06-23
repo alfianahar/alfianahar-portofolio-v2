@@ -47,6 +47,17 @@ select {
   color: var(--background);
 }
 
+.brutal-press {
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.brutal-press:hover {
+  box-shadow: 0 0 0 var(--accent);
+  transform: translate(6px, 6px);
+}
+
 /* ── page-loader ── */
 .page-loader {
   position: fixed;
@@ -112,5 +123,9 @@ select {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .brutal-press:hover {
+    transform: none;
   }
 }
