@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && printf '_worker.js\\n' > dist/.assetsignore",
     "preview": "astro preview",
     "lint": "eslint src components content lib types",
     "format": "prettier --write .",
