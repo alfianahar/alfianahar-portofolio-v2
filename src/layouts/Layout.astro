@@ -47,7 +47,7 @@ const jsonLd = [buildPersonJsonLd(), buildWebsiteJsonLd()];
     <script is:inline set:html={JSON.stringify(jsonLd)} type="application/ld+json" />
   </head>
   <body>
-    {!hideHeader && <SiteHeader />}
+    {!hideHeader && <SiteHeader client:load />}
     <main class={hideHeader ? "overflow-x-clip" : ""}>
       <slot />
     </main>

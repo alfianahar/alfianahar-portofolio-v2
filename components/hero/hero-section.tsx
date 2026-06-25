@@ -16,7 +16,9 @@ export function HeroSection() {
           <HeroCopy />
           <HeroToolStrip />
         </div>
-        <HeroChatPreview />
+        <div className="hidden lg:block lg:h-full">
+          <HeroChatPreview />
+        </div>
       </Container>
     </section>
   );

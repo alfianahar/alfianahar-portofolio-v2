@@ -59,6 +59,60 @@ When a task or phase is complete and all checks pass:
    - `refactor : ` for code restructuring
 3. Verify no unstaged files remain: `git status`
 
+## Portfolio Workflow
+
+When asked to add a work portfolio entry, target directory is `src/content/projects/`.
+
+### Template (follow exactly)
+
+```markdown
+---
+title: "Project Name"
+shortDescription: "One-line description."
+tags: ["Tag1", "Tag2"]
+role: "Your Role"
+position: ["lead", "fullstack"]
+type: "from scratch" | "redesign" | "maintenance"
+stack: ["Tech1", "Tech2"]
+cover: "../../assets/projects/<project-slug>/cover.svg"
+coverAlt: "Project preview"
+outcome: "One-line outcome."
+year: 2026
+status: "active"
+featured: true
+order: <next number>
+links:
+  caseStudy: "/work/<project-slug>"
+---
+
+## Problem
+
+<What problem existed?>
+
+## Solution
+
+<What was built?>
+
+## Outcome
+
+<What was delivered?>
+```
+
+### Steps
+
+1. Create markdown file: `src/content/projects/<project-slug>.md`
+2. Create cover dir: `src/assets/projects/<project-slug>/`
+3. Add `cover.svg` in that dir (generate or placeholder)
+4. Fill frontmatter + Problem/Solution/Outcome sections
+5. Run `bun run build` to verify no errors
+
+### Rules
+
+- Slug = lowercase, hyphenated project name
+- Cover image path must be relative: `../../assets/projects/<slug>/cover.svg`
+- `order` = next available number (check existing files)
+- Tags: use existing tag vocabulary when possible (Portfolio, Frontend, Backend, Full-Stack, Enterprise, SEO, UI/UX, etc.)
+
 ## Status
 
 **Complete**

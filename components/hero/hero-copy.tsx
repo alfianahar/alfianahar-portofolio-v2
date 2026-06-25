@@ -99,21 +99,42 @@ export function HeroCopy() {
         Reliable Systems. Practical AI. I build fullstack web apps, robotics interfaces, backend
         APIs, and realtime integrations that turn rough ideas into shipped products.
       </p>
-      <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+      <div className="mt-4 flex flex-col gap-3">
         <a
-          href="mailto:alfian.aswinda@gmail.com"
-          className={buttonClassName({ variant: "brutal", size: "lg", className: "h-14 px-7" })}
+          href="/chat"
+          className={buttonClassName({
+            variant: "brutal",
+            size: "lg",
+            className: "h-14 px-7 sm:hidden",
+          })}
         >
-          Let's Build Something
+          Chat with my AI
           <span aria-hidden="true">↗</span>
         </a>
-        <a
-          href="/work"
-          className={buttonClassName({ variant: "secondary", size: "lg", className: "h-14 px-7" })}
-        >
-          View My Work
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div className="hidden flex-col gap-3 sm:flex sm:flex-row">
+          <a
+            href="mailto:alfian.aswinda@gmail.com"
+            className={buttonClassName({
+              variant: "brutal",
+              size: "lg",
+              className: "h-14 px-7",
+            })}
+          >
+            Let's Build Something
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="/work"
+            className={buttonClassName({
+              variant: "secondary",
+              size: "lg",
+              className: "h-14 px-7",
+            })}
+          >
+            View My Work
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   );
