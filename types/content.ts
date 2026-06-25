@@ -23,6 +23,9 @@ export type Project = {
   type: string;
   tags: string[];
   stack: string[];
+  year?: number;
+  body?: string;
+  status?: string;
   outcome?: string;
   links?: {
     live?: string;

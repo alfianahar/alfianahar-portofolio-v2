@@ -38,7 +38,7 @@ const filteredProjects = filterProjects(projects, activeFilter);
         />
         <ProjectFilters projects={projects} activeFilter={activeFilter} />
       </div>
-      <ProjectGrid projects={filteredProjects} />
+      <ProjectGrid projects={filteredProjects} client:load />
     </Container>
   </div>
   <SiteFooter />

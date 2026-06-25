@@ -3,6 +3,7 @@ import type { Project } from "@app-types/content";
 type ProjectEntry = {
   id?: string;
   slug: string;
+  body?: string;
   data: {
     title: string;
     shortDescription: string;
@@ -13,6 +14,8 @@ type ProjectEntry = {
     stack: string[];
     cover: { src: string } | string;
     coverAlt: string;
+    year?: number;
+    status?: string;
     outcome?: string;
     order?: number;
     links?: Project["links"];
@@ -29,7 +32,7 @@ export function mapProjectEntries(entries: ProjectEntry[]): Project[] {
       const order = (left.data.order ?? 999) - (right.data.order ?? 999);
       return order || left.data.title.localeCompare(right.data.title);
     })
-    .map(({ slug, data }) => ({
+    .map(({ slug, data, body }) => ({
       title: data.title,
       slug,
       description: data.shortDescription,
@@ -42,6 +45,9 @@ export function mapProjectEntries(entries: ProjectEntry[]): Project[] {
       type: data.type,
       tags: data.tags,
       stack: data.stack,
+      year: data.year,
+      status: data.status,
+      body,
       outcome: data.outcome,
       links: data.links,
     }));
