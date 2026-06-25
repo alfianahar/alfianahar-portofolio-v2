@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0f172a"/>
+  <path d="M200 150 C200 100, 250 80, 300 120 C350 160, 400 100, 450 140 C500 180, 550 120, 600 160 L600 420 L200 420 Z" fill="#1e293b"/>
+  <circle cx="350" cy="250" r="50" fill="#f472b6" opacity="0.15"/>
+  <circle cx="450" cy="280" r="35" fill="#22d3ee" opacity="0.15"/>
+  <path d="M350 200 Q400 160 450 245" fill="none" stroke="#f472b6" stroke-width="2" opacity="0.5"/>
+  <path d="M350 300 Q380 340 450 315" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.5"/>
+  <text x="310" y="240" font-family="monospace" font-size="10" fill="#f472b6">ibu hamil</text>
+  <text x="440" y="275" font-family="monospace" font-size="10" fill="#22d3ee">balita</text>
+  <rect x="240" y="380" width="320" height="4" rx="2" fill="#334155"/>
+  <rect x="240" y="380" width="200" height="4" rx="2" fill="#22d3ee"/>
+  <text x="240" y="410" font-family="monospace" font-size="10" fill="#6b7280">distribusi bantuan gizi</text>
+  <rect x="160" y="480" width="120" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="160" y="480" width="72" height="32" rx="6" fill="#22d3ee" opacity="0.2"/>
+  <text x="168" y="500" font-family="monospace" font-size="10" fill="#22d3ee">web</text>
+  <text x="192" y="500" font-family="monospace" font-size="10" fill="#6b7280">| dashboard</text>
+  <rect x="300" y="480" width="120" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="300" y="480" width="48" height="32" rx="6" fill="#f472b6" opacity="0.2"/>
+  <text x="308" y="500" font-family="monospace" font-size="10" fill="#f472b6">mobile</text>
+  <text x="348" y="500" font-family="monospace" font-size="10" fill="#6b7280">| flutter</text>
+  <circle cx="460" cy="496" r="6" fill="#22d3ee" opacity="0.3"/>
+  <circle cx="476" cy="496" r="4" fill="#22d3ee" opacity="0.5"/>
+  <circle cx="488" cy="496" r="2" fill="#22d3ee" opacity="0.8"/>
+</svg>

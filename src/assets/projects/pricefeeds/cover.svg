@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1a1b2e"/>
+  <circle cx="400" cy="220" r="120" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.3"/>
+  <circle cx="400" cy="220" r="80" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.5"/>
+  <circle cx="400" cy="220" r="40" fill="#818cf8" opacity="0.2"/>
+  <text x="400" y="228" text-anchor="middle" font-family="monospace" font-size="16" fill="#a5b4fc">$</text>
+  <line x1="240" y1="380" x2="560" y2="380" stroke="#374151" stroke-width="1"/>
+  <polyline points="280,380 320,340 360,360 400,300 440,330 480,270 520,310" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
+  <polyline points="280,380 320,390 360,370 400,410 440,380 480,350 520,370" fill="none" stroke="#f472b6" stroke-width="2.5" opacity="0.6"/>
+  <text x="400" y="430" text-anchor="middle" font-family="monospace" font-size="12" fill="#6b7280">real-time price feeds</text>
+  <rect x="160" y="480" width="80" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="200" y="500" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">ATOM</text>
+  <rect x="260" y="480" width="80" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="500" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">USDC</text>
+  <rect x="360" y="480" width="80" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="400" y="500" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">OSMO</text>
+  <rect x="460" y="480" width="80" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="500" y="500" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">DOT</text>
+  <rect x="560" y="480" width="80" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="500" text-anchor="middle" font-family="monospace" font-size="10" fill="#6366f1">ETH</text>
+</svg>
