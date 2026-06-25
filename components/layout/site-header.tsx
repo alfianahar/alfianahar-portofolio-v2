@@ -132,12 +132,13 @@ export function SiteHeader() {
             href="/bio"
             onClick={() => setOpen(false)}
             className={buttonClassName({
-              variant: "secondary",
+              variant: "brutal",
               size: "md",
               className: "mt-2 w-full",
             })}
           >
             Biopage
+            <span aria-hidden="true">↗</span>
           </a>
         </Container>
       </div>
