@@ -56,19 +56,49 @@ export function SiteHeader() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-nav-panel"
-          className="relative grid h-11 w-11 place-items-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-elevated)] text-[var(--text-primary)] backdrop-blur-xl sm:hidden"
+          className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-elevated)] text-[var(--text-primary)] backdrop-blur-xl sm:hidden"
         >
-          <span aria-hidden="true" className="relative block h-4 w-5">
-            <span
-              className={`absolute left-0 top-0 h-0.5 w-full bg-current transition-transform duration-200 ${open ? "translate-y-1.5 rotate-45" : ""}`}
-            />
-            <span
-              className={`absolute left-0 top-1.5 h-0.5 w-full bg-current transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"}`}
-            />
-            <span
-              className={`absolute left-0 top-3 h-0.5 w-full bg-current transition-transform duration-200 ${open ? "-translate-y-1.5 -rotate-45" : ""}`}
-            />
-          </span>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`transition-all duration-300 ease-out ${
+              open
+                ? "rotate-45 -translate-y-3 scale-50 opacity-0"
+                : "rotate-0 translate-y-0 scale-100 opacity-100"
+            }`}
+          >
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z" />
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z" />
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+          </svg>
+
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`absolute transition-all duration-300 ease-out ${
+              open
+                ? "rotate-0 translate-y-0 scale-100 opacity-100"
+                : "-rotate-90 translate-y-3 scale-50 opacity-0"
+            }`}
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
         </button>
       </Container>
 
