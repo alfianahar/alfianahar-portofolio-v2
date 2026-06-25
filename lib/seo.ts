@@ -6,6 +6,6 @@ export const siteConfig = {
   description:
     "Personal portfolio of Alfian Nahar, a fullstack software engineer building web systems, robotics interfaces, backend APIs, and practical AI-assisted workflows.",
   url: profile.website,
-  ogImage: "/og-image.svg",
+  ogImage: "/og-image.png",
   locale: "en_US",
 };

@@ -52,6 +52,32 @@ describe("chat API", () => {
     expect(json.actions).toEqual([]);
   });
 
+  test("reads OpenRouter config from Cloudflare runtime env", async () => {
+    globalThis.fetch = (async () =>
+      Response.json({
+        choices: [{ message: { content: "Alfian builds robotics UI and backend APIs." } }],
+      })) as unknown as typeof globalThis.fetch;
+
+    const response = await POST({
+      request: createRequest({
+        messages: [{ role: "user", content: "Tell me about Alfian robotics work" }],
+      }),
+      locals: {
+        runtime: {
+          env: {
+            OPENROUTER_API_KEY: "test-key",
+            OPENROUTER_MODEL: "test-model",
+          },
+        },
+      },
+    } as never);
+    const json = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(json.reply).toContain("robotics UI");
+    expect(json.actions).toEqual([]);
+  });
+
   test("streams delta chunks and final reply for in-scope prompts", async () => {
     process.env.OPENROUTER_API_KEY = "test-key";
     process.env.OPENROUTER_MODEL = "test-model";

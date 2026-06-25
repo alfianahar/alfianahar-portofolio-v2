@@ -16,6 +16,7 @@ const RATE_WINDOW_MS = 15_000;
 const RATE_MAX_REQUESTS = 5;
 const RATE_PRUNE_SIZE = 100;
 const rateMap = new Map<string, number[]>();
+type RuntimeEnv = Record<string, string | undefined>;
 
 function pruneRateMap(now: number) {
   const windowStart = now - RATE_WINDOW_MS;
@@ -73,30 +74,30 @@ function streamResponse(stream: ReadableStream) {
   });
 }
 
-function getEnv(name: string) {
-  return import.meta.env[name] as string | undefined;
+function getEnv(name: string, runtimeEnv?: RuntimeEnv) {
+  return runtimeEnv?.[name] ?? (import.meta.env[name] as string | undefined);
 }
 
-function getEnvNumber(name: string, fallback: number) {
-  const raw = getEnv(name);
+function getEnvNumber(name: string, fallback: number, runtimeEnv?: RuntimeEnv) {
+  const raw = getEnv(name, runtimeEnv);
   if (!raw) return fallback;
   const n = Number(raw);
   return Number.isFinite(n) ? n : fallback;
 }
 
-function getEnvBool(name: string) {
-  return getEnv(name)?.toLowerCase() === "true";
+function getEnvBool(name: string, runtimeEnv?: RuntimeEnv) {
+  return getEnv(name, runtimeEnv)?.toLowerCase() === "true";
 }
 
-function buildOpenRouterBody(messages: ReturnType<typeof sanitizeChatMessages>) {
+function buildOpenRouterBody(messages: ReturnType<typeof sanitizeChatMessages>, runtimeEnv?: RuntimeEnv) {
   const body: Record<string, unknown> = {
-    model: getEnv("OPENROUTER_MODEL"),
+    model: getEnv("OPENROUTER_MODEL", runtimeEnv),
     messages: buildOpenRouterMessages(messages),
-    temperature: getEnvNumber("OPENROUTER_TEMPERATURE", 0.2),
-    max_tokens: getEnvNumber("OPENROUTER_MAX_TOKENS", 500),
+    temperature: getEnvNumber("OPENROUTER_TEMPERATURE", 0.2, runtimeEnv),
+    max_tokens: getEnvNumber("OPENROUTER_MAX_TOKENS", 500, runtimeEnv),
   };
 
-  if (getEnvBool("OPENROUTER_REASONING")) {
+  if (getEnvBool("OPENROUTER_REASONING", runtimeEnv)) {
     body.reasoning = { enabled: true };
   }
 
@@ -107,7 +108,8 @@ function getClientIp(request: Request) {
   return request.headers.get("CF-Connecting-IP") ?? "127.0.0.1";
 }
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
+  const runtimeEnv = (locals as { runtime?: { env?: RuntimeEnv } } | undefined)?.runtime?.env;
   const ip = getClientIp(request);
 
   if (isRateLimited(ip)) {
@@ -142,8 +144,8 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(createOutOfScopeResponse());
   }
 
-  const apiKey = getEnv("OPENROUTER_API_KEY");
-  const model = getEnv("OPENROUTER_MODEL");
+  const apiKey = getEnv("OPENROUTER_API_KEY", runtimeEnv);
+  const model = getEnv("OPENROUTER_MODEL", runtimeEnv);
 
   if (!apiKey || !model) {
     return jsonResponse({
@@ -154,7 +156,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const shouldStream = (body as { stream?: boolean }).stream === true;
-  const openRouterBody = buildOpenRouterBody(messages);
+  const openRouterBody = buildOpenRouterBody(messages, runtimeEnv);
 
   if (!shouldStream) {
     try {
@@ -163,8 +165,8 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           authorization: `Bearer ${apiKey}`,
           "content-type": "application/json",
-          "http-referer": getEnv("OPENROUTER_SITE_URL") ?? "https://alfianahar.com",
-          "x-title": getEnv("OPENROUTER_SITE_NAME") ?? "Alfian Nahar Portfolio",
+          "http-referer": getEnv("OPENROUTER_SITE_URL", runtimeEnv) ?? "https://alfianahar.com",
+          "x-title": getEnv("OPENROUTER_SITE_NAME", runtimeEnv) ?? "Alfian Nahar Portfolio",
         },
         body: openRouterBody,
       });
@@ -212,8 +214,8 @@ export const POST: APIRoute = async ({ request }) => {
           headers: {
             authorization: `Bearer ${apiKey}`,
             "content-type": "application/json",
-            "http-referer": getEnv("OPENROUTER_SITE_URL") ?? "https://alfianahar.com",
-            "x-title": getEnv("OPENROUTER_SITE_NAME") ?? "Alfian Nahar Portfolio",
+            "http-referer": getEnv("OPENROUTER_SITE_URL", runtimeEnv) ?? "https://alfianahar.com",
+            "x-title": getEnv("OPENROUTER_SITE_NAME", runtimeEnv) ?? "Alfian Nahar Portfolio",
           },
           body: streamBody,
         });
