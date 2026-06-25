@@ -105,7 +105,7 @@ export function HeroCopy() {
           className={buttonClassName({
             variant: "brutal",
             size: "lg",
-            className: "h-14 px-7",
+            className: "h-14 px-7 sm:hidden",
           })}
         >
           Chat with my AI
