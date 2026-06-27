@@ -9,7 +9,7 @@ describe("mapProjectEntries", () => {
         slug: "portfolio-v2",
         data: {
           title: "Portfolio V2",
-          shortDescription: "Portfolio built from Markdown content.",
+          description: "Portfolio built from Markdown content.",
           tags: ["Portfolio", "Astro"],
           role: "Designer & Developer",
           position: ["personal", "lead"],
@@ -17,8 +17,7 @@ describe("mapProjectEntries", () => {
           stack: ["Astro", "React"],
           cover: { src: "/_astro/cover.hash.svg" },
           coverAlt: "Portfolio V2 preview",
-          outcome: "A simpler content workflow.",
-          links: { caseStudy: "/work/portfolio-v2" },
+          links: {},
           order: 1,
         },
       },
@@ -38,8 +37,7 @@ describe("mapProjectEntries", () => {
         type: "from scratch",
         tags: ["Portfolio", "Astro"],
         stack: ["Astro", "React"],
-        outcome: "A simpler content workflow.",
-        links: { caseStudy: "/work/portfolio-v2" },
+        links: {},
       },
     ]);
   });

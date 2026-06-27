@@ -1,6 +1,6 @@
 ---
 title: "Satpol VideoStream"
-shortDescription: "YouTube-like video streaming platform for Satpol PP DKI Jakarta — upload field operation documentation, transcode to HLS, and serve with comments and interactions."
+description: "YouTube-like video streaming platform for Satpol PP DKI Jakarta — upload field operation documentation, transcode to HLS, and serve with comments and interactions."
 tags: ["Satpol PP", "Video Streaming", "Full-Stack", "Infrastructure"]
 role: "Designer & Developer"
 position: ["personal", "lead", "fullstack"]
@@ -8,13 +8,10 @@ type: "from scratch"
 stack: ["Go", "GIN", "ConnectRPC", "Protobuf", "React", "Vite", "hls.js", "Mantine UI", "TypeScript", "TanStack Query", "PostgreSQL", "MinIO", "FFmpeg", "Docker", "Caddy"]
 cover: "../../assets/projects/satpol-videostream/cover.svg"
 coverAlt: "Satpol VideoStream project preview"
-outcome: "Operational video documentation is now centralized, publicly accessible, and searchable — replacing scattered phone footage."
 year: 2026
 status: "active"
 featured: true
 order: 3
-links:
-  caseStudy: "/work/satpol-videostream"
 ---
 
 ## Problem

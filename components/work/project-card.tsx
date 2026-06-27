@@ -74,12 +74,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
 
-          {project.outcome ? (
-            <p className="rounded-[var(--radius-md)] bg-[var(--muted-surface)] p-4 text-sm leading-6 text-[var(--text-secondary)]">
-              {project.outcome}
-            </p>
-          ) : null}
-
           {project.links?.live || project.links?.repo || project.body ? (
             <div className="flex flex-wrap gap-4 text-sm font-semibold text-[var(--text-primary)]">
               {project.links?.live ? <a href={project.links.live}>Live</a> : null}

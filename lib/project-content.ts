@@ -6,7 +6,7 @@ type ProjectEntry = {
   body?: string;
   data: {
     title: string;
-    shortDescription: string;
+    description: string;
     tags: string[];
     role: string;
     position: string[];
@@ -16,7 +16,6 @@ type ProjectEntry = {
     coverAlt: string;
     year?: number;
     status?: string;
-    outcome?: string;
     order?: number;
     links?: Project["links"];
   };
@@ -66,7 +65,7 @@ export function mapProjectEntries(entries: ProjectEntry[]): Project[] {
     .map(({ slug, data, body }) => ({
       title: data.title,
       slug,
-      description: data.shortDescription,
+      description: data.description,
       thumbnail: {
         src: coverSrc(data.cover),
         alt: data.coverAlt,
@@ -79,7 +78,6 @@ export function mapProjectEntries(entries: ProjectEntry[]): Project[] {
       year: data.year,
       status: data.status,
       body: resolveBodyImages(body),
-      outcome: data.outcome,
       links: data.links,
     }));
 }

@@ -4,7 +4,7 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      shortDescription: z.string(),
+      description: z.string(),
       tags: z.array(z.string()),
       role: z.string(),
       position: z.array(z.string()),
@@ -12,7 +12,6 @@ const projects = defineCollection({
       stack: z.array(z.string()),
       cover: image(),
       coverAlt: z.string(),
-      outcome: z.string().optional(),
       year: z.number().optional(),
       status: z.string().optional(),
       featured: z.boolean().optional(),
@@ -21,7 +20,6 @@ const projects = defineCollection({
         .object({
           live: z.string().url().optional(),
           repo: z.string().url().optional(),
-          caseStudy: z.string().optional(),
         })
         .optional(),
     }),

@@ -1,6 +1,6 @@
 ---
 title: "PriceFeeds"
-shortDescription: "Real-time price oracle module for Cosmos-based blockchain, on-chain USD-denominated transfer and daily limits powered by decentralized price feeds."
+description: "Real-time price oracle module for Cosmos-based blockchain enabling on-chain USD-denominated transfers and dynamic daily limits via decentralized price feeds."
 tags: ["Blockchain", "Full-Stack", "Cosmos SDK"]
 role: "Blockchain Developer"
 position: ["fullstack"]
@@ -17,13 +17,10 @@ stack:
   ]
 cover: "../../assets/projects/pricefeeds/cover.svg"
 coverAlt: "PriceFeeds project preview"
-outcome: "Delivered a Cosmos SDK chain module with decentralized oracle integration for real-time multi-currency price feeds and dynamic transaction limits."
 year: 2025
 status: "completed"
 featured: true
 order: 4
-links:
-  caseStudy: "/work/pricefeeds"
 ---
 
 ## Problem

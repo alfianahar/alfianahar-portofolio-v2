@@ -1,6 +1,6 @@
 ---
 title: "SISAPPRA"
-shortDescription: "Integrated information system for Satpol PP DKI Jakarta covering 38 modules; personnel, licensing, reporting, finance, and operational management."
+description: "Integrated information system for Satpol PP DKI Jakarta — 38 modules covering personnel, licensing, reporting, finance, and operational management for thousands of personnel."
 tags: ["Satpol PP", "Enterprise", "Full-Stack", "Dashboard"]
 role: "Lead Developer & Architect"
 position: ["lead", "fullstack"]
@@ -21,13 +21,10 @@ stack:
   ]
 cover: "../../assets/projects/sisappra/cover.svg"
 coverAlt: "SISAPPRA project preview"
-outcome: "Delivered a production-grade modular platform serving thousands of Satpol PP personnel across DKI Jakarta."
 year: 2024
 status: "active"
 featured: true
 order: 2
-links:
-  caseStudy: "/work/sisappra"
 ---
 
 ## Problem

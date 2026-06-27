@@ -1,9 +1,9 @@
 ---
-title: "PKM Cirinten"
-shortDescription: "Nutrition aid management system for Puskesmas Cirinten, tracking distribution of food assistance to pregnant women and toddlers with web dashboard and offline mobile app using OpenStreetMap."
+title: "Puskesmas Cirinten"
+description: "Nutrition aid management system for Puskesmas Cirinten, tracking food assistance distribution to pregnant women and toddlers with web dashboard and offline mobile app."
 tags: ["Full-Stack", "Healthcare", "Mobile", "Dashboard"]
 role: "Fullstack Developer & Tech Lead"
-position: ["lead", "fullstack"]
+position: ["fullstack"]
 type: "from scratch"
 stack:
   [
@@ -16,19 +16,17 @@ stack:
     "TypeScript",
     "TanStack Query",
     "PostgreSQL",
+    "OpenStreetMap",
+    "Docker",
     "Flutter",
     "SQLite",
-    "Docker",
   ]
 cover: "../../assets/projects/pkm-cirinten/01-login.png"
 coverAlt: "PKM Cirinten login page"
-outcome: "Deployed a nutrition tracking platform used by Puskesmas Cirinten staff to manage and monitor food aid distribution for maternal and child health programs."
 year: 2024
 status: "completed"
 featured: true
 order: 5
-links:
-  caseStudy: "/work/pkm-cirinten"
 ---
 
 ## Problem

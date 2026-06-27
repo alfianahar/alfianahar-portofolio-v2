@@ -26,11 +26,9 @@ export type Project = {
   year?: number;
   body?: string;
   status?: string;
-  outcome?: string;
   links?: {
     live?: string;
     repo?: string;
-    caseStudy?: string;
   };
 };
 

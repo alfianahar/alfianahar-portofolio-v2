@@ -68,7 +68,7 @@ When asked to add a work portfolio entry, target directory is `src/content/proje
 ```markdown
 ---
 title: "Project Name"
-shortDescription: "One-line description."
+description: "One-line description covering what was built and what it achieved."
 tags: ["Tag1", "Tag2"]
 role: "Your Role"
 position: ["lead", "fullstack"]
@@ -76,13 +76,10 @@ type: "from scratch" | "redesign" | "maintenance"
 stack: ["Tech1", "Tech2"]
 cover: "../../assets/projects/<project-slug>/cover.svg"
 coverAlt: "Project preview"
-outcome: "One-line outcome."
 year: 2026
 status: "active"
 featured: true
 order: <next number>
-links:
-  caseStudy: "/work/<project-slug>"
 ---
 
 ## Problem
