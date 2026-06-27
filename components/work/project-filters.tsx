@@ -74,10 +74,21 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
   return (
     <details
       open={isFilterOpen}
-      className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl"
+      className="group rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl"
     >
-      <summary className="cursor-pointer list-none text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] marker:hidden">
+      <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] marker:hidden">
         Filter work
+        <svg
+          className="h-3 w-3 shrink-0 transition-transform group-open:rotate-180"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </summary>
       <div className="mt-4 space-y-4">
         {groups.map((group) => (
