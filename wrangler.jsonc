@@ -6,11 +6,10 @@
     "directory": "./dist"
   },
   "vars": {
-    "OPENROUTER_MAX_TOKENS": "10000",
-    "OPENROUTER_MODEL": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    "OPENROUTER_SITE_NAME": "Alfian's Portfolio",
-    "OPENROUTER_SITE_URL": "https://alfianahar.com",
-    "OPENROUTER_TEMPERATURE": "0.5"
+    "LLM_BASE_URL": "https://api.deepseek.com/v1",
+    "LLM_MODEL": "deepseek-v4-flash",
+    "LLM_TEMPERATURE": "0.5",
+    "LLM_MAX_TOKENS": "10000"
   },
   "kv_namespaces": [
     {

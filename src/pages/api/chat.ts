@@ -9,7 +9,26 @@ import {
 
 export const prerender = false;
 
-const openRouterUrl = "https://openrouter.ai/api/v1/chat/completions";
+function getLLMUrl(env?: RuntimeEnv) {
+  const base = getEnv("LLM_BASE_URL", env) || "https://api.deepseek.com/v1";
+  return `${base.replace(/\/+$/, "")}/chat/completions`;
+}
+
+// ponytail: single retry for cold-start / transient network failures.
+async function fetchWithRetry(url: string, init: RequestInit, retries = 1): Promise<Response> {
+  let lastError: unknown;
+  for (let i = 0; i <= retries; i++) {
+    try {
+      const response = await fetch(url, init);
+      if (response.ok) return response;
+      lastError = new Error(`LLM API returned ${response.status}`);
+    } catch (err) {
+      lastError = err;
+    }
+    if (i < retries) await new Promise((r) => setTimeout(r, 400));
+  }
+  throw lastError ?? new Error("fetch failed after retries");
+}
 const encoder = new TextEncoder();
 
 const RATE_WINDOW_MS = 15_000;
@@ -89,15 +108,15 @@ function getEnvBool(name: string, runtimeEnv?: RuntimeEnv) {
   return getEnv(name, runtimeEnv)?.toLowerCase() === "true";
 }
 
-function buildOpenRouterBody(messages: ReturnType<typeof sanitizeChatMessages>, runtimeEnv?: RuntimeEnv) {
+function buildLLMBody(messages: ReturnType<typeof sanitizeChatMessages>, runtimeEnv?: RuntimeEnv) {
   const body: Record<string, unknown> = {
-    model: getEnv("OPENROUTER_MODEL", runtimeEnv),
+    model: getEnv("LLM_MODEL", runtimeEnv) || "deepseek-v4-flash",
     messages: buildOpenRouterMessages(messages),
-    temperature: getEnvNumber("OPENROUTER_TEMPERATURE", 0.2, runtimeEnv),
-    max_tokens: getEnvNumber("OPENROUTER_MAX_TOKENS", 500, runtimeEnv),
+    temperature: getEnvNumber("LLM_TEMPERATURE", 0.2, runtimeEnv),
+    max_tokens: getEnvNumber("LLM_MAX_TOKENS", 500, runtimeEnv),
   };
 
-  if (getEnvBool("OPENROUTER_REASONING", runtimeEnv)) {
+  if (getEnvBool("LLM_REASONING", runtimeEnv)) {
     body.reasoning = { enabled: true };
   }
 
@@ -144,8 +163,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return jsonResponse(createOutOfScopeResponse());
   }
 
-  const apiKey = getEnv("OPENROUTER_API_KEY", runtimeEnv);
-  const model = getEnv("OPENROUTER_MODEL", runtimeEnv);
+  const apiKey = getEnv("LLM_API_KEY", runtimeEnv);
+  const model = getEnv("LLM_MODEL", runtimeEnv);
 
   if (!apiKey || !model) {
     return jsonResponse({
@@ -156,19 +175,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
   }
 
   const shouldStream = (body as { stream?: boolean }).stream === true;
-  const openRouterBody = buildOpenRouterBody(messages, runtimeEnv);
+  const llmBody = buildLLMBody(messages, runtimeEnv);
 
   if (!shouldStream) {
     try {
-      const response = await fetch(openRouterUrl, {
+      const response = await fetchWithRetry(getLLMUrl(runtimeEnv), {
         method: "POST",
         headers: {
           authorization: `Bearer ${apiKey}`,
           "content-type": "application/json",
-          "http-referer": getEnv("OPENROUTER_SITE_URL", runtimeEnv) ?? "https://alfianahar.com",
-          "x-title": getEnv("OPENROUTER_SITE_NAME", runtimeEnv) ?? "Alfian Nahar Portfolio",
         },
-        body: openRouterBody,
+        body: llmBody,
       });
 
       if (!response.ok) {
@@ -204,18 +221,16 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
   }
 
-  const streamBody = JSON.stringify({ ...JSON.parse(openRouterBody), stream: true });
+  const streamBody = JSON.stringify({ ...JSON.parse(llmBody), stream: true });
 
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        const response = await fetch(openRouterUrl, {
+        const response = await fetchWithRetry(getLLMUrl(runtimeEnv), {
           method: "POST",
           headers: {
             authorization: `Bearer ${apiKey}`,
             "content-type": "application/json",
-            "http-referer": getEnv("OPENROUTER_SITE_URL", runtimeEnv) ?? "https://alfianahar.com",
-            "x-title": getEnv("OPENROUTER_SITE_NAME", runtimeEnv) ?? "Alfian Nahar Portfolio",
           },
           body: streamBody,
         });

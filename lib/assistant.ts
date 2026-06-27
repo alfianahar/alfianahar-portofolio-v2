@@ -1,6 +1,30 @@
 import assistantContext from "@content/assistant-context.md?raw";
 import type { ChatAction } from "@app-types/content";
 
+// ponytail: eager glob — all project .md files inlined at build, auto-scales as projects grow.
+// Falls back to empty in test runner where import.meta.glob is not available.
+const projectModules: Record<string, string> = (() => {
+  try {
+    if (typeof import.meta.glob === "function") {
+      return import.meta.glob("/src/content/projects/*.md", {
+        query: "?raw",
+        import: "default",
+        eager: true,
+      }) as Record<string, string>;
+    }
+  } catch {
+    // import.meta.glob not available (e.g. Bun test runner)
+  }
+  return {};
+})();
+
+const projectsContext = Object.entries(projectModules)
+  .map(([path, content]) => {
+    const name = path.split("/").pop()?.replace(".md", "") ?? "";
+    return `---\nProject: ${name}\n${content}`;
+  })
+  .join("\n\n");
+
 export type AssistantMessage = {
   role: "user" | "assistant";
   content: string;
@@ -11,7 +35,7 @@ export type AssistantResponse = {
   actions: ChatAction[];
 };
 
-const maxMessages = 8;
+const maxMessages = 16;
 const maxMessageLength = 1600;
 
 const inScopeTerms = [
@@ -51,18 +75,55 @@ const inScopeTerms = [
   "blockchain",
   "markidraw",
   "coffee",
-];
-
-const obviousOutOfScopeTerms = [
-  "weather",
-  "stock price",
-  "crypto price",
-  "recipe",
-  "football",
-  "movie",
-  "news today",
-  "translate this",
-  "solve my homework",
+  "hotel",
+  "linen",
+  "amr",
+  "pkm",
+  "cirinten",
+  "puskesmas",
+  "nutrition",
+  "satpol",
+  "videostream",
+  "streaming",
+  "pricefeed",
+  "cosmos",
+  "oracle",
+  "portfolio",
+  "s16",
+  "zoune",
+  "halo",
+  "hallo",
+  "hello",
+  "hi",
+  "hai",
+  "hey",
+  "apa kabar",
+  "pagi",
+  "siang",
+  "sore",
+  "malam",
+  "selamat",
+  "diri",
+  "profil",
+  "latar belakang",
+  "bangun",
+  "buat",
+  "kerjakan",
+  "develop",
+  "tanya",
+  "bisa",
+  "github",
+  "linkedin",
+  "detail",
+  "jelasin",
+  "jelaskan",
+  "lanjut",
+  "gimana",
+  "cara",
+  "contoh",
+  "lebih",
+  "spesifik",
+  "teknis",
 ];
 
 export const assistantContactActions: ChatAction[] = [
@@ -80,12 +141,7 @@ export function createOutOfScopeResponse(): AssistantResponse {
 
 export function isLikelyOutOfScope(input: string): boolean {
   const normalized = input.toLowerCase();
-
-  if (inScopeTerms.some((term) => normalized.includes(term))) {
-    return false;
-  }
-
-  return obviousOutOfScopeTerms.some((term) => normalized.includes(term));
+  return !inScopeTerms.some((term) => normalized.includes(term));
 }
 
 const outOfScopePatterns = [
@@ -139,13 +195,15 @@ export function buildOpenRouterMessages(messages: AssistantMessage[]) {
       role: "system" as const,
       content: [
         "You are Alfian Assistant for Alfian Nahar Aswinda's portfolio website.",
-        "Answer ONLY from the provided context below about Alfian's resume, skills, experience, and selected work.",
-        "If the context does not contain the answer, or the question is outside Alfian's resume and work, respond with exactly this text: \"I don't have enough context to answer that. I can only discuss Alfian's resume, skills, experience, and selected work. For anything else, send Alfian a message directly.\"",
-        'Do not invent facts. Do not claim live web access. Do not use phrases like "I\'m sorry" or "I can\'t help with that" — use only the exact out-of-scope text above when you cannot answer. Keep answers concise and useful.',
-        "When the user asks about experience, projects, or selected work, format the answer in markdown: use a short heading, then bullets grouped by role or company, and bold the role or company names. Avoid long plain paragraphs when a structured summary would be easier to scan.",
-        "Contact options for visitors: WhatsApp at +6285725359530 or email alfian.aswinda@gmail.com.",
-        "Context:",
+        "Use the provided context below for factual information about Alfian's resume, skills, experience, and projects. For follow-up questions, clarifications, or details about topics already discussed in the conversation above, use the conversation history.",
+        "If the user asks something outside Alfian's background and it is not already being discussed in the conversation, respond with exactly this text: \"I don't have enough context to answer that. I can only discuss Alfian's resume, skills, experience, and selected work. For anything else, send Alfian a message directly.\"",
+        'Do not invent facts. Do not claim live web access. Keep answers concise and useful.',
+        "For greetings like 'halo', 'hello', 'hi', 'apa kabar', respond warmly in the user's language and invite questions about Alfian's work.",
+        "When answering about experience or projects, format in markdown: short heading, then bullets with bold role/company names.",
+        "Contact options: WhatsApp +6285725359530 or alfian.aswinda@gmail.com.",
+        "## Context",
         assistantContext,
+        projectsContext,
       ].join("\n\n"),
     },
     ...messages,

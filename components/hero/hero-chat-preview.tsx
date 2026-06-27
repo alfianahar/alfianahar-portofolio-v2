@@ -7,7 +7,7 @@ const sideCards = [
 
 export function HeroChatPreview() {
   return (
-    <div className="relative min-h-[26rem] rounded-lg border-bold border-(--brutal-ink) bg-(--cream) p-3 shadow-(--shadow-hard) sm:p-4 lg:h-full lg:min-h-0 lg:p-5">
+    <div className="relative min-h-[26rem] rounded-lg border-bold border-(--brutal-ink) bg-(--cream) p-3 shadow-(--shadow-hard) sm:p-4 lg:h-[calc(100svh-8rem)] lg:min-h-0 lg:p-5">
       <div className="absolute -right-3 -top-3 hidden rounded-md border-bold border-(--brutal-ink) bg-(--cream) px-4 py-3 text-xs font-semibold text-(--brutal-ink) shadow-(--shadow-hard-sm) lg:block">
         AI assistant preview
       </div>

@@ -13,8 +13,8 @@ describe("chat API", () => {
   const originalFetch = globalThis.fetch;
 
   beforeEach(() => {
-    delete process.env.OPENROUTER_API_KEY;
-    delete process.env.OPENROUTER_MODEL;
+    delete process.env.LLM_API_KEY;
+    delete process.env.LLM_MODEL;
   });
 
   afterEach(() => {
@@ -33,8 +33,8 @@ describe("chat API", () => {
   });
 
   test("returns model reply for in-scope prompts", async () => {
-    process.env.OPENROUTER_API_KEY = "test-key";
-    process.env.OPENROUTER_MODEL = "test-model";
+    process.env.LLM_API_KEY = "test-key";
+    process.env.LLM_MODEL = "test-model";
     globalThis.fetch = (async () =>
       Response.json({
         choices: [{ message: { content: "Alfian builds robotics UI and backend APIs." } }],
@@ -52,7 +52,7 @@ describe("chat API", () => {
     expect(json.actions).toEqual([]);
   });
 
-  test("reads OpenRouter config from Cloudflare runtime env", async () => {
+  test("reads LLM config from Cloudflare runtime env", async () => {
     globalThis.fetch = (async () =>
       Response.json({
         choices: [{ message: { content: "Alfian builds robotics UI and backend APIs." } }],
@@ -65,8 +65,8 @@ describe("chat API", () => {
       locals: {
         runtime: {
           env: {
-            OPENROUTER_API_KEY: "test-key",
-            OPENROUTER_MODEL: "test-model",
+            LLM_API_KEY: "test-key",
+            LLM_MODEL: "test-model",
           },
         },
       },
@@ -79,8 +79,8 @@ describe("chat API", () => {
   });
 
   test("streams delta chunks and final reply for in-scope prompts", async () => {
-    process.env.OPENROUTER_API_KEY = "test-key";
-    process.env.OPENROUTER_MODEL = "test-model";
+    process.env.LLM_API_KEY = "test-key";
+    process.env.LLM_MODEL = "test-model";
 
     const sseChunks = [
       'data: {"choices":[{"delta":{"content":"Alfian"}}]}',

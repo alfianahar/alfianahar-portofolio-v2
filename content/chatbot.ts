@@ -10,7 +10,7 @@ export const chatMessages = [
     id: "assistant-resume-summary",
     role: "assistant",
     content:
-      "Alfian builds fullstack systems across robotics UI, REST APIs, Apollo GraphQL with ROS integrations, WebRTC workflows, and Golang microservices. He is also deepening practical AI engineering for smarter product and automation flows.",
+      "Alfian builds full-stack and AI-powered systems using TypeScript, Python, Go, and React, from enterprise platforms and robotics dashboards to blockchain modules, analytics, RAG, and automation.",
   },
 ] satisfies ChatMessage[];
 
