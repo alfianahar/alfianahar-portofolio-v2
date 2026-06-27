@@ -79,7 +79,9 @@ coverAlt: "Project preview"
 year: 2026
 status: "active"
 featured: true
-order: <next number>
+links:
+  live: "https://example.com"
+  repo: "https://github.com/user/repo"
 ---
 
 ## Problem
@@ -103,11 +105,23 @@ order: <next number>
 4. Fill frontmatter + Problem/Solution/Outcome sections
 5. Run `bun run build` to verify no errors
 
+### Links
+
+Always set `links` frontmatter when a project has a live demo or repository. The project card auto-renders `Live Demo` and `GitHub` buttons only when these are present, so omitting them leaves the card with only the `Case Study` button.
+
+```yaml
+links:
+  live: "https://example.com"   # omit entirely if no public demo
+  repo: "https://github.com/..."  # omit entirely if private/no repo
+```
+
+Both fields are optional and URL-validated by the content schema (`src/content.config.ts`). Only add keys for links that actually exist. Never invent placeholder URLs.
+
 ### Rules
 
+- NEVER use em dashes (—) or en dashes (–) in responses. Use commas, parentheses, or other natural punctuation instead.
 - Slug = lowercase, hyphenated project name
 - Cover image path must be relative: `../../assets/projects/<slug>/cover.svg`
-- `order` = next available number (check existing files)
 - Tags: use existing tag vocabulary when possible (Portfolio, Frontend, Backend, Full-Stack, Enterprise, SEO, UI/UX, etc.)
 
 ## Status
