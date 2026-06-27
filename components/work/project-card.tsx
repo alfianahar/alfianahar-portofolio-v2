@@ -16,10 +16,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <img
             src={project.thumbnail.src}
             alt={project.thumbnail.alt}
-            width={160}
-            height={110}
             loading="lazy"
-            className="h-auto w-24 opacity-90 transition duration-300 group-hover:scale-105"
+            className="h-full w-full object-contain p-4 opacity-90 transition duration-300 group-hover:scale-105"
           />
           <div className="absolute left-4 top-4 flex gap-2">
             <span className="rounded-full border border-white/70 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] backdrop-blur">
