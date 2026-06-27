@@ -1,6 +1,6 @@
 ---
 title: "PKM Cirinten"
-shortDescription: "Nutrition aid management system for Puskesmas Cirinten, tracking distribution of food assistance to pregnant women and toddlers with web dashboard and mobile app."
+shortDescription: "Nutrition aid management system for Puskesmas Cirinten, tracking distribution of food assistance to pregnant women and toddlers with web dashboard and offline mobile app using OpenStreetMap."
 tags: ["Full-Stack", "Healthcare", "Mobile", "Dashboard"]
 role: "Fullstack Developer & Tech Lead"
 position: ["lead", "fullstack"]
@@ -20,8 +20,8 @@ stack:
     "SQLite",
     "Docker",
   ]
-cover: "../../assets/projects/pkm-cirinten/cover.svg"
-coverAlt: "PKM Cirinten project preview"
+cover: "../../assets/projects/pkm-cirinten/01-login.png"
+coverAlt: "PKM Cirinten login page"
 outcome: "Deployed a nutrition tracking platform used by Puskesmas Cirinten staff to manage and monitor food aid distribution for maternal and child health programs."
 year: 2024
 status: "completed"
@@ -37,7 +37,24 @@ Puskesmas Cirinten lacked a digital system to track the distribution of nutritio
 
 ## Solution
 
-Built a full-stack platform with Go backend (GIN + GORM + PostgreSQL) and React web dashboard (Mantine UI + TanStack Query). Led a 2-person team, handled fullstack development and directed a partner building the Flutter + SQLite mobile app that works offline-first: data stored locally on-device and syncs to the backend when internet is available.
+Built a full-stack platform with Go backend (GIN + GORM + PostgreSQL) and React web dashboard (Mantine UI + TanStack Query). The dashboard visualizes recipient locations and reporting status on an interactive OpenStreetMap (via react-leaflet) so field coordinators can monitor coverage and validate home visits at a glance. Led a 2-person team, handled fullstack development and directed a partner building the Flutter + SQLite mobile app that works offline-first: data stored locally on-device and syncs to the backend when internet is available.
+
+### Login
+
+![Login page](../../assets/projects/pkm-cirinten/01-login.png)
+
+### Dashboard Ibu Hamil
+
+![Dashboard Ibu Hamil with map](../../assets/projects/pkm-cirinten/03-dashboard-ibu-hamil.png)
+
+### Dashboard Balita
+
+![Dashboard Balita](../../assets/projects/pkm-cirinten/04-dashboard-balita.png)
+
+### Data tables
+
+![Data Balita](../../assets/projects/pkm-cirinten/06-data-balita.png)
+![Pengguna](../../assets/projects/pkm-cirinten/08-data-pengguna.png)
 
 ## Outcome
 
