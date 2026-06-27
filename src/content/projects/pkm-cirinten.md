@@ -1,7 +1,7 @@
 ---
 title: "Puskesmas Cirinten"
 description: "Nutrition aid management system for Puskesmas Cirinten, tracking food assistance distribution to pregnant women and toddlers with web dashboard and offline mobile app."
-tags: ["Full-Stack", "Healthcare", "Dashboard"]
+tags: ["Full-Stack", "Healthcare", "Dashboard", "Maps"]
 role: "Fullstack Developer"
 position: ["fullstack", "frontend", "backend"]
 type: "from scratch"

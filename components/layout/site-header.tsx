@@ -23,24 +23,24 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[var(--background)]/80 shadow-[inset_0_-1px_0_0_var(--border)] backdrop-blur-xl">
+      <header className="sticky top-0 z-40 bg-(--background)/80 shadow-[inset_0_-1px_0_0_var(--border)] backdrop-blur-xl">
         <Container
           size="wide"
           className="relative grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6"
         >
           <a href="/" className="flex items-center gap-2 sm:gap-3" aria-label="Go to homepage">
             <LogoMark priority size={36} />
-            <span className="text-base font-bold tracking-[-0.03em] text-[var(--text-primary)] sm:text-lg md:text-xl">
+            <span className="text-base font-bold tracking-[-0.03em] text-(--text-primary) sm:text-lg md:text-xl">
               {profile.displayName}
             </span>
           </a>
 
-          <nav className="hidden items-center gap-6 text-base font-semibold text-[var(--text-primary)] sm:flex md:gap-10 md:text-lg">
+          <nav className="hidden items-center gap-6 text-base font-semibold text-(--text-primary) sm:flex md:gap-10 md:text-lg">
             {navigationItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="relative transition hover:text-[var(--text-secondary)]"
+                className="relative transition hover:text-(--text-secondary)"
               >
                 {item.label}
               </a>
@@ -49,7 +49,7 @@ export function SiteHeader() {
 
           <a
             href="/bio"
-            className="hidden h-9 items-center justify-center justify-self-end rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-elevated)] px-4 text-sm font-medium text-[var(--text-primary)] backdrop-blur-xl transition duration-200 ease-out hover:text-[var(--text-primary)] sm:inline-flex"
+            className="hidden h-9 items-center justify-center justify-self-end rounded-sm border border-(--border) bg-(--surface-elevated) px-4 text-sm font-medium text-(--text-primary) backdrop-blur-xl transition duration-200 ease-out hover:text-(--text-primary) sm:inline-flex"
           >
             Biopage
           </a>
@@ -57,7 +57,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="absolute right-4 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center overflow-hidden rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-elevated)] text-[var(--text-primary)] backdrop-blur-xl sm:hidden"
+            className="absolute right-4 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center overflow-hidden rounded-sm border border-(--border) bg-(--surface-elevated) text-(--text-primary) backdrop-blur-xl sm:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-panel"
@@ -110,7 +110,7 @@ export function SiteHeader() {
       <div
         id="mobile-nav-panel"
         aria-hidden={!open}
-        className={`fixed inset-0 z-30 flex flex-col bg-[var(--background)]/40 backdrop-blur-xl transition-opacity duration-300 sm:hidden ${
+        className={`fixed inset-0 z-30 flex flex-col bg-(--background)/40 backdrop-blur-xl transition-opacity duration-300 sm:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -126,7 +126,7 @@ export function SiteHeader() {
               href={item.href}
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${80 + i * 40}ms` : "0ms" }}
-              className={`text-4xl font-semibold tracking-[-0.03em] text-[var(--text-primary)] transition-all duration-500 ease-out ${
+              className={`text-4xl font-semibold tracking-[-0.03em] text-(--text-primary) transition-all duration-500 ease-out ${
                 open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               }`}
             >
@@ -149,7 +149,7 @@ export function SiteHeader() {
           </a>
         </Container>
 
-        <div className="border-t border-[var(--border)]/50 px-6 py-5 text-xs text-[var(--text-tertiary)]">
+        <div className="border-t border-(--border)/50 px-6 py-5 text-xs text-(--text-tertiary)">
           <Container size="wide" className="flex items-center justify-between">
             <span>{profile.email}</span>
             <span>© {new Date().getFullYear()}</span>

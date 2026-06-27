@@ -58,11 +58,11 @@ export function HeroCopy() {
 
   return (
     <div className="relative z-10 max-w-3xl">
-      <p className="mb-8 inline-flex items-center gap-2 rounded-full border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]">
+      <p className="mb-8 inline-flex items-center gap-2 rounded-full border-bold border-(--brutal-ink) bg-(--cream) px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-(--brutal-ink) shadow-(--shadow-hard-sm)">
         <span aria-hidden="true">✦</span>
         FULLSTACK AI-POWERED ENGINEERING
       </p>
-      <h1 className="relative max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.075em] text-[var(--text-primary)] sm:text-6xl lg:text-7xl xl:text-8xl">
+      <h1 className="relative max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.075em] text-(--text-primary) sm:text-6xl lg:text-7xl xl:text-8xl">
         <span className="sr-only">
           I'm Alfian, the {PAIRS[0].alias} — {PAIRS[0].real}.
         </span>
@@ -74,14 +74,14 @@ export function HeroCopy() {
           {PAIRS.map((p) => (
             <span key={p.alias} className="block">
               <span className="block">{p.alias}</span>
-              <span className="mt-2 block font-mono text-xs uppercase tracking-[0.22em] text-[var(--text-muted)] sm:text-sm">
+              <span className="mt-2 block font-mono text-xs uppercase tracking-[0.22em] text-(--text-muted) sm:text-sm">
                 {p.real}
               </span>
             </span>
           ))}
         </span>
         <span aria-hidden="true">
-          <span className="mb-2 block text-2xl font-medium tracking-tight text-[var(--text-secondary)] sm:text-3xl">
+          <span className="mb-2 block text-2xl font-medium tracking-tight text-(--text-secondary) sm:text-3xl">
             I'm Alfian, the
           </span>
           <span
@@ -89,13 +89,13 @@ export function HeroCopy() {
             style={{ minHeight: slotH }}
           >
             <span className="block">{PAIRS[i].alias}</span>
-            <span className="mt-2 block font-mono text-xs uppercase tracking-[0.22em] text-[var(--text-muted)] sm:text-sm">
+            <span className="mt-2 block font-mono text-xs uppercase tracking-[0.22em] text-(--text-muted) sm:text-sm">
               {PAIRS[i].real}
             </span>
           </span>
         </span>
       </h1>
-      <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl sm:leading-9">
+      <p className="mt-8 max-w-2xl text-lg leading-8 text-(--text-secondary) sm:text-xl sm:leading-9">
         Reliable Systems. Practical AI. I build fullstack web apps, robotics interfaces, backend
         APIs, and realtime integrations that turn rough ideas into shipped products.
       </p>

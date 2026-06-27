@@ -15,10 +15,10 @@ export function HeroBackground() {
       {arcs.map((className) => (
         <div
           key={className}
-          className={`absolute rounded-full border border-[var(--border)] bg-white/20 shadow-[0_0_80px_rgba(20,39,62,0.05)] ${className}`}
+          className={`absolute rounded-full border border-(--border) bg-white/20 shadow-[0_0_80px_rgba(20,39,62,0.05)] ${className}`}
         />
       ))}
-      <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[var(--background)]/88 to-transparent lg:block" />
+      <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-(--background)/88 to-transparent lg:block" />
     </div>
   );
 }

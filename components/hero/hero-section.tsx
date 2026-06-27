@@ -6,7 +6,7 @@ import { HeroToolStrip } from "./hero-tool-strip";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[var(--background)] lg:h-[calc(100svh-5rem)]">
+    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-(--background) lg:h-[calc(100svh-5rem)]">
       <HeroBackground />
       <Container
         size="wide"

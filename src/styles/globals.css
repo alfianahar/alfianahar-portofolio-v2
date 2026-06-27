@@ -1,5 +1,11 @@
 @import "tailwindcss";
-@import "../../styles/tokens.css";
+
+@theme {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-bold: 2px;
+}
 
 @font-face {
   font-family: "Rubik";
@@ -7,6 +13,37 @@
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
+}
+
+:root {
+  --background: #f4faff;
+  --surface: #ffffff;
+  --surface-elevated: rgba(255, 255, 255, 0.78);
+  --accent: #0095fa;
+  --cream: #f1f1e6;
+  --brutal-ink: #050505;
+  --text-primary: #050505;
+  --text-secondary: #525252;
+  --text-muted: #737373;
+  --border: #e5e5e5;
+  --muted-surface: #f4f4f5;
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.08);
+  --shadow-hard: 6px 6px 0 var(--accent);
+  --shadow-hard-sm: 4px 4px 0 var(--accent);
+}
+
+[data-theme="dark"] {
+  --background: #14273e;
+  --surface: #0f1f33;
+  --surface-elevated: rgba(15, 31, 51, 0.84);
+  --accent: #0095fa;
+  --cream: #f1f1e6;
+  --brutal-ink: #050505;
+  --text-primary: #efeff6;
+  --text-secondary: rgba(239, 239, 246, 0.78);
+  --text-muted: rgba(239, 239, 246, 0.68);
+  --border: rgba(239, 239, 246, 0.16);
+  --muted-surface: rgba(239, 239, 246, 0.08);
 }
 
 * {
@@ -58,7 +95,6 @@ select {
   transform: translate(6px, 6px);
 }
 
-/* ── page-loader ── */
 .page-loader {
   position: fixed;
   inset: 0;

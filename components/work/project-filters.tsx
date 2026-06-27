@@ -74,9 +74,9 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
   return (
     <details
       open={isFilterOpen}
-      className="group rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface-elevated)] p-4 shadow-[var(--shadow-soft)] backdrop-blur-xl"
+      className="group rounded-lg border border-(--border) bg-(--surface-elevated) p-4 shadow-(--shadow-soft) backdrop-blur-xl"
     >
-      <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-muted)] marker:hidden">
+      <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-(--text-muted) marker:hidden">
         Filter work
         <svg
           className="h-3 w-3 shrink-0 transition-transform group-open:rotate-180"
@@ -93,7 +93,7 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
       <div className="mt-4 space-y-4">
         {groups.map((group) => (
           <div key={group.label} className="grid gap-2 sm:grid-cols-[5rem_1fr] sm:items-start">
-            <p className="pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+            <p className="pt-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--text-muted)">
               {group.label}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -102,10 +102,10 @@ export function ProjectFilters({ projects, activeFilter }: ProjectFiltersProps) 
                   key={`${link.kind}-${link.value ?? "all"}`}
                   href={link.href}
                   className={cn(
-                    "rounded-[var(--radius-sm)] border px-3 py-2 text-sm font-medium transition",
+                    "rounded-sm border px-3 py-2 text-sm font-medium transition",
                     isActive(activeFilter, link)
-                      ? "border-[var(--brutal-ink)] bg-[var(--cream)] text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]"
-                      : "border-[var(--border)] bg-white/70 text-[var(--text-secondary)] hover:border-[var(--text-primary)] hover:text-[var(--text-primary)]",
+                      ? "border-(--brutal-ink) bg-(--cream) text-(--brutal-ink) shadow-(--shadow-hard-sm)"
+                      : "border-(--border) bg-white/70 text-(--text-secondary) hover:border-(--text-primary) hover:text-(--text-primary)",
                   )}
                 >
                   {link.label}

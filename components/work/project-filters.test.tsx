@@ -23,9 +23,9 @@ describe("ProjectFilters", () => {
       <ProjectFilters projects={projects} activeFilter={{ kind: "tag", value: "Astro" }} />,
     );
 
-    expect(html).toContain("bg-[var(--cream)]");
-    expect(html).toContain("text-[var(--brutal-ink)]");
-    expect(html).toContain("border-[var(--brutal-ink)]");
+    expect(html).toContain("bg-(--cream)");
+    expect(html).toContain("text-(--brutal-ink)");
+    expect(html).toContain("border-(--brutal-ink)");
     expect(html).toContain("Stack");
   });
 

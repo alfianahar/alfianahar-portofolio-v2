@@ -79,7 +79,7 @@ export function ChatPanel({
   return (
     <div
       className={cn(
-        framed && "rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5",
+        framed && "rounded-lg border border-(--border) bg-(--surface) p-4 sm:p-5",
         className,
       )}
     >
@@ -88,7 +88,7 @@ export function ChatPanel({
           {avatar ? (
             <div
               className={cn(
-                "grid size-11 place-items-center rounded-[var(--radius-md)] bg-[var(--text-primary)] text-sm font-semibold text-[var(--background)]",
+                "grid size-11 place-items-center rounded-md bg-(--text-primary) text-sm font-semibold text-(--background)",
                 avatarClassName,
               )}
             >
@@ -96,10 +96,10 @@ export function ChatPanel({
             </div>
           ) : null}
           <div>
-            <p className={cn("text-sm font-semibold text-[var(--text-primary)]", titleClassName)}>
+            <p className={cn("text-sm font-semibold text-(--text-primary)", titleClassName)}>
               {title}
             </p>
-            <p className={cn("text-xs text-[var(--text-muted)]", descriptionClassName)}>
+            <p className={cn("text-xs text-(--text-muted)", descriptionClassName)}>
               {description}
             </p>
           </div>

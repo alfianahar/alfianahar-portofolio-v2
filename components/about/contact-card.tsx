@@ -27,20 +27,20 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
   return (
     <section
       id="contact"
-      className="rounded-[var(--radius-lg)] border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--surface)] p-6 text-[var(--text-primary)] shadow-[var(--shadow-hard-sm)]"
+      className="rounded-lg border-bold border-(--brutal-ink) bg-(--surface) p-6 text-(--text-primary) shadow-(--shadow-hard-sm)"
     >
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--text-muted)]">Contact</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-(--text-muted)">Contact</p>
       <h2 className="mt-3 text-2xl font-semibold tracking-[-0.05em]">
         Build something clear, not noisy.
       </h2>
-      <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+      <p className="mt-3 text-sm leading-6 text-(--text-secondary)">
         Based in {profile.location}. Reach out for focused web apps, AI workflow interfaces, or
         product implementation help.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${profile.email}`}
-          className="brutal-press rounded-[var(--radius-sm)] border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] px-5 py-3 text-sm font-semibold text-[var(--brutal-ink)] shadow-[var(--shadow-hard-sm)]"
+          className="brutal-press rounded-sm border-bold border-(--brutal-ink) bg-(--cream) px-5 py-3 text-sm font-semibold text-(--brutal-ink) shadow-(--shadow-hard-sm)"
         >
           Send Email
         </a>
@@ -48,7 +48,7 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
-          className="rounded-[var(--radius-sm)] border border-[var(--border)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
+          className="rounded-sm border border-(--border) px-5 py-3 text-sm font-semibold text-(--text-primary) transition hover:border-(--text-primary)"
         >
           Send me a message
         </a>
@@ -59,7 +59,7 @@ export function ContactCard({ profile, socialLinks }: ContactCardProps) {
             target="_blank"
             rel="noreferrer"
             aria-label={link.label}
-            className="grid size-11 place-items-center rounded-[var(--radius-sm)] border border-[var(--border)] text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
+            className="grid size-11 place-items-center rounded-sm border border-(--border) text-(--text-primary) transition hover:border-(--text-primary)"
           >
             <SocialIcon label={link.label} />
           </a>

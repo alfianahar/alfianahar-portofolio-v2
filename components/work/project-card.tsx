@@ -71,7 +71,7 @@ function ActionFooter({
   const justifyClass = showPrimary ? "justify-between" : "justify-end";
   return (
     <div
-      className={`flex flex-wrap items-end ${justifyClass} gap-3 border-t border-[var(--border)] pt-5`}
+      className={`flex flex-wrap items-end ${justifyClass} gap-3 border-t border-(--border) pt-5`}
     >
       {showPrimary && primaryLabel ? (
         primaryAs === "link" && primaryHref ? (
@@ -87,13 +87,13 @@ function ActionFooter({
         )
       ) : null}
 
-      <div className="flex items-center gap-3 self-end pb-1 text-[var(--text-muted)]">
+      <div className="flex items-center gap-3 self-end pb-1 text-(--text-muted)">
         {demoHref ? (
           <a
             href={demoHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-[var(--text-primary)] transition hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-1 text-sm font-medium text-(--text-primary) transition hover:text-(--accent)"
           >
             Live Demo
             <span aria-hidden>↗</span>
@@ -106,7 +106,7 @@ function ActionFooter({
             rel="noreferrer"
             aria-label="GitHub repository"
             title="GitHub"
-            className="inline-flex items-center text-[var(--text-primary)] transition hover:text-[var(--accent)]"
+            className="inline-flex items-center text-(--text-primary) transition hover:text-(--accent)"
           >
             <GitHubIcon />
           </a>
@@ -135,13 +135,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <article className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border-[length:var(--border-bold)] border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)] transition duration-200 hover:-translate-y-1 hover:border-[var(--text-primary)] hover:shadow-[var(--shadow-hard)]">
-        <div className="flex items-center gap-2 border-b border-[var(--border)] px-5 py-3">
-          <span className="rounded-full bg-[var(--muted-surface)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-secondary)]">
+      <article className="group flex h-full flex-col overflow-hidden rounded-lg border-bold border-(--border) bg-(--surface) shadow-(--shadow-soft) transition duration-200 hover:-translate-y-1 hover:border-(--text-primary) hover:shadow-(--shadow-hard)">
+        <div className="flex items-center gap-2 border-b border-(--border) px-5 py-3">
+          <span className="rounded-full bg-(--muted-surface) px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-(--text-secondary)">
             {project.type}
           </span>
           {project.year ? (
-            <span className="rounded-full bg-[var(--muted-surface)] px-3 py-1 text-[11px] font-semibold tracking-[0.02em] text-[var(--text-secondary)]">
+            <span className="rounded-full bg-(--muted-surface) px-3 py-1 text-[11px] font-semibold tracking-[0.02em] text-(--text-secondary)">
               {project.year}
             </span>
           ) : null}
@@ -150,7 +150,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className={
                 project.status === "active"
                   ? "ml-auto rounded-full bg-emerald-500/90 px-3 py-1 text-[11px] font-semibold text-white"
-                  : "ml-auto rounded-full bg-[var(--muted-surface)] px-3 py-1 text-[11px] font-semibold text-[var(--text-secondary)]"
+                  : "ml-auto rounded-full bg-(--muted-surface) px-3 py-1 text-[11px] font-semibold text-(--text-secondary)"
               }
             >
               {statusLabel}
@@ -158,7 +158,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : null}
         </div>
 
-        <div className="relative grid aspect-[16/10] place-items-center overflow-hidden border-b border-[var(--border)] bg-[linear-gradient(135deg,var(--muted-surface),var(--surface))]">
+        <div className="relative grid aspect-[16/10] place-items-center overflow-hidden border-b border-(--border) bg-[linear-gradient(135deg,var(--muted-surface),var(--surface))]">
           <img
             src={project.thumbnail.src}
             alt={project.thumbnail.alt}
@@ -169,11 +169,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="flex flex-1 flex-col px-6 pt-6">
           <div>
-            <p className="text-sm font-medium text-[var(--text-muted)]">{project.role}</p>
-            <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
+            <p className="text-sm font-medium text-(--text-muted)">{project.role}</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-(--text-primary)">
               {project.title}
             </h3>
-            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+            <p className="mt-3 text-sm leading-6 text-(--text-secondary)">
               {project.description}
             </p>
           </div>
@@ -182,13 +182,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {visibleStack.map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)]"
+                className="rounded-full border border-(--border) bg-(--surface) px-3 py-1 text-xs font-medium text-(--text-secondary)"
               >
                 {item}
               </span>
             ))}
             {hiddenStack > 0 ? (
-              <span className="rounded-full border border-dashed border-[var(--border)] px-3 py-1 text-xs font-medium text-[var(--text-muted)]">
+              <span className="rounded-full border border-dashed border-(--border) px-3 py-1 text-xs font-medium text-(--text-muted)">
                 +{hiddenStack} more
               </span>
             ) : null}
@@ -221,15 +221,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl"
+            className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-(--border) bg-(--surface) shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] bg-[var(--muted-surface)] px-6 py-5">
+            <div className="flex items-start justify-between gap-4 border-b border-(--border) bg-(--muted-surface) px-6 py-5">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-(--text-muted)">
                   Case Study
                 </p>
-                <h2 className="mt-1 text-2xl font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
+                <h2 className="mt-1 text-2xl font-semibold tracking-[-0.04em] text-(--text-primary)">
                   {project.title}
                 </h2>
               </div>
@@ -237,23 +237,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 type="button"
                 onClick={() => setModalOpen(false)}
                 aria-label="Close"
-                className="cursor-pointer rounded-md p-1 text-2xl leading-none text-[var(--text-muted)] transition hover:bg-[var(--surface)] hover:text-[var(--text-primary)]"
+                className="cursor-pointer rounded-md p-1 text-2xl leading-none text-(--text-muted) transition hover:bg-(--surface) hover:text-(--text-primary)"
               >
                 &times;
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 border-b border-[var(--border)] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--text-secondary)]">
-              <span className="rounded-full bg-[var(--surface)] px-3 py-1">{project.type}</span>
+            <div className="flex flex-wrap items-center gap-2 border-b border-(--border) px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-(--text-secondary)">
+              <span className="rounded-full bg-(--surface) px-3 py-1">{project.type}</span>
               {project.year ? (
-                <span className="rounded-full bg-[var(--surface)] px-3 py-1">{project.year}</span>
+                <span className="rounded-full bg-(--surface) px-3 py-1">{project.year}</span>
               ) : null}
               {statusLabel ? (
                 <span
                   className={
                     project.status === "active"
                       ? "rounded-full bg-emerald-500/90 px-3 py-1 text-white"
-                      : "rounded-full bg-[var(--surface)] px-3 py-1"
+                      : "rounded-full bg-(--surface) px-3 py-1"
                   }
                 >
                   {statusLabel}
@@ -261,17 +261,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
               ) : null}
             </div>
 
-            <div className="overflow-y-auto px-6 py-6 text-sm leading-relaxed text-[var(--text-secondary)]">
+            <div className="overflow-y-auto px-6 py-6 text-sm leading-relaxed text-(--text-secondary)">
               {project.stack.length > 0 ? (
                 <div className="mb-6">
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--text-muted)">
                     Stack
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.stack.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-[var(--border)] bg-[var(--muted-surface)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)]"
+                        className="rounded-full border border-(--border) bg-(--muted-surface) px-3 py-1 text-xs font-medium text-(--text-secondary)"
                       >
                         {item}
                       </span>
@@ -283,12 +283,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <Markdown
                 components={{
                   h2: ({ children }) => (
-                    <h2 className="mb-3 mt-6 text-lg font-semibold text-[var(--text-primary)] first:mt-0">
+                    <h2 className="mb-3 mt-6 text-lg font-semibold text-(--text-primary) first:mt-0">
                       {children}
                     </h2>
                   ),
                   h3: ({ children }) => (
-                    <h3 className="mb-2 mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-primary)]">
+                    <h3 className="mb-2 mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-(--text-primary)">
                       {children}
                     </h3>
                   ),
@@ -302,7 +302,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                       href={href}
                       target="_blank"
                       rel="noreferrer"
-                      className="font-semibold text-[var(--text-primary)] underline decoration-2 underline-offset-2"
+                      className="font-semibold text-(--text-primary) underline decoration-2 underline-offset-2"
                     >
                       {children}
                     </a>
@@ -312,12 +312,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
                       <img
                         src={typeof src === "string" ? src : ""}
                         alt={alt ?? ""}
-                        className="mb-4 w-full rounded-[var(--radius-md)] border border-[var(--border)]"
+                        className="mb-4 w-full rounded-md border border-(--border)"
                         loading="lazy"
                       />
                     ) : null,
                   strong: ({ children }) => (
-                    <strong className="font-semibold text-[var(--text-primary)]">{children}</strong>
+                    <strong className="font-semibold text-(--text-primary)">{children}</strong>
                   ),
                 }}
               >
@@ -326,7 +326,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
 
             {/* {demoLink?.href || repoLink?.href ? (
-              <div className="border-t border-[var(--border)] bg-[var(--muted-surface)] px-6 py-4">
+              <div className="border-t border-(--border) bg-(--muted-surface) px-6 py-4">
                 <ActionFooter
                   showPrimary={false}
                   demoHref={demoLink?.href}

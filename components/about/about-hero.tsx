@@ -14,7 +14,7 @@ const buildAreas = [
 
 export function AboutHero() {
   return (
-    <section className="bg-[var(--background)] py-20 sm:py-28">
+    <section className="bg-(--background) py-20 sm:py-28">
       <Container size="wide" className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <AvatarArt />
 
@@ -25,15 +25,15 @@ export function AboutHero() {
             description={profile.bio}
           />
 
-          <div className="rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-soft)]">
-            <h2 className="text-xl font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
+          <div className="rounded-lg border border-(--border) bg-(--surface) p-6 shadow-(--shadow-soft)">
+            <h2 className="text-xl font-semibold tracking-[-0.04em] text-(--text-primary)">
               What Alfian builds
             </h2>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {buildAreas.map((area) => (
                 <div
                   key={area}
-                  className="rounded-[var(--radius-md)] bg-[var(--muted-surface)] p-4 text-sm font-medium text-[var(--text-secondary)]"
+                  className="rounded-md bg-(--muted-surface) p-4 text-sm font-medium text-(--text-secondary)"
                 >
                   {area}
                 </div>

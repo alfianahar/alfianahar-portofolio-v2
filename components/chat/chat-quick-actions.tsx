@@ -12,10 +12,10 @@ type ChatQuickActionsProps = {
 };
 
 const defaultButtonClassName =
-  "rounded-[var(--radius-sm)] border border-[var(--border)] bg-white px-3 py-2 text-xs font-medium text-[var(--text-secondary)] transition hover:border-[var(--text-primary)] hover:text-[var(--text-primary)]";
+  "rounded-sm border border-(--border) bg-white px-3 py-2 text-xs font-medium text-(--text-secondary) transition hover:border-(--text-primary) hover:text-(--text-primary)";
 
 const defaultChipClassName =
-  "rounded-[var(--radius-sm)] border border-[var(--border)] px-3 py-2 text-xs font-medium text-[var(--text-secondary)]";
+  "rounded-sm border border-(--border) px-3 py-2 text-xs font-medium text-(--text-secondary)";
 
 export function ChatQuickActions({
   actions,

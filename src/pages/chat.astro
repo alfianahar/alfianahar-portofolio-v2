@@ -9,19 +9,19 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <section class="relative isolate flex h-[calc(100svh-5rem)] flex-col overflow-hidden bg-[var(--background)]">
+  <section class="relative isolate flex h-[calc(100svh-5rem)] flex-col overflow-hidden bg-(--background)">
     <HeroBackground />
     <div class="relative z-10 mx-auto flex h-full w-full max-w-4xl flex-col px-4 py-4 sm:px-6 sm:py-6">
       <div class="mb-3 shrink-0 sm:mb-4">
-        <h1 class="text-2xl font-semibold tracking-[-0.04em] text-[var(--text-primary)] sm:text-3xl">
+        <h1 class="text-2xl font-semibold tracking-[-0.04em] text-(--text-primary) sm:text-3xl">
           Chat with my AI
         </h1>
-        <p class="mt-1 text-sm text-[var(--text-secondary)] sm:text-base">
+        <p class="mt-1 text-sm text-(--text-secondary) sm:text-base">
           Ask about fullstack systems, robotics UI, backend APIs, or AI engineering.
         </p>
       </div>
       <div
-        class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[var(--radius-lg)] border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] p-3 shadow-[var(--shadow-hard)] sm:p-4"
+        class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border-bold border-(--brutal-ink) bg-(--cream) p-3 shadow-(--shadow-hard) sm:p-4"
       >
         <AssistantChat
           title="Alfian Assistant"
@@ -29,15 +29,15 @@ const description =
           inputLabel="Ask Alfian Assistant"
           inputPlaceholder="Ask about fullstack systems, robotics UI, or AI engineering..."
           className="flex h-full min-h-0 flex-col overflow-hidden"
-          headerClassName="mb-3 shrink-0 border-b border-[var(--border)] pb-3 sm:mb-4 sm:pb-4"
+          headerClassName="mb-3 shrink-0 border-b border-(--border) pb-3 sm:mb-4 sm:pb-4"
           messagesClassName="min-h-0 flex-1 space-y-3 overflow-y-auto"
           messageMaxWidthClassName="max-w-[92%]"
           messageClassName="text-xs leading-5 sm:text-sm sm:leading-6"
-          userMessageClassName="bg-[var(--text-primary)] text-[var(--background)]"
-          assistantMessageClassName="bg-[var(--muted-surface)] text-[var(--text-secondary)]"
+          userMessageClassName="bg-(--text-primary) text-(--background)"
+          assistantMessageClassName="bg-(--muted-surface) text-(--text-secondary)"
           quickActionsClassName="mt-3 shrink-0 gap-2"
           quickActionClassName="px-3 py-1.5 text-[0.7rem]"
-          inputBaseClassName="mt-3 shrink-0 flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-white px-4 py-3 text-xs text-[var(--text-muted)] sm:text-sm"
+          inputBaseClassName="mt-3 shrink-0 flex items-center gap-2 rounded-md border border-(--border) bg-white px-4 py-3 text-xs text-(--text-muted) sm:text-sm"
           client:load
         />
       </div>

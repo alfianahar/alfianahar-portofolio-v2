@@ -4,12 +4,12 @@ type ButtonVariant = "primary" | "secondary" | "ghost" | "brutal";
 type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-[var(--text-primary)] text-[var(--background)] shadow-[var(--shadow-soft)]",
+  primary: "bg-(--text-primary) text-(--background) shadow-(--shadow-soft)",
   secondary:
-    "border border-[var(--border)] bg-[var(--surface-elevated)] text-[var(--text-primary)] backdrop-blur-xl",
-  ghost: "text-[var(--text-secondary)] hover:text-[var(--text-primary)]",
+    "border border-(--border) bg-(--surface-elevated) text-(--text-primary) backdrop-blur-xl",
+  ghost: "text-(--text-secondary) hover:text-(--text-primary)",
   brutal:
-    "brutal-press border-[length:var(--border-bold)] border-[var(--brutal-ink)] bg-[var(--cream)] text-[var(--brutal-ink)] shadow-[var(--shadow-hard)]",
+    "brutal-press border-bold border-(--brutal-ink) bg-(--cream) text-(--brutal-ink) shadow-(--shadow-hard)",
 };
 
 const sizes: Record<ButtonSize, string> = {
@@ -28,7 +28,7 @@ export function buttonClassName({
   className?: string;
 }) {
   return cn(
-    "inline-flex items-center justify-center gap-2 rounded-[var(--radius-sm)] font-medium transition duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--text-primary)] disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center gap-2 rounded-sm font-medium transition duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--text-primary) disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
     sizes[size],
     className,

@@ -261,13 +261,13 @@ export function AssistantChat({
             value={input}
             onChange={(event) => setInput(event.target.value)}
             placeholder={inputPlaceholder}
-            className="min-w-0 flex-1 bg-transparent text-[var(--text-primary)] outline-none placeholder:text-[var(--text-muted)]"
+            className="min-w-0 flex-1 bg-transparent text-(--text-primary) outline-none placeholder:text-(--text-muted)"
             disabled={isSubmitting}
           />
           <button
             type="submit"
             disabled={isSubmitting || input.trim().length === 0}
-            className="rounded-full bg-[var(--text-primary)] px-3 py-1.5 text-xs font-semibold text-[var(--background)] transition disabled:cursor-not-allowed disabled:opacity-45"
+            className="rounded-full bg-(--text-primary) px-3 py-1.5 text-xs font-semibold text-(--background) transition disabled:cursor-not-allowed disabled:opacity-45"
           >
             {isSubmitting ? "..." : "Send"}
           </button>

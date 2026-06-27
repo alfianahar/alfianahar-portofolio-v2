@@ -21,7 +21,7 @@ export function ChatMessage({
     <div
       className={cn(
         maxWidthClassName,
-        "rounded-[var(--radius-md)] px-4 py-3 text-sm leading-6",
+        "rounded-md px-4 py-3 text-sm leading-6",
         message.role === "user" ? cn("ml-auto", userClassName) : assistantClassName,
         className,
       )}
@@ -35,7 +35,7 @@ export function ChatMessage({
               href={action.href}
               target={action.href.startsWith("http") ? "_blank" : undefined}
               rel={action.href.startsWith("http") ? "noreferrer" : undefined}
-              className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition hover:border-[var(--text-primary)]"
+              className="rounded-full border border-(--border) bg-(--surface) px-3 py-1.5 text-xs font-medium text-(--text-primary) transition hover:border-(--text-primary)"
             >
               {action.label}
             </a>
