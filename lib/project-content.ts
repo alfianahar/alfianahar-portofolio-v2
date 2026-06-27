@@ -16,7 +16,6 @@ type ProjectEntry = {
     coverAlt: string;
     year?: number;
     status?: string;
-    order?: number;
     links?: Project["links"];
   };
 };
@@ -59,8 +58,11 @@ function coverSrc(cover: ProjectEntry["data"]["cover"]) {
 export function mapProjectEntries(entries: ProjectEntry[]): Project[] {
   return entries
     .toSorted((left, right) => {
-      const order = (left.data.order ?? 999) - (right.data.order ?? 999);
-      return order || left.data.title.localeCompare(right.data.title);
+      const activeLeft = left.data.status === "active" ? 0 : 1;
+      const activeRight = right.data.status === "active" ? 0 : 1;
+      const statusDiff = activeLeft - activeRight;
+      if (statusDiff !== 0) return statusDiff;
+      return (right.data.year ?? 0) - (left.data.year ?? 0);
     })
     .map(({ slug, data, body }) => ({
       title: data.title,

@@ -15,7 +15,6 @@ const projects = defineCollection({
       year: z.number().optional(),
       status: z.string().optional(),
       featured: z.boolean().optional(),
-      order: z.number().optional(),
       links: z
         .object({
           live: z.string().url().optional(),

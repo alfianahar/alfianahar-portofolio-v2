@@ -18,7 +18,6 @@ describe("mapProjectEntries", () => {
           cover: { src: "/_astro/cover.hash.svg" },
           coverAlt: "Portfolio V2 preview",
           links: {},
-          order: 1,
         },
       },
     ]);

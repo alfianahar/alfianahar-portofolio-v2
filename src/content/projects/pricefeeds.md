@@ -1,26 +1,16 @@
 ---
-title: "PriceFeeds"
+title: "Real-time Price Feeds"
 description: "Real-time price oracle module for Cosmos-based blockchain enabling on-chain USD-denominated transfers and dynamic daily limits via decentralized price feeds."
 tags: ["Blockchain", "Full-Stack", "Cosmos SDK"]
 role: "Blockchain Developer"
-position: ["fullstack"]
+position: ["backend"]
 type: "from scratch"
-stack:
-  [
-    "Cosmos SDK",
-    "Go",
-    "Ignite CLI",
-    "Tendermint",
-    "Connect",
-    "Pyth",
-    "Docker",
-  ]
+stack: ["Cosmos SDK", "Go", "Ignite CLI", "Tendermint", "Connect", "Pyth", "Docker"]
 cover: "../../assets/projects/pricefeeds/cover.svg"
 coverAlt: "PriceFeeds project preview"
 year: 2025
 status: "completed"
 featured: true
-order: 4
 ---
 
 ## Problem
